@@ -1184,16 +1184,16 @@ export default function Home() {
           <p>Perimetro</p>
         </div>
         <div className="investment__headline" data-reveal>
-          <h2>Un core modulare.<br />Governabile per gate.</h2>
-          <p>Dimensionamento preliminare interdisciplinare. Valorizzazione economica da completare prima dell’invio formale.</p>
+          <h2>Un perimetro chiaro.<br />Verificato fase per fase.</h2>
+          <p>Il progetto è suddiviso in cinque moduli operativi. Al termine di ciascuno, VIDAS verifica output e priorità prima di avviare il successivo. La valorizzazione economica sarà completata prima dell’invio formale.</p>
         </div>
         <div className="investment__total" data-reveal>
-          <span>Core totale</span>
+          <span>Impegno complessivo</span>
           <strong>156—208</strong>
           <small>giorni persona</small>
         </div>
         <details className="investment__details" data-reveal>
-          <summary>Vedi il dimensionamento per modulo</summary>
+          <summary>Vedi la stima per modulo</summary>
           <div>
             {[
               ["M0", "Mobilitazione e data contract", "6-8 gg"],
