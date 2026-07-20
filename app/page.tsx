@@ -286,34 +286,20 @@ const team = [
   ["Marie Amadei", "Strategic advisor", "ADV"],
 ];
 
-const whyUsReasons = [
+const teamProposalReasons = [
   {
     code: "01",
-    signal: "Continuità VIDAS",
-    title: "Non dobbiamo scoprire da zero il punto di partenza.",
-    body: "Conosciamo lo storico del database, le analisi già condotte e la logica di transizione verso l’ecosistema attuale. Il tempo iniziale viene investito nelle decisioni, non nella ricostruzione del contesto.",
-    proof: "Rischio ridotto · onboarding e compatibilità",
+    signal: "Il fattore Marco Bellati",
+    title: "Conosce l’infrastruttura d’origine del database VIDAS.",
+    body: "Marco Bellati conosce la logica di transizione verso il CRM attuale. Questa continuità riduce concretamente il rischio di incompatibilità tecnica segnalato nel brief, in particolare rispetto all’applicabilità quotidiana su CRM Mentor e BI Qlik.",
+    proof: "Continuità tecnica · CRM Mentor e BI Qlik",
   },
   {
     code: "02",
-    signal: "DNA nonprofit",
-    title: "Leggiamo il dato con la grammatica del fundraising.",
-    body: "Oltre vent’anni nel non profit permettono di distinguere un segnale statisticamente interessante da una leva realmente utilizzabile per retention, upgrade, riattivazione e major donor development.",
-    proof: "Esperienza · strategia, campagne e donor care",
-  },
-  {
-    code: "03",
-    signal: "Data science spiegabile",
-    title: "Innovazione tecnica senza black box.",
-    body: "RFM, scoring e modelli predittivi vengono validati su baseline, lift e stabilità. Ogni priorità mantiene reason code leggibili, soglie verificabili e la possibilità di override umano.",
-    proof: "Metodo · evidenza prima della complessità",
-  },
-  {
-    code: "04",
-    signal: "Messa a terra",
-    title: "Il modello entra nel lavoro quotidiano.",
-    body: "La responsabilità non finisce con la segmentazione: campi Mentor, dashboard Qlik, audience, pilot, monitoraggio e formazione fanno parte della stessa delivery.",
-    proof: "Output · adozione, governance e handover",
+    signal: "Perché siamo diversi",
+    title: "Non siamo semplici fornitori di liste prospect.",
+    body: "Conosciamo storicamente il database VIDAS grazie alle analisi annuali condotte con ProsperData. Nel tempo abbiamo accumulato una conoscenza profonda dei pattern comportamentali dei donatori, che permette di iniziare il progetto da un livello di consapevolezza già avanzato.",
+    proof: "Conoscenza storica · analisi ProsperData",
   },
 ];
 
@@ -460,7 +446,7 @@ export default function Home() {
             ["04", "Un esempio", "RFM Lapsed", "#rfm-lapsed"],
             ["05", "I Journey", "Dalla segmentazione alla relazione", "#journey"],
             ["06", "La delivery", "Mentor, Qlik e monitoraggio", "#delivery"],
-            ["07", "Perché noi", "Vantaggio, prove e team", "#why-us"],
+            ["07", "Perché noi", "Partnership, continuità e team", "#why-us"],
           ].map(([code, title, body, href]) => (
             <a href={href} key={code}>
               <span>{code}</span>
@@ -1071,28 +1057,62 @@ export default function Home() {
           <p>Perché noi</p>
         </div>
         <div className="why-us-intro__header" data-reveal>
-          <h2>Perché partiamo<br />già avanti.</h2>
-          <p>VIDAS non deve scegliere tra conoscenza del fundraising e competenza tecnica. DataProsper e Kiwi portano nello stesso gruppo di lavoro continuità sul database, esperienza nonprofit, data science e responsabilità sull’adozione operativa.</p>
+          <h2>Sappiamo da dove<br />viene VIDAS.</h2>
+          <p>Sappiamo dove può arrivare. La proposta nasce da una partnership strategica tra due realtà complementari, unite da una visione comune: trasformare i dati in strategie di fundraising efficaci e misurabili.</p>
         </div>
         <div className="why-us-signals" data-reveal>
-          <div><span>01</span><strong>VIDAS già conosciuta</strong><small>Storico, database e transizione CRM</small></div>
-          <div><span>02</span><strong>20+ anni nonprofit</strong><small>Il dato letto dentro il fundraising</small></div>
-          <div><span>03</span><strong>40+ mln contatti</strong><small>Patrimonio analitico DataProsper</small></div>
-          <div><span>04</span><strong>Un’unica delivery</strong><small>Modelli, Mentor, Qlik e handover</small></div>
+          <div><span>01</span><strong>Database VIDAS</strong><small>Conoscenza storica già maturata</small></div>
+          <div><span>02</span><strong>ProsperData</strong><small>Analisi annuali già condotte</small></div>
+          <div><span>03</span><strong>CRM Mentor</strong><small>Continuità con l’operatività quotidiana</small></div>
+          <div><span>04</span><strong>BI Qlik</strong><small>Applicabilità e monitoraggio</small></div>
+        </div>
+      </section>
+
+      <section className="partnership section">
+        <div className="section-kicker" data-reveal>
+          <span>7.1</span>
+          <p>Chi siamo</p>
+        </div>
+        <div className="partnership__header" data-reveal>
+          <h2>Due competenze complementari.<br />Una visione comune.</h2>
+          <p>DataProsper e KiwiDataScience uniscono conoscenza profonda del settore nonprofit e competenza tecnica nell’analisi dei dati: una combinazione difficilmente replicabile da un singolo fornitore.</p>
+        </div>
+        <div className="partnership-flow" data-reveal>
+          <article>
+            <span>DATAPROSPER</span>
+            <h3>Analisi avanzata per il fundraising</h3>
+            <p>Specialisti nell’analisi di database donatori, nei modelli statistici comportamentali e nello sviluppo di algoritmi di segmentazione per il non profit.</p>
+          </article>
+          <div className="partnership-flow__core">
+            <small>PARTNERSHIP STRATEGICA</small>
+            <strong>ProsperData<br />Engine</strong>
+            <span>Dati trasformati in strategie<br />efficaci e misurabili.</span>
+          </div>
+          <article>
+            <span>KIWI DATA SCIENCE</span>
+            <h3>Data science applicata</h3>
+            <p>Scoring predittivo, machine learning e integrazione dei dati su piattaforme CRM, con rigore metodologico e innovazione tecnologica al servizio della missione.</p>
+          </article>
+        </div>
+        <div className="partnership-promises" data-reveal>
+          <span>Fundraising nonprofit</span>
+          <span>Modelli comportamentali</span>
+          <span>Data science</span>
+          <span>Integrazione CRM</span>
         </div>
       </section>
 
       <section className="why-us-advantage section">
         <div className="section-kicker" data-reveal>
-          <span>7.1</span>
-          <p>Il vantaggio competitivo</p>
+          <span>7.2</span>
+          <p>Il nostro vantaggio competitivo</p>
         </div>
         <div className="why-us-advantage__header" data-reveal>
-          <h2>Quattro rischi del brief.<br />Quattro risposte già incorporate.</h2>
-          <p>Il valore differenziale non è una promessa aggiunta alla proposta. È il modo in cui il progetto è stato costruito: meno tempo perso, meno distanza tra modello e fundraising, più controllo e più probabilità di adozione.</p>
+          <h2>La continuità storica<br />è il vantaggio.</h2>
+          <p>Non partiamo da un database astratto. Partiamo da una storia già conosciuta, da analisi già realizzate e dalla comprensione della transizione verso gli strumenti attuali di VIDAS.</p>
         </div>
         <div className="why-us-reasons" data-reveal>
-          {whyUsReasons.map((reason) => (
+          {teamProposalReasons.map((reason) => (
             <article key={reason.code}>
               <div><span>{reason.code}</span><small>{reason.signal}</small></div>
               <h3>{reason.title}</h3>
@@ -1103,44 +1123,10 @@ export default function Home() {
         </div>
         <div className="continuity-spotlight" data-reveal>
           <div>
-            <span>IL FATTORE CONTINUITÀ</span>
-            <strong>Marco Bellati conosce l’infrastruttura d’origine del database VIDAS e la logica di transizione verso il CRM attuale.</strong>
+            <span>PERCHÉ SIAMO DIVERSI</span>
+            <strong>Partiamo già avanti: sappiamo da dove viene VIDAS, sappiamo dove può arrivare.</strong>
           </div>
-          <p>Questa conoscenza riduce drasticamente il rischio di incompatibilità tecnica indicato nel brief e accelera la traduzione dei modelli in campi, audience e dashboard utilizzabili ogni giorno su Mentor e Qlik.</p>
-        </div>
-      </section>
-
-      <section className="partnership section">
-        <div className="section-kicker" data-reveal>
-          <span>7.2</span>
-          <p>La partnership</p>
-        </div>
-        <div className="partnership__header" data-reveal>
-          <h2>Due specializzazioni.<br />Un’unica responsabilità.</h2>
-          <p>Non due fornitori in parallelo, ma una sola regia che porta ogni evidenza fino alla decisione e ogni decisione fino agli strumenti VIDAS.</p>
-        </div>
-        <div className="partnership-flow" data-reveal>
-          <article>
-            <span>DATAPROSPER</span>
-            <h3>Fundraising intelligence</h3>
-            <p>Strategia di raccolta · comportamento donativo · campaign economics · benchmark nonprofit · donor journey.</p>
-          </article>
-          <div className="partnership-flow__core">
-            <small>REGIA CONDIVISA</small>
-            <strong>ProsperData<br />Engine</strong>
-            <span>Una priorità.<br />Una decisione.</span>
-          </div>
-          <article>
-            <span>KIWI DATA SCIENCE</span>
-            <h3>Data science &amp; architecture</h3>
-            <p>Scoring · validazione · machine learning · data architecture · integrazione CRM e BI.</p>
-          </article>
-        </div>
-        <div className="partnership-promises" data-reveal>
-          <span>Un solo backlog</span>
-          <span>Un’unica governance</span>
-          <span>Reason code condivisi</span>
-          <span>Know-how trasferito a VIDAS</span>
+          <p>La conoscenza storica del database e dei pattern comportamentali dei donatori è un asset differenziale che nessun competitor può replicare.</p>
         </div>
       </section>
 
