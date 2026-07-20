@@ -112,6 +112,53 @@ const teamModels = [
   },
 ];
 
+const currentJourneyMonths = ["Gen", "Feb", "Mar", "Apr", "Mag", "Giu", "Lug", "Ago", "Set", "Ott", "Nov", "Dic"];
+
+const currentJourneyChannels = [
+  { id: "postal", name: "Postale", note: "12 campagne HM", active: currentJourneyMonths.map((_, index) => index) },
+  { id: "email", name: "Email", note: "Presenza continuativa", active: currentJourneyMonths.map((_, index) => index) },
+  { id: "phone", name: "Telefono", note: "Focus di fine anno", active: [10, 11] },
+];
+
+const currentJourneySegments = [
+  {
+    id: "small",
+    name: "Small",
+    monetary: "0–99€",
+    recency: "0–24",
+    volume: "29.000",
+    letter: "A",
+    headline: "L’impatto della tua prima donazione.",
+    message: "Messaggio focalizzato sull’impatto della prima donazione.",
+    ask: "Importo suggerito calibrato sulla mediana del segmento.",
+    objective: "Rinnovo della donazione",
+  },
+  {
+    id: "mini-middle",
+    name: "Mini Middle",
+    monetary: "100–249€",
+    recency: "0–18",
+    volume: "12.000",
+    letter: "B",
+    headline: "La fedeltà può diventare crescita.",
+    message: "Riconoscimento della fedeltà e messaggio di upgrade verso la fascia superiore.",
+    ask: "Importo suggerito contestualizzato sul profilo del donatore.",
+    objective: "Upgrade di fascia",
+  },
+  {
+    id: "middle",
+    name: "Middle",
+    monetary: "250–999€",
+    recency: "0–18",
+    volume: "4.800",
+    letter: "C",
+    headline: "Un sostegno qualificato merita una relazione diversa.",
+    message: "Tono più relazionale e riconoscimento del ruolo di sostenitore qualificato.",
+    ask: "Proposta personalizzata e coerente con il valore espresso.",
+    objective: "Upgrade verso Pre Major",
+  },
+];
+
 const journeyMonths = [
   "Lug 27", "Ago 27", "Set 27", "Ott 27", "Nov 27", "Dic 27",
   "Gen 28", "Feb 28", "Mar 28", "Apr 28", "Mag 28", "Giu 28",
@@ -331,12 +378,14 @@ function BrandLockup({ light = false }: { light?: boolean }) {
 export default function Home() {
   const [activeStage, setActiveStage] = useState(0);
   const [activeModel, setActiveModel] = useState(0);
+  const [activeCurrentSegment, setActiveCurrentSegment] = useState(0);
   const [activeJourney, setActiveJourney] = useState(0);
   const [journeyDetail, setJourneyDetail] = useState<{ title: string; text: string } | null>(null);
   useReveal();
 
   const stage = engineStages[activeStage];
   const model = teamModels[activeModel];
+  const currentSegment = currentJourneySegments[activeCurrentSegment];
   const journey = donorJourneys[activeJourney];
   const progress = useMemo(() => `${((activeStage + 1) / engineStages.length) * 100}%`, [activeStage]);
 
@@ -560,6 +609,190 @@ export default function Home() {
           <div><strong>01</strong><p>Analisi multidimensionale</p></div>
           <div><strong>02</strong><p>Segmentazione evoluta</p></div>
           <div><strong>03</strong><p>Operativizzazione in Mentor e Qlik</p></div>
+        </div>
+      </section>
+
+      <section className="phase-one phase-one--journey section" id="phase-one">
+        <div className="section-kicker" data-reveal>
+          <span>2.1</span>
+          <p>Fase 1 · Fotografia del donor journey attuale</p>
+        </div>
+        <div className="phase-one__header" data-reveal>
+          <h2>Prima di disegnare il nuovo,<br />rendiamo visibile ciò che accade oggi.</h2>
+          <p>La fotografia incrocia segmenti, volumi, recency, canali e pressione mensile. È il punto di partenza per individuare sovrapposizioni, automatismi e opportunità non ancora sfruttate.</p>
+        </div>
+
+        <div className="current-segment-tabs" role="tablist" aria-label="Seleziona il segmento attuale" data-reveal>
+          {currentJourneySegments.map((segment, index) => (
+            <button
+              type="button"
+              role="tab"
+              aria-selected={activeCurrentSegment === index}
+              className={activeCurrentSegment === index ? "is-active" : ""}
+              key={segment.id}
+              onClick={() => setActiveCurrentSegment(index)}
+            >
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <strong>{segment.name}</strong>
+              <small>{segment.monetary} · {segment.volume}</small>
+            </button>
+          ))}
+        </div>
+
+        <div className="current-journey" role="tabpanel" data-reveal>
+          <aside className="current-journey__profile">
+            <span>SEGMENTO ATTUALE</span>
+            <h3>{currentSegment.name}</h3>
+            <dl>
+              <div><dt>Monetary</dt><dd>{currentSegment.monetary}</dd></div>
+              <div><dt>Recency</dt><dd>{currentSegment.recency} mesi</dd></div>
+              <div><dt>Volumi</dt><dd>{currentSegment.volume}</dd></div>
+              <div><dt>Area</dt><dd>Individui</dd></div>
+            </dl>
+          </aside>
+
+          <div className="current-journey__rhythm">
+            <div className="rhythm-months" aria-hidden="true">
+              <span />
+              <div className="rhythm-months__labels">
+                {currentJourneyMonths.map((month) => <small key={month}>{month}</small>)}
+              </div>
+            </div>
+            {currentJourneyChannels.map((channel) => (
+              <div className={`rhythm-track rhythm-track--${channel.id}`} key={channel.id}>
+                <div className="rhythm-track__label">
+                  <strong>{channel.name}</strong>
+                  <small>{channel.note}</small>
+                </div>
+                <div className="rhythm-track__line">
+                  {currentJourneyMonths.map((month, monthIndex) => {
+                    const isActive = channel.active.includes(monthIndex);
+                    const label = channel.id === "postal"
+                      ? `HM${String(monthIndex + 1).padStart(2, "0")}`
+                      : channel.id === "email" ? "@" : "TEL";
+                    return (
+                      <span className={isActive ? "is-active" : ""} key={`${channel.id}-${month}`}>
+                        {isActive ? label : ""}
+                      </span>
+                    );
+                  })}
+                </div>
+              </div>
+            ))}
+            <div className="current-journey__reading">
+              <span>CHE COSA RENDE VISIBILE</span>
+              <p>La pressione reale sul donatore, la compresenza dei canali e i momenti in cui una campagna può essere coordinata, differenziata o alleggerita.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="phase-one phase-one--campaign section">
+        <div className="section-kicker section-kicker--light" data-reveal>
+          <span>2.2</span>
+          <p>Fase 1 · Dettaglio per campagna e target</p>
+        </div>
+        <div className="phase-one__header phase-one__header--light" data-reveal>
+          <h2>La stessa campagna.<br />Tre relazioni diverse.</h2>
+          <p>Il secondo livello scende dentro la singola campagna. ASK, lettera e messaggio cambiano in funzione del valore e del profilo del segmento: è qui che la segmentazione diventa personalizzazione reale.</p>
+        </div>
+
+        <div className="campaign-switcher" role="tablist" aria-label="Confronta la personalizzazione per segmento" data-reveal>
+          {currentJourneySegments.map((segment, index) => (
+            <button
+              type="button"
+              role="tab"
+              aria-selected={activeCurrentSegment === index}
+              className={activeCurrentSegment === index ? "is-active" : ""}
+              key={segment.id}
+              onClick={() => setActiveCurrentSegment(index)}
+            >
+              {segment.name}
+            </button>
+          ))}
+        </div>
+
+        <div className="campaign-story" role="tabpanel" data-reveal>
+          <article className="campaign-letter">
+            <div className="campaign-letter__top">
+              <span>VIDAS</span>
+              <small>HM01 · GENNAIO</small>
+            </div>
+            <div className="campaign-letter__code">{currentSegment.letter}</div>
+            <div className="campaign-letter__copy">
+              <small>LETTERA {currentSegment.letter} · {currentSegment.name.toUpperCase()}</small>
+              <h3>{currentSegment.headline}</h3>
+              <p>{currentSegment.message}</p>
+            </div>
+            <div className="campaign-letter__footer">Messaggio dedicato · ASK calibrato</div>
+          </article>
+
+          <div className="campaign-logic">
+            <div className="campaign-logic__intro">
+              <span>LOGICA DI PERSONALIZZAZIONE</span>
+              <strong>{currentSegment.name}</strong>
+            </div>
+            <dl>
+              <div><dt>Valore</dt><dd>{currentSegment.monetary}</dd></div>
+              <div><dt>Recency</dt><dd>{currentSegment.recency} mesi</dd></div>
+              <div><dt>ASK</dt><dd>{currentSegment.ask}</dd></div>
+              <div><dt>Obiettivo</dt><dd>{currentSegment.objective}</dd></div>
+            </dl>
+          </div>
+        </div>
+
+        <div className="campaign-principle" data-reveal>
+          <span>IL PRINCIPIO OPERATIVO</span>
+          <strong>La segmentazione senza personalizzazione del messaggio non genera valore aggiunto misurabile.</strong>
+        </div>
+      </section>
+
+      <section className="phase-one phase-one--swot section">
+        <div className="section-kicker" data-reveal>
+          <span>2.3</span>
+          <p>Fase 1 · Analisi SWOT integrata</p>
+        </div>
+        <div className="phase-one__header" data-reveal>
+          <h2>La fotografia diventa<br />una decisione condivisa.</h2>
+          <p>L’analisi del database e l’assessment del piano comunicativo non restano due esercizi separati. Confluiscono in una sintesi unica, leggibile e azionabile.</p>
+        </div>
+
+        <div className="swot-synthesis" data-reveal>
+          <article className="swot-source swot-source--quant">
+            <span>EVIDENZE QUANTITATIVE</span>
+            <h3>Che cosa dicono i dati</h3>
+            <ul>
+              <li>Tasso di retention</li>
+              <li>Valore medio per segmento</li>
+              <li>Tasso di apertura DEM</li>
+            </ul>
+          </article>
+
+          <div className="swot-core" aria-label="Sintesi SWOT integrata">
+            <i className="swot-core__letter swot-core__letter--s">S</i>
+            <i className="swot-core__letter swot-core__letter--w">W</i>
+            <i className="swot-core__letter swot-core__letter--o">O</i>
+            <i className="swot-core__letter swot-core__letter--t">T</i>
+            <span>SINTESI</span>
+            <strong>SWOT<br />integrata</strong>
+            <small>Una sola base decisionale</small>
+          </div>
+
+          <article className="swot-source swot-source--qual">
+            <span>EVIDENZE QUALITATIVE</span>
+            <h3>Che cosa mostra il journey</h3>
+            <ul>
+              <li>Coerenza dei messaggi</li>
+              <li>Pressione e ruolo dei canali</li>
+              <li>Opportunità non sfruttate</li>
+            </ul>
+          </article>
+        </div>
+
+        <div className="swot-output" data-reveal>
+          <span>OUTPUT DELLA FASE 1</span>
+          <strong>Priorità strategiche che orientano segmenti, modelli, journey e KPI della Fase 2.</strong>
+          <small>Il sistema parte da qui ↓</small>
         </div>
       </section>
 
