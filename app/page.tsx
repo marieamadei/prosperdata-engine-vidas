@@ -1105,7 +1105,7 @@ export default function Home() {
       <section className="why-us-advantage section">
         <div className="section-kicker" data-reveal>
           <span>7.2</span>
-          <p>Il nostro vantaggio competitivo</p>
+          <p>Il vantaggio competitivo di DataProsper</p>
         </div>
         <div className="why-us-advantage__header" data-reveal>
           <h2>La continuità storica<br />è il vantaggio.</h2>
