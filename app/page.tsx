@@ -324,6 +324,14 @@ const phases = [
   },
 ];
 
+const projectModules = [
+  { code: "M0", title: "Mobilitazione e data contract", min: 6, max: 8 },
+  { code: "M1", title: "Analisi multidimensionale e baseline", min: 35, max: 45 },
+  { code: "M2", title: "Segment engine e validazione", min: 50, max: 65 },
+  { code: "M3", title: "Mentor/Qlik, pilot, UAT e rilascio", min: 45, max: 60 },
+  { code: "M4", title: "Stabilizzazione, training e governance", min: 20, max: 30 },
+];
+
 const team = [
   {
     name: "Marco Bellati",
@@ -1456,25 +1464,50 @@ export default function Home() {
           <h2>Un perimetro chiaro.<br />Verificato fase per fase.</h2>
           <p>Il progetto è suddiviso in cinque moduli operativi. Al termine di ciascuno, VIDAS verifica output e priorità prima di avviare il successivo. La valorizzazione economica sarà completata prima dell’invio formale.</p>
         </div>
-        <div className="investment__total" data-reveal>
-          <span>Impegno complessivo</span>
-          <strong>156—208</strong>
-          <small>giorni persona</small>
+        <div className="investment__range" data-reveal>
+          <div className="investment__range-value">
+            <span>STIMA MINIMA</span>
+            <strong>156</strong>
+            <small>somma dei valori minimi</small>
+          </div>
+          <div className="investment__range-connector" aria-hidden="true">
+            <span>RANGE COMPLESSIVO</span>
+            <i />
+          </div>
+          <div className="investment__range-value investment__range-value--max">
+            <span>STIMA MASSIMA</span>
+            <strong>208</strong>
+            <small>somma dei valori massimi</small>
+          </div>
+          <p>giorni/persona complessivi</p>
         </div>
-        <details className="investment__details" data-reveal>
-          <summary>Vedi la stima per modulo</summary>
-          <div>
-            {[
-              ["M0", "Mobilitazione e data contract", "6-8 gg"],
-              ["M1", "Analisi multidimensionale e baseline", "35-45 gg"],
-              ["M2", "Segment engine e validazione", "50-65 gg"],
-              ["M3", "Mentor/Qlik, pilot, UAT e rilascio", "45-60 gg"],
-              ["M4", "Stabilizzazione, training e governance", "20-30 gg"],
-            ].map(([code, item, effort]) => (
-              <p key={code}><span>{code}</span><strong>{item}</strong><small>{effort}</small></p>
+
+        <div className="investment__modules" data-reveal>
+          <div className="investment__modules-header">
+            <div>
+              <span>I CINQUE MODULI</span>
+              <h3>Come si compone la stima.</h3>
+            </div>
+            <p>Il range di ogni modulo rappresenta l’impegno minimo e massimo previsto.</p>
+          </div>
+          <div className="investment__module-list">
+            {projectModules.map((module) => (
+              <article className="investment__module" key={module.code}>
+                <div className="investment__module-title">
+                  <span>{module.code}</span>
+                  <strong>{module.title}</strong>
+                </div>
+                <div className="investment__module-bar" aria-hidden="true">
+                  <i style={{ width: `${Math.round((module.max / 65) * 100)}%` }} />
+                </div>
+                <div className="investment__module-effort">
+                  <strong>{module.min}–{module.max}</strong>
+                  <small>giorni/persona</small>
+                </div>
+              </article>
             ))}
           </div>
-        </details>
+        </div>
       </section>
 
       <footer className="site-footer">
