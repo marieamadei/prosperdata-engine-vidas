@@ -1430,7 +1430,7 @@ export default function Home() {
           <div className="team-section__header" data-reveal>
             <div>
               <p>7.4 · IL TEAM DATAPROSPER</p>
-              <h2>Sei competenze dedicate al progetto VIDAS.</h2>
+              <h2>Competenze trasversali dedicate al progetto VIDAS.</h2>
             </div>
             <div className="partner-logos">
               <img src="/dataprosper.png" alt="DataProsper" />
