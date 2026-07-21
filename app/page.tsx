@@ -325,12 +325,42 @@ const phases = [
 ];
 
 const team = [
-  ["Fabio Molari", "Data & analytics lead", "DP"],
-  ["Cinzia Rosolin", "Target analysis", "DP"],
-  ["Marco Bellati", "VIDAS continuity · business & data", "KDS"],
-  ["Giovanni Bocchi", "Data science lead", "KDS"],
-  ["Francesco Cuccio", "Data architecture", "KDS"],
-  ["Marie Amadei", "Strategic advisor", "ADV"],
+  {
+    name: "Marco Bellati",
+    role: "Responsabile Data Quality · continuità VIDAS",
+    org: "DataProsper",
+    image: "/team/marco-bellati.jpg",
+  },
+  {
+    name: "Fiorenza Castelvetere",
+    role: "Strategist",
+    org: "DataProsper",
+    image: "/team/fiorenza-castelvetere.jpg",
+  },
+  {
+    name: "Fabio Molari",
+    role: "Direttore dati e analisi",
+    org: "DataProsper",
+    image: "/team/fabio-molari.jpg",
+  },
+  {
+    name: "Antonio Schirone",
+    role: "Direttore creativo",
+    org: "DataProsper",
+    image: "/team/antonio-schirone.jpg",
+  },
+  {
+    name: "Marie Amadei",
+    role: "Advisor",
+    org: "DataProsper",
+    image: "/team/marie-amadei.jpg",
+  },
+  {
+    name: "Sebastiano Moneta",
+    role: "Founder",
+    org: "DataProsper",
+    image: "/team/sebastiano-moneta.jpg",
+  },
 ];
 
 const teamProposalReasons = [
@@ -1391,8 +1421,8 @@ export default function Home() {
         <div className="section">
           <div className="team-section__header" data-reveal>
             <div>
-              <p>7.4 · IL TEAM · DATAPROSPER + KIWI DATA SCIENCE</p>
-              <h2>Fundraising, data science e continuità VIDAS nello stesso tavolo.</h2>
+              <p>7.4 · IL TEAM DATAPROSPER</p>
+              <h2>Sei competenze dedicate al progetto VIDAS.</h2>
             </div>
             <div className="partner-logos">
               <img src="/dataprosper.png" alt="DataProsper" />
@@ -1400,12 +1430,18 @@ export default function Home() {
             </div>
           </div>
           <div className="team-list" data-reveal>
-            {team.map(([name, role, org]) => (
-              <div key={name}>
-                <span>{org}</span>
-                <strong>{name}</strong>
-                <small>{role}</small>
-              </div>
+            {team.map((member, index) => (
+              <article className="team-card" key={member.name}>
+                <div className="team-card__portrait">
+                  <img src={member.image} alt={`Ritratto di ${member.name}`} />
+                  <span className="team-card__number">{String(index + 1).padStart(2, "0")}</span>
+                </div>
+                <div className="team-card__copy">
+                  <span>{member.org}</span>
+                  <strong>{member.name}</strong>
+                  <small>{member.role}</small>
+                </div>
+              </article>
             ))}
           </div>
         </div>
