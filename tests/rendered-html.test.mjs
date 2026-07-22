@@ -37,7 +37,7 @@ test("server-renders the corrected VIDAS proposal", async () => {
   assert.match(html, /Crescita delle attività digitali e multicanale/);
   assert.match(html, /Maggiore personalizzazione delle strategie di engagement/);
   assert.match(html, /Obiettivi di crescita sulle fasce middle e major donor/);
-  assert.match(html, /TRE FOCALIZZAZIONI/);
+  assert.match(html, /TRE FOCALIZZAZIONI: PARAMETRI DI PARTENZA/);
   assert.match(html, /2020/);
   assert.match(html, /definizione del modello attuale/);
   assert.match(html, /6/);

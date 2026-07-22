@@ -560,7 +560,7 @@ export default function Home() {
         </div>
 
         <div className="brief-premise__focalizations" data-reveal>
-          <h3>TRE FOCALIZZAZIONI</h3>
+          <h3>TRE FOCALIZZAZIONI: PARAMETRI DI PARTENZA</h3>
           <div>
             <article>
               <strong>2020</strong>
