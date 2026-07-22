@@ -30,6 +30,10 @@ test("server-renders the corrected VIDAS proposal", async () => {
 
   const html = await response.text();
   assert.match(html, /<title>ProsperData Engine \| Proposta VIDAS 2027<\/title>/i);
+  assert.match(html, /La base è solida/);
+  assert.match(html, /2020/);
+  assert.match(html, /6<\/strong><span>fasce economiche oggi in uso/);
+  assert.match(html, /3<\/strong><span>deliverable richiesti/);
   assert.match(html, /I modelli vengono scritti in Mentor/);
   assert.match(html, /Cronoprogramma · Gantt annuale/);
   assert.match(html, /BOZZA DI LAVORO/);

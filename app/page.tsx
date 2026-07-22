@@ -533,6 +533,29 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="signal-band" aria-label="Punti di partenza dal brief VIDAS">
+        <div className="signal-band__intro">
+          <small>DAL BRIEF VIDAS</small>
+          <span>La base è solida.</span>
+          <strong>È il momento di evolverla.</strong>
+        </div>
+        <div className="signal-stat">
+          <strong>2020</strong>
+          <span>definizione del modello attuale</span>
+          <small>il punto di partenza della revisione</small>
+        </div>
+        <div className="signal-stat">
+          <strong>6</strong>
+          <span>fasce economiche oggi in uso</span>
+          <small>da Small a VIP</small>
+        </div>
+        <div className="signal-stat">
+          <strong>3</strong>
+          <span>deliverable richiesti</span>
+          <small>analisi · segmentazione · messa a terra</small>
+        </div>
+      </section>
+
       <section className="story-map section" id="story" aria-labelledby="story-title">
         <div className="story-map__header" data-reveal>
           <span>COME LEGGERE LA PROPOSTA</span>
