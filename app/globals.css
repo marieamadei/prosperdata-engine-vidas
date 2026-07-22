@@ -7206,45 +7206,37 @@ html {
 }
 
 .brief-premise__dataprosper-quote {
-  display: grid;
-  grid-template-columns: minmax(240px, .58fr) minmax(0, 1.42fr);
-  gap: 6vw;
-  align-items: start;
   margin-top: 0;
   margin-right: calc(var(--section-x) * -1);
   margin-left: calc(var(--section-x) * -1);
-  padding: 78px var(--section-x) 88px;
+  padding: 66px var(--section-x) 72px;
   border-top: 0;
   background: var(--white);
   color: var(--navy);
 }
 
-.brief-premise__dataprosper-quote > span {
-  color: var(--blue);
-  font-size: 9px;
-  font-weight: 850;
-  letter-spacing: .16em;
-}
-
 .brief-premise__dataprosper-quote blockquote {
-  margin: 0;
-  padding-left: 38px;
-  border-left: 5px solid var(--red);
+  max-width: 1050px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .brief-premise__dataprosper-quote blockquote p {
-  max-width: 1050px;
   margin: 0;
-  font-size: clamp(46px, 6vw, 92px);
-  font-weight: 600;
-  line-height: .95;
-  letter-spacing: -.065em;
+  font-size: clamp(28px, 3.4vw, 50px);
+  font-weight: 450;
+  line-height: 1.18;
+  letter-spacing: -.035em;
+}
+
+.brief-premise__dataprosper-quote blockquote em {
+  font-style: italic;
 }
 
 .brief-premise__dataprosper-quote blockquote footer {
-  margin-top: 34px;
+  margin-top: 20px;
   color: var(--muted);
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 700;
   letter-spacing: .08em;
   text-transform: uppercase;
@@ -7252,8 +7244,7 @@ html {
 
 @media (max-width: 1000px) {
   .brief-premise__opening,
-  .brief-premise__changes,
-  .brief-premise__dataprosper-quote {
+  .brief-premise__changes {
     grid-template-columns: 1fr;
   }
 
@@ -7281,9 +7272,8 @@ html {
   .brief-premise__changes-list { grid-template-columns: 1fr; }
 
   .brief-premise__changes-list li { min-height: 140px; }
-  .brief-premise__dataprosper-quote { padding-top: 54px; padding-bottom: 62px; }
-  .brief-premise__dataprosper-quote blockquote { padding-left: 22px; border-left-width: 4px; }
-  .brief-premise__dataprosper-quote blockquote p { font-size: 48px; }
+  .brief-premise__dataprosper-quote { padding-top: 48px; padding-bottom: 52px; }
+  .brief-premise__dataprosper-quote blockquote p { font-size: 30px; }
 }
 
 /* Proposal route — a compact orientation timeline, not another content grid. */
@@ -7490,12 +7480,14 @@ html {
 
 .story-map__header {
   display: grid;
-  grid-template-columns: .7fr 1.3fr .8fr;
-  gap: 5vw;
+  grid-template-columns: minmax(0, 1.35fr) minmax(260px, .65fr);
+  gap: 8vw;
   align-items: end;
 }
 
-.story-map__header > span {
+.story-map__heading > span {
+  display: block;
+  margin-bottom: 30px;
   color: var(--red);
   font-size: 9px;
   font-weight: 850;
@@ -7597,7 +7589,7 @@ html {
   outline-offset: 5px;
 }
 
-.story-map__chapters a > span {
+.story-map__chapters a:nth-child(n) > span {
   width: auto;
   height: auto;
   flex: none;
@@ -7676,6 +7668,7 @@ html {
   }
 
   .story-map__header h2 { font-size: 48px; }
+  .story-map__heading > span { margin-bottom: 22px; }
 
   .story-map__chapters {
     grid-template-columns: 1fr;

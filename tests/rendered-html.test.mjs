@@ -37,9 +37,9 @@ test("server-renders the corrected VIDAS proposal", async () => {
   assert.match(html, /Crescita delle attività digitali e multicanale/);
   assert.match(html, /Maggiore personalizzazione delle strategie di engagement/);
   assert.match(html, /Obiettivi di crescita sulle fasce middle e major donor/);
-  assert.match(html, /DAL BRIEF ALLA RISPOSTA/);
   assert.match(html, /Trasformiamo i dati in valore/);
-  assert.match(html, /DataProsper · Analisi dati e segmentazione/);
+  assert.match(html, /<em>“Trasformiamo i dati in valore\.”<\/em>/);
+  assert.doesNotMatch(html, /DAL BRIEF ALLA RISPOSTA/);
   assert.doesNotMatch(html, /TRE FOCALIZZAZIONI/);
   assert.doesNotMatch(html, /definizione del modello attuale/);
   assert.doesNotMatch(html, /fasce economiche oggi in uso/);

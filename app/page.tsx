@@ -560,18 +560,19 @@ export default function Home() {
         </div>
 
         <div className="brief-premise__dataprosper-quote" data-reveal>
-          <span>DAL BRIEF ALLA RISPOSTA</span>
           <blockquote>
-            <p>Trasformiamo i dati in valore.</p>
-            <footer>DataProsper · Analisi dati e segmentazione</footer>
+            <p><em>“Trasformiamo i dati in valore.”</em></p>
+            <footer>DataProsper</footer>
           </blockquote>
         </div>
       </section>
 
       <section className="story-map section" id="story" aria-labelledby="story-title">
         <div className="story-map__header" data-reveal>
-          <span>LA PROPOSTA IN SINTESI</span>
-          <h2 id="story-title">Sette capitoli.<br />Un’unica progressione.</h2>
+          <div className="story-map__heading">
+            <span>LA PROPOSTA IN SINTESI</span>
+            <h2 id="story-title">Sette capitoli.<br />Un’unica progressione.</h2>
+          </div>
           <p>Dalla sfida di VIDAS alla messa a terra: ogni capitolo prepara il successivo.</p>
         </div>
         <nav className="story-map__chapters" aria-label="Indice della proposta" data-reveal>
