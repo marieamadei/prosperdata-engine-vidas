@@ -533,26 +533,42 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="signal-band" aria-label="Punti di partenza dal brief VIDAS">
-        <div className="signal-band__intro">
-          <small>DAL BRIEF VIDAS</small>
-          <span>La base è solida.</span>
-          <strong>È il momento di evolverla.</strong>
+      <section className="brief-premise section" aria-labelledby="brief-premise-title">
+        <div className="section-kicker" data-reveal>
+          <span>00</span>
+          <p>Premessa · Contesto e obiettivo</p>
         </div>
-        <div className="signal-stat">
-          <strong>2020</strong>
-          <span>definizione del modello attuale</span>
-          <small>il punto di partenza della revisione</small>
+
+        <div className="brief-premise__opening" data-reveal>
+          <h2 id="brief-premise-title">Prima di proporre,<br />partiamo dal brief.</h2>
+          <div className="brief-premise__copy">
+            <p>VIDAS sta avviando una riflessione strategica sull’evoluzione del proprio modello di fundraising data-driven, con l’obiettivo di rafforzare la capacità di analisi del database donatori e migliorare l’efficacia delle strategie di raccolta fondi.</p>
+            <p>Oggi l’organizzazione non dispone di una funzione interna dedicata all’analisi avanzata dei dati di fundraising: reporting, segmentazione e interrogazione del CRM vengono gestiti direttamente dai team operativi sulla base delle esigenze di campagna.</p>
+            <p>Il modello di segmentazione definito nel 2020 ha rappresentato uno strumento efficace per diversi anni. Il brief chiede ora a un partner specializzato di accompagnarne l’evoluzione attraverso un’analisi strategica del database e la definizione di un sistema di segmentazione e monitoraggio concretamente applicabile.</p>
+          </div>
         </div>
-        <div className="signal-stat">
-          <strong>6</strong>
-          <span>fasce economiche oggi in uso</span>
-          <small>da Small a VIP</small>
+
+        <div className="brief-premise__drivers" data-reveal>
+          <div>
+            <span>PERCHÉ IL MODELLO DEVE EVOLVERE</span>
+            <strong>Quattro cambiamenti<br />da affrontare insieme.</strong>
+          </div>
+          <ol>
+            <li><span>01</span><p>Evoluzione del database e del comportamento dei donatori</p></li>
+            <li><span>02</span><p>Crescita delle attività digitali e multicanale</p></li>
+            <li><span>03</span><p>Maggiore personalizzazione delle strategie di engagement</p></li>
+            <li><span>04</span><p>Obiettivi di crescita sulle fasce middle e major donor</p></li>
+          </ol>
         </div>
-        <div className="signal-stat">
-          <strong>3</strong>
-          <span>deliverable richiesti</span>
-          <small>analisi · segmentazione · messa a terra</small>
+
+        <div className="brief-premise__numbers" data-reveal>
+          <div className="brief-premise__numbers-intro">
+            <span>IL BRIEF IN TRE NUMERI</span>
+            <p>La base da cui parte la proposta.</p>
+          </div>
+          <article><strong>2020</strong><span>definizione del modello attuale</span><small>il punto di partenza della revisione</small></article>
+          <article><strong>6</strong><span>fasce economiche oggi in uso</span><small>da Small a VIP</small></article>
+          <article><strong>3</strong><span>deliverable principali</span><small>analisi · segmentazione · messa a terra</small></article>
         </div>
       </section>
 
