@@ -7205,75 +7205,55 @@ html {
   letter-spacing: -.025em;
 }
 
-.brief-premise__focalizations {
+.brief-premise__dataprosper-quote {
+  display: grid;
+  grid-template-columns: minmax(240px, .58fr) minmax(0, 1.42fr);
+  gap: 6vw;
+  align-items: start;
   margin-top: 0;
   margin-right: calc(var(--section-x) * -1);
   margin-left: calc(var(--section-x) * -1);
-  padding: 68px var(--section-x) 84px;
-  border-top: 1px solid rgba(255, 255, 255, .26);
-  background: var(--red);
+  padding: 78px var(--section-x) 88px;
+  border-top: 0;
+  background: var(--white);
+  color: var(--navy);
 }
 
-.brief-premise__focalizations > h3 {
-  margin: 0 0 24px;
-  color: var(--white);
-  font-size: 10px;
+.brief-premise__dataprosper-quote > span {
+  color: var(--blue);
+  font-size: 9px;
   font-weight: 850;
   letter-spacing: .16em;
 }
 
-.brief-premise__focalizations > div {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
+.brief-premise__dataprosper-quote blockquote {
+  margin: 0;
+  padding-left: 38px;
+  border-left: 5px solid var(--red);
 }
 
-.brief-premise__focalizations article {
-  min-height: 220px;
-  display: flex;
-  flex-direction: column;
-  padding: 30px;
-  border-radius: 22px;
-  background: rgba(255, 255, 255, .95);
-  box-shadow: 0 18px 50px rgba(115, 7, 11, .14);
+.brief-premise__dataprosper-quote blockquote p {
+  max-width: 1050px;
+  margin: 0;
+  font-size: clamp(46px, 6vw, 92px);
+  font-weight: 600;
+  line-height: .95;
+  letter-spacing: -.065em;
 }
 
-.brief-premise__focalizations article:nth-child(2),
-.brief-premise__focalizations article:nth-child(3) { background: rgba(255, 255, 255, .95); }
-
-.brief-premise__focalizations article > strong {
-  color: var(--red);
-  font-size: clamp(58px, 5.5vw, 86px);
-  line-height: .82;
-  letter-spacing: -.07em;
-}
-
-.brief-premise__focalizations article:nth-child(2) > strong { color: var(--red); }
-.brief-premise__focalizations article:nth-child(3) > strong { color: var(--red); }
-
-.brief-premise__focalizations article p {
-  margin: auto 0 0;
-  font-size: clamp(16px, 1.3vw, 20px);
-  font-weight: 750;
-  line-height: 1.2;
-  letter-spacing: -.025em;
-}
-
-.brief-premise__focalizations article small {
-  margin-top: 8px;
+.brief-premise__dataprosper-quote blockquote footer {
+  margin-top: 34px;
   color: var(--muted);
-  font-size: 11px;
-  line-height: 1.4;
-}
-
-.brief-premise__focalizations article small i {
-  color: var(--red);
-  font-style: normal;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
 }
 
 @media (max-width: 1000px) {
   .brief-premise__opening,
-  .brief-premise__changes {
+  .brief-premise__changes,
+  .brief-premise__dataprosper-quote {
     grid-template-columns: 1fr;
   }
 
@@ -7298,14 +7278,12 @@ html {
     padding-bottom: 34px;
   }
 
-  .brief-premise__changes-list,
-  .brief-premise__focalizations > div {
-    grid-template-columns: 1fr;
-  }
+  .brief-premise__changes-list { grid-template-columns: 1fr; }
 
   .brief-premise__changes-list li { min-height: 140px; }
-  .brief-premise__focalizations { padding-top: 52px; padding-bottom: 64px; }
-  .brief-premise__focalizations article { min-height: 190px; }
+  .brief-premise__dataprosper-quote { padding-top: 54px; padding-bottom: 62px; }
+  .brief-premise__dataprosper-quote blockquote { padding-left: 22px; border-left-width: 4px; }
+  .brief-premise__dataprosper-quote blockquote p { font-size: 48px; }
 }
 
 /* Proposal route — a compact orientation timeline, not another content grid. */

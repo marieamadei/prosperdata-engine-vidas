@@ -559,25 +559,12 @@ export default function Home() {
           </ol>
         </div>
 
-        <div className="brief-premise__focalizations" data-reveal>
-          <h3>TRE FOCALIZZAZIONI: PARAMETRI DI PARTENZA</h3>
-          <div>
-            <article>
-              <strong>2020</strong>
-              <p>definizione del modello attuale</p>
-              <small>il punto di partenza della revisione</small>
-            </article>
-            <article>
-              <strong>6</strong>
-              <p>fasce economiche oggi in uso</p>
-              <small>da Small a VIP</small>
-            </article>
-            <article>
-              <strong>3</strong>
-              <p>deliverable principali</p>
-              <small>analisi <i>•</i> segmentazione <i>•</i> messa a terra</small>
-            </article>
-          </div>
+        <div className="brief-premise__dataprosper-quote" data-reveal>
+          <span>DAL BRIEF ALLA RISPOSTA</span>
+          <blockquote>
+            <p>Trasformiamo i dati in valore.</p>
+            <footer>DataProsper · Analisi dati e segmentazione</footer>
+          </blockquote>
         </div>
       </section>
 
