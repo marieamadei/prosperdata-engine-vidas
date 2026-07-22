@@ -543,13 +543,40 @@ export default function Home() {
           <h2 id="brief-premise-title">La visione di VIDAS<br />e il brief</h2>
           <div className="brief-premise__summary">
             <p>VIDAS sta avviando una riflessione strategica sull’evoluzione del proprio modello di fundraising data-driven, con l’obiettivo di rafforzare la capacità di analisi del database donatori e migliorare l’efficacia delle strategie di raccolta fondi.</p>
-            <div className="brief-premise__trajectory" aria-label="Dal modello attuale ai risultati richiesti">
-              <strong>2020 e 6 fasce</strong>
-              <i aria-hidden="true">→</i>
-              <strong>4 cambiamenti</strong>
-              <i aria-hidden="true">→</i>
-              <strong>3 risultati richiesti</strong>
-            </div>
+          </div>
+        </div>
+
+        <div className="brief-premise__changes" data-reveal>
+          <div className="brief-premise__changes-title">
+            <span>PERCHÉ IL MODELLO DEVE EVOLVERE</span>
+            <h3>Quattro cambiamenti<br />da affrontare insieme.</h3>
+          </div>
+          <ol className="brief-premise__changes-list">
+            <li><span>01</span><strong>Evoluzione del database e del comportamento dei donatori</strong></li>
+            <li><span>02</span><strong>Crescita delle attività digitali e multicanale</strong></li>
+            <li><span>03</span><strong>Maggiore personalizzazione delle strategie di engagement</strong></li>
+            <li><span>04</span><strong>Obiettivi di crescita sulle fasce middle e major donor</strong></li>
+          </ol>
+        </div>
+
+        <div className="brief-premise__focalizations" data-reveal>
+          <h3>TRE FOCALIZZAZIONI</h3>
+          <div>
+            <article>
+              <strong>2020</strong>
+              <p>definizione del modello attuale</p>
+              <small>il punto di partenza della revisione</small>
+            </article>
+            <article>
+              <strong>6</strong>
+              <p>fasce economiche oggi in uso</p>
+              <small>da Small a VIP</small>
+            </article>
+            <article>
+              <strong>3</strong>
+              <p>deliverable principali</p>
+              <small>analisi <i>•</i> segmentazione <i>•</i> messa a terra</small>
+            </article>
           </div>
         </div>
       </section>

@@ -7090,84 +7090,217 @@ html {
   .brief-evolution__bridge { margin-top: 18px; }
 }
 
-/* Final compact brief intro */
+/* Complete VIDAS premise — context, four changes and three focalizations. */
 
 .brief-premise {
-  padding-top: 104px;
-  padding-bottom: 100px;
+  padding-top: 92px;
+  padding-bottom: 112px;
+  background: var(--white);
 }
 
 .brief-premise__opening {
-  grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr);
-  gap: 8vw;
+  grid-template-columns: minmax(0, .78fr) minmax(0, 1.22fr);
+  gap: 7vw;
   align-items: start;
-  margin-top: 54px;
+  margin-top: 46px;
 }
 
 .brief-premise__opening h2 {
   position: static;
-  max-width: 720px;
-  font-size: clamp(56px, 6vw, 94px);
+  max-width: 650px;
+  font-size: clamp(50px, 5vw, 78px);
   line-height: .94;
 }
 
 .brief-premise__summary {
-  padding: 6px 0 0 46px;
-  border-left: 5px solid var(--red);
+  max-width: 1000px;
+  padding: 3px 0 3px 36px;
+  border-left: 4px solid var(--red);
 }
 
 .brief-premise__summary > p {
-  max-width: 980px;
   margin: 0;
   color: var(--navy);
-  font-size: clamp(20px, 2.1vw, 32px);
+  font-size: clamp(19px, 1.72vw, 27px);
   font-weight: 700;
-  line-height: 1.5;
-  letter-spacing: -.026em;
-}
-
-.brief-premise__trajectory {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1.2fr);
-  gap: 20px;
-  align-items: center;
-  margin-top: 52px;
-  padding-top: 34px;
-  border-top: 1px solid var(--line);
-}
-
-.brief-premise__trajectory strong {
-  font-size: clamp(17px, 1.55vw, 24px);
-  line-height: 1.15;
+  line-height: 1.48;
   letter-spacing: -.025em;
 }
 
-.brief-premise__trajectory strong:nth-of-type(1) { color: var(--navy); }
-.brief-premise__trajectory strong:nth-of-type(2) { color: var(--blue); }
-.brief-premise__trajectory strong:nth-of-type(3) { color: var(--red); }
+.brief-premise__changes {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(300px, .68fr) minmax(0, 1.72fr);
+  gap: 4vw;
+  margin-top: 76px;
+  margin-right: calc(var(--section-x) * -1);
+  margin-left: calc(var(--section-x) * -1);
+  padding: clamp(38px, 4vw, 60px) var(--section-x);
+  overflow: hidden;
+  border-top: 4px solid var(--red);
+  border-radius: 0;
+  background: linear-gradient(140deg, var(--navy-deep), var(--navy));
+  color: var(--white);
+  box-shadow: none;
+}
 
-.brief-premise__trajectory i {
+.brief-premise__changes::after {
+  display: none;
+}
+
+.brief-premise__changes-title,
+.brief-premise__changes-list {
+  position: relative;
+  z-index: 1;
+}
+
+.brief-premise__changes-title > span {
   color: var(--cyan);
-  font-size: 22px;
+  font-size: 9px;
+  font-weight: 850;
+  letter-spacing: .16em;
+}
+
+.brief-premise__changes-title h3 {
+  margin: 30px 0 0;
+  font-size: clamp(38px, 4.2vw, 64px);
+  font-weight: 600;
+  line-height: .96;
+  letter-spacing: -.06em;
+}
+
+.brief-premise__changes-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.brief-premise__changes-list li {
+  min-height: 172px;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, .09);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, .055);
+}
+
+.brief-premise__changes-list li span {
+  color: var(--cyan);
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: .1em;
+}
+
+.brief-premise__changes-list li:first-child span { color: #ff5a5e; }
+
+.brief-premise__changes-list li strong {
+  max-width: 330px;
+  margin-top: auto;
+  font-size: clamp(16px, 1.35vw, 20px);
+  line-height: 1.22;
+  letter-spacing: -.025em;
+}
+
+.brief-premise__focalizations {
+  margin-top: 74px;
+}
+
+.brief-premise__focalizations > h3 {
+  margin: 0 0 24px;
+  color: var(--red);
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: .16em;
+}
+
+.brief-premise__focalizations > div {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.brief-premise__focalizations article {
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  border-radius: 22px;
+  background: var(--surface-soft);
+}
+
+.brief-premise__focalizations article:nth-child(2) { background: var(--blue-soft); }
+.brief-premise__focalizations article:nth-child(3) { background: var(--teal-soft); }
+
+.brief-premise__focalizations article > strong {
+  color: var(--navy);
+  font-size: clamp(58px, 5.5vw, 86px);
+  line-height: .82;
+  letter-spacing: -.07em;
+}
+
+.brief-premise__focalizations article:nth-child(2) > strong { color: var(--blue); }
+.brief-premise__focalizations article:nth-child(3) > strong { color: var(--red); }
+
+.brief-premise__focalizations article p {
+  margin: auto 0 0;
+  font-size: clamp(16px, 1.3vw, 20px);
+  font-weight: 750;
+  line-height: 1.2;
+  letter-spacing: -.025em;
+}
+
+.brief-premise__focalizations article small {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.brief-premise__focalizations article small i {
+  color: var(--cyan);
   font-style: normal;
 }
 
 @media (max-width: 1000px) {
-  .brief-premise__opening { grid-template-columns: 1fr; gap: 48px; }
+  .brief-premise__opening,
+  .brief-premise__changes {
+    grid-template-columns: 1fr;
+  }
+
+  .brief-premise__opening { gap: 40px; }
   .brief-premise__summary { max-width: 900px; }
+  .brief-premise__changes { gap: 46px; }
+  .brief-premise__changes-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 700px) {
-  .brief-premise { padding-top: 88px; padding-bottom: 82px; }
-  .brief-premise__summary { padding: 4px 0 0 22px; border-left-width: 4px; }
-  .brief-premise__summary > p { font-size: 19px; }
-  .brief-premise__trajectory {
-    grid-template-columns: 1fr;
-    gap: 13px;
-    margin-top: 36px;
-    padding-top: 28px;
+  .brief-premise {
+    padding-top: 82px;
+    padding-bottom: 88px;
   }
-  .brief-premise__trajectory i { transform: rotate(90deg); transform-origin: center; }
+
+  .brief-premise__opening h2 { font-size: 48px; }
+  .brief-premise__summary { padding: 3px 0 3px 22px; }
+  .brief-premise__summary > p { font-size: 18px; }
+
+  .brief-premise__changes {
+    margin-top: 58px;
+    padding-top: 34px;
+    padding-bottom: 34px;
+  }
+
+  .brief-premise__changes-list,
+  .brief-premise__focalizations > div {
+    grid-template-columns: 1fr;
+  }
+
+  .brief-premise__changes-list li { min-height: 140px; }
+  .brief-premise__focalizations { margin-top: 58px; }
+  .brief-premise__focalizations article { min-height: 190px; }
 }
 
 /* Proposal route — a compact orientation timeline, not another content grid. */
