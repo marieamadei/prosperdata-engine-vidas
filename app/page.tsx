@@ -655,7 +655,7 @@ export default function Home() {
           <p>La nostra proposta</p>
         </div>
         <div className="proposal__header" data-reveal>
-          <h2>Prima comprendiamo.<br />Poi modelliamo.<br />Infine attiviamo.</h2>
+          <h2>Comprendere. Modellare.<br />Attivare. Migliorare.</h2>
           <p>
             La risposta al brief è un percorso in quattro fasi cumulative. Ogni fase produce un output utilizzabile dalla successiva e porta VIDAS dalla diagnosi alla capacità operativa interna.
           </p>
@@ -689,7 +689,7 @@ export default function Home() {
           <p>Fase 1 · Fotografia del donor journey attuale</p>
         </div>
         <div className="phase-one__header" data-reveal>
-          <h2>Prima di disegnare il nuovo,<br />rendiamo visibile ciò che accade oggi.</h2>
+          <h2>Il nuovo modello parte<br />da ciò che accade oggi.</h2>
           <p>La fotografia incrocia segmenti, volumi, recency, canali e pressione mensile. È il punto di partenza per individuare sovrapposizioni, automatismi e opportunità non ancora sfruttate.</p>
         </div>
 
