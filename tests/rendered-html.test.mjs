@@ -35,8 +35,13 @@ test("server-renders the corrected VIDAS proposal", async () => {
   assert.match(html, /2020 e 6 fasce/);
   assert.match(html, /4 cambiamenti/);
   assert.match(html, /3 risultati richiesti/);
+  assert.match(html, /La proposta in sette passaggi/);
+  assert.match(html, /ProsperData Engine integra queste letture/);
+  assert.match(html, /la priorità di azione e le ragioni che la determinano/);
   assert.doesNotMatch(html, /non dispone di una funzione interna dedicata/);
   assert.doesNotMatch(html, /Il brief definisce una progressione chiara/);
+  assert.doesNotMatch(html, /Sette capitoli/);
+  assert.doesNotMatch(html, /una sola priorità operativa, con reason code spiegabile/);
   assert.match(html, /I modelli vengono scritti in Mentor/);
   assert.match(html, /Cronoprogramma · Gantt annuale/);
   assert.match(html, /BOZZA DI LAVORO/);

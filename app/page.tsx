@@ -557,23 +557,21 @@ export default function Home() {
       <section className="story-map section" id="story" aria-labelledby="story-title">
         <div className="story-map__header" data-reveal>
           <span>COME LEGGERE LA PROPOSTA</span>
-          <h2 id="story-title">Sette capitoli.<br />Un’unica progressione.</h2>
-          <p>Ogni capitolo risponde alla domanda aperta da quello precedente.</p>
+          <h2 id="story-title">La proposta in sette passaggi.</h2>
         </div>
         <nav className="story-map__chapters" aria-label="Indice della proposta" data-reveal>
           {[
-            ["01", "La sfida VIDAS", "Perché il modello deve evolvere", "#vidas"],
-            ["02", "La proposta", "Come affrontiamo il progetto", "#proposal"],
-            ["03", "Il sistema", "Modelli ed Engine", "#engine"],
-            ["04", "Un esempio", "RFM Lapsed", "#rfm-lapsed"],
-            ["05", "I Journey", "Dalla segmentazione alla relazione", "#journey"],
-            ["06", "La delivery", "Mentor, Qlik e monitoraggio", "#delivery"],
-            ["07", "Perché noi", "Partnership, continuità e team", "#why-us"],
-          ].map(([code, title, body, href]) => (
+            ["01", "La sfida VIDAS", "#vidas"],
+            ["02", "La proposta", "#proposal"],
+            ["03", "ProsperData Engine", "#engine"],
+            ["04", "RFM Lapsed", "#rfm-lapsed"],
+            ["05", "Donor Journey", "#journey"],
+            ["06", "La delivery", "#delivery"],
+            ["07", "Perché DataProsper", "#why-us"],
+          ].map(([code, title, href]) => (
             <a href={href} key={code}>
               <span>{code}</span>
               <strong>{title}</strong>
-              <small>{body}</small>
             </a>
           ))}
         </nav>
@@ -877,7 +875,7 @@ export default function Home() {
           </div>
           <h2 data-reveal>I modelli osservano.<br />L’Engine decide.</h2>
           <p data-reveal>
-            I sei modelli DataProsper producono letture complementari. ProsperData Engine le combina in quattro livelli e restituisce al team una sola priorità operativa, con reason code spiegabile.
+            I sei modelli DataProsper analizzano il database da prospettive diverse. ProsperData Engine integra queste letture e indica, per ogni donatore, la priorità di azione e le ragioni che la determinano.
           </p>
         </div>
 
