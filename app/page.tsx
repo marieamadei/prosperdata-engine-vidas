@@ -556,22 +556,24 @@ export default function Home() {
 
       <section className="story-map section" id="story" aria-labelledby="story-title">
         <div className="story-map__header" data-reveal>
-          <span>COME LEGGERE LA PROPOSTA</span>
-          <h2 id="story-title">La proposta in sette passaggi.</h2>
+          <span>LA PROPOSTA IN SINTESI</span>
+          <h2 id="story-title">Sette capitoli.<br />Un’unica progressione.</h2>
+          <p>Dalla sfida di VIDAS alla messa a terra: ogni capitolo prepara il successivo.</p>
         </div>
         <nav className="story-map__chapters" aria-label="Indice della proposta" data-reveal>
           {[
-            ["01", "La sfida VIDAS", "#vidas"],
-            ["02", "La proposta", "#proposal"],
-            ["03", "ProsperData Engine", "#engine"],
-            ["04", "RFM Lapsed", "#rfm-lapsed"],
-            ["05", "Donor Journey", "#journey"],
-            ["06", "La delivery", "#delivery"],
-            ["07", "Perché DataProsper", "#why-us"],
-          ].map(([code, title, href]) => (
+            ["01", "La sfida VIDAS", "Perché il modello deve evolvere", "#vidas"],
+            ["02", "La proposta", "Come affrontiamo il progetto", "#proposal"],
+            ["03", "ProsperData Engine", "Sei modelli, una priorità operativa", "#engine"],
+            ["04", "RFM Lapsed", "Un esempio concreto", "#rfm-lapsed"],
+            ["05", "Donor Journey", "Dalla segmentazione alla relazione", "#journey"],
+            ["06", "La delivery", "Mentor, Qlik e monitoraggio", "#delivery"],
+            ["07", "Perché DataProsper", "Partnership, continuità e team", "#why-us"],
+          ].map(([code, title, body, href]) => (
             <a href={href} key={code}>
               <span>{code}</span>
               <strong>{title}</strong>
+              <small>{body}</small>
             </a>
           ))}
         </nav>

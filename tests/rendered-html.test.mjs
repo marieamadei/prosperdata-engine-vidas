@@ -35,7 +35,9 @@ test("server-renders the corrected VIDAS proposal", async () => {
   assert.match(html, /2020 e 6 fasce/);
   assert.match(html, /4 cambiamenti/);
   assert.match(html, /3 risultati richiesti/);
-  assert.match(html, /La proposta in sette passaggi/);
+  assert.match(html, /Sette capitoli/);
+  assert.match(html, /Un’unica progressione/);
+  assert.match(html, /Sei modelli, una priorità operativa/);
   assert.match(html, /Comprendere\. Modellare/);
   assert.match(html, /Attivare\. Migliorare/);
   assert.match(html, /Il nuovo modello parte/);
@@ -44,7 +46,7 @@ test("server-renders the corrected VIDAS proposal", async () => {
   assert.match(html, /la priorità di azione e le ragioni che la determinano/);
   assert.doesNotMatch(html, /non dispone di una funzione interna dedicata/);
   assert.doesNotMatch(html, /Il brief definisce una progressione chiara/);
-  assert.doesNotMatch(html, /Sette capitoli/);
+  assert.doesNotMatch(html, /La proposta in sette passaggi/);
   assert.doesNotMatch(html, /Prima comprendiamo/);
   assert.doesNotMatch(html, /Prima di disegnare il nuovo/);
   assert.doesNotMatch(html, /una sola priorità operativa, con reason code spiegabile/);
