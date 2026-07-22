@@ -548,27 +548,34 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="brief-premise__drivers" data-reveal>
-          <div>
-            <span>PERCHÉ IL MODELLO DEVE EVOLVERE</span>
-            <strong>Quattro cambiamenti<br />da affrontare insieme.</strong>
+        <div className="brief-evolution" data-reveal>
+          <div className="brief-evolution__header">
+            <span>DAL MODELLO ATTUALE ALLA CAPACITÀ DA COSTRUIRE</span>
+            <h3>Il brief definisce una progressione chiara.</h3>
           </div>
-          <ol>
-            <li><span>01</span><p>Evoluzione del database e del comportamento dei donatori</p></li>
-            <li><span>02</span><p>Crescita delle attività digitali e multicanale</p></li>
-            <li><span>03</span><p>Maggiore personalizzazione delle strategie di engagement</p></li>
-            <li><span>04</span><p>Obiettivi di crescita sulle fasce middle e major donor</p></li>
-          </ol>
-        </div>
 
-        <div className="brief-premise__numbers" data-reveal>
-          <div className="brief-premise__numbers-intro">
-            <span>IL BRIEF IN TRE NUMERI</span>
-            <p>La base da cui parte la proposta.</p>
+          <div className="brief-evolution__flow">
+            <article>
+              <div className="brief-evolution__step"><span>01</span><strong>2020 · 6 fasce</strong></div>
+              <h4>Da dove partiamo</h4>
+              <p>Un modello semplice, efficace e ancora utile, articolato in fasce economiche da Small a VIP e prevalentemente basato sulla monetary.</p>
+            </article>
+            <article>
+              <div className="brief-evolution__step"><span>02</span><strong>4 cambiamenti</strong></div>
+              <h4>Che cosa è cambiato</h4>
+              <p>Database e comportamenti, multicanalità, bisogno di personalizzazione e crescita middle e major richiedono una lettura più evoluta.</p>
+            </article>
+            <article>
+              <div className="brief-evolution__step"><span>03</span><strong>3 risultati</strong></div>
+              <h4>Che cosa chiede VIDAS</h4>
+              <p>Analisi multidimensionale, segmentazione evoluta e messa a terra operativa negli strumenti utilizzati dal team.</p>
+            </article>
           </div>
-          <article><strong>2020</strong><span>definizione del modello attuale</span><small>il punto di partenza della revisione</small></article>
-          <article><strong>6</strong><span>fasce economiche oggi in uso</span><small>da Small a VIP</small></article>
-          <article><strong>3</strong><span>deliverable principali</span><small>analisi · segmentazione · messa a terra</small></article>
+
+          <div className="brief-evolution__bridge">
+            <span>IL PASSAGGIO PROGETTUALE</span>
+            <strong>È su questo passaggio — da una segmentazione utile a una capacità decisionale continuativa — che si innesta ProsperData Engine.</strong>
+          </div>
         </div>
       </section>
 
