@@ -57,6 +57,7 @@ const teamModels = [
     thesis: "Recency, Frequency e Monetary restano la base, ma vengono aperte, prioritizzate e integrate con lifecycle e comportamento per generare segmenti dinamici.",
     metric: "RFM+",
     metricLabel: "Da fascia economica a comportamento osservabile",
+    detailLabel: "OUTPUT OPERATIVI",
     outputs: ["Segmentazione evoluta", "Lapsed Small / Middle", "Priorità di riattivazione"],
     tone: "red",
   },
@@ -64,10 +65,11 @@ const teamModels = [
     code: "B",
     name: "Propensione ai Regolari",
     role: "Scoring di conversione",
-    thesis: "Uno scoring statistico individua i donatori one-off con frequenza e stabilità compatibili con la conversione a sostegno ricorrente.",
-    metric: "81%",
-    metricLabel: "del Middle telefonico sostenuto da Multi + Pluri nei dati ProsperData",
-    outputs: ["Frequenza mobile > 3", "Target TM prioritari", "DEM personalizzate di supporto"],
+    thesis: "Il modello distingue con chiarezza chi è già regolare — perché dona attraverso un metodo di pagamento ricorrente — dai donatori one-off da accompagnare alla conversione. La propensione non viene dedotta solo da monetary e frequency: il segnale centrale è la fedeltà dimostrata nel tempo.",
+    metric: "FEDELTÀ",
+    metricLabel: "Continuità, stabilità e risposta alla relazione guidano lo score; importo e frequenza restano segnali da contestualizzare.",
+    detailLabel: "SEGNALI CHE ALIMENTANO LO SCORE",
+    outputs: ["Continuità storica", "Stabilità del sostegno", "Risposta ai contatti"],
     tone: "magenta",
   },
   {
@@ -77,7 +79,8 @@ const teamModels = [
     thesis: "Il database viene letto per reale raggiungibilità e comportamento, distinguendo Solo Postale, Solo Digital, Multicanale Caldo e Digital Silente.",
     metric: "+8.600",
     metricLabel: "donatori digitali attivi nel 2025 secondo l’analisi del team",
-    outputs: ["Cluster di contact mix", "Journey per canale", "Protezione deliverability"],
+    detailLabel: "LETTURE OPERATIVE",
+    outputs: ["Cluster di contact mix", "Journey per canale", "Pressione coordinata"],
     tone: "blue",
   },
   {
@@ -87,6 +90,7 @@ const teamModels = [
     thesis: "Capacità contributiva, segnali relazionali e comportamento donativo convergono in un indice di potenziale unico e riproducibile.",
     metric: "96–99°",
     metricLabel: "percentile proposto per il cluster HVD attivo",
+    detailLabel: "AREE DEL MODELLO CHE GENERANO LO SCORE",
     outputs: ["Network aziendale", "Geo-intelligence", "RFM puntuale e cumulato"],
     tone: "green",
   },
@@ -97,6 +101,7 @@ const teamModels = [
     thesis: "Il profilo di chi ha già scelto un lascito diventa il riferimento per trovare somiglianze anagrafiche, geografiche e di fedeltà nella base VIDAS.",
     metric: "149.107",
     metricLabel: "donatori unici dal 2015 disponibili come patrimonio storico",
+    detailLabel: "OUTPUT OPERATIVI",
     outputs: ["Profilo seed", "Lookalike scoring", "Candidati a maggiore affinità"],
     tone: "yellow",
   },
@@ -107,6 +112,7 @@ const teamModels = [
     thesis: "Le donazioni legate ad assistiti e persone care richiedono una lettura dedicata: il contesto della relazione guida esclusioni, caring e linguaggio.",
     metric: "1:1",
     metricLabel: "una relazione sensibile, non un segmento promozionale",
+    detailLabel: "OUTPUT OPERATIVI",
     outputs: ["Tag relazionali", "Auto-identificazione", "Journey e caring dedicati"],
     tone: "cyan",
   },
@@ -286,41 +292,72 @@ const donorJourneys = [
   },
 ];
 
-const phases = [
+const ganttMonths = ["Feb", "Mar", "Apr", "Mag", "Giu", "Lug", "Ago", "Set", "Ott", "Nov", "Dic", "Gen"];
+
+const ganttRows = [
   {
-    code: "00",
-    title: "Mobilitare",
-    duration: "2 settimane",
-    months: "Febbraio",
-    body: "Data contract, team, accessi, privacy e decision log.",
+    phase: "F1",
+    title: "Analisi del database",
+    detail: "Struttura, qualità, KPI e baseline",
+    start: 0,
+    span: 2,
+    tone: "cyan",
   },
   {
-    code: "01",
-    title: "Analisi & Assessment",
-    duration: "6 settimane",
-    months: "Febbraio - marzo",
-    body: "Database, strumenti, donor journey, KPI, baseline e SWOT integrata.",
+    phase: "F1",
+    title: "Fotografia donor journey",
+    detail: "Target, canali, campagne e pressione",
+    start: 0,
+    span: 1,
+    tone: "cyan",
   },
   {
-    code: "02",
-    title: "Modelli & Segmenti",
-    duration: "8 settimane",
-    months: "Aprile - maggio",
-    body: "Sei modelli DataProsper, integrazione, score, KPI e donor journey.",
+    phase: "F1",
+    title: "Analisi SWOT integrata",
+    detail: "Sintesi quantitativa e qualitativa",
+    start: 1,
+    span: 1,
+    tone: "cyan",
   },
   {
-    code: "03",
-    title: "Implementazione su CRM",
-    duration: "10 settimane",
-    months: "Giugno - agosto",
-    body: "Mentor, Qlik, pipeline dati, pilot, UAT e formazione operativa.",
+    phase: "F2",
+    title: "Modelli DataProsper",
+    detail: "Sei letture complementari",
+    start: 2,
+    span: 1,
+    tone: "blue",
   },
   {
-    code: "04",
-    title: "Monitoraggio continuo",
-    duration: "5 mesi",
-    months: "Settembre - gennaio",
-    body: "Performance per segmento, tuning, governance e handover.",
+    phase: "F2",
+    title: "Elaborazione segmenti",
+    detail: "Priorità, sovrapposizioni e KPI",
+    start: 2,
+    span: 2,
+    tone: "blue",
+  },
+  {
+    phase: "F2",
+    title: "Donor journey per segmenti",
+    detail: "Touchpoint, tempi, obiettivi e KPI",
+    start: 2,
+    span: 2,
+    tone: "blue",
+  },
+  {
+    phase: "F3",
+    title: "Automazioni e modelli in Mentor",
+    detail: "Sviluppo, test, audience e dashboard Qlik",
+    start: 4,
+    span: 8,
+    tone: "red",
+  },
+  {
+    phase: "F4",
+    title: "Monitoraggio risultati fundraising",
+    detail: "Performance dei target e ottimizzazione",
+    start: 4,
+    span: 8,
+    tone: "green",
   },
 ];
 
@@ -493,29 +530,6 @@ export default function Home() {
           <span>01</span>
           <div />
           <span>ProsperData Engine × VIDAS</span>
-        </div>
-      </section>
-
-      <section className="signal-band" aria-label="Evidenze dal brief">
-        <div className="signal-band__intro">
-          <small>DAL BRIEF VIDAS</small>
-          <span>La base è forte.</span>
-          <strong>La complessità è cresciuta.</strong>
-        </div>
-        <div className="signal-stat">
-          <strong>38%</strong>
-          <span>retention postal + email</span>
-          <small>vs 24% media database</small>
-        </div>
-        <div className="signal-stat">
-          <strong>~30%</strong>
-          <span>del database non apre</span>
-          <small>mai o da 12 mesi</small>
-        </div>
-        <div className="signal-stat">
-          <strong>7%</strong>
-          <span>overlap realmente attivo</span>
-          <small>postal + email che apre</small>
         </div>
       </section>
 
@@ -945,10 +959,11 @@ export default function Home() {
               <span>{model.metricLabel}</span>
             </div>
             <div className="model-detail__outputs">
-              <span>OUTPUT DEL MODELLO</span>
+              <span>{model.detailLabel}</span>
               <ul>
                 {model.outputs.map((output) => <li key={output}>{output}</li>)}
               </ul>
+              {model.code === "D" && <p>Ogni area produce uno score dedicato; gli score vengono poi ponderati in un unico indice di potenziale HVD.</p>}
             </div>
             {activeModel === 0 && (
               <a className="text-link" href="#rfm-lapsed">
@@ -1226,19 +1241,19 @@ export default function Home() {
           </div>
         </div>
         <div className="method__headline" data-reveal>
-          <span>6.1 · METODO ANALITICO</span>
-          <h2>Explainable first.</h2>
-          <h2 className="outline">Predittivo quando serve.</h2>
-          <p>Ogni salto di sofisticazione deve superare gate di qualità, lift, stabilità e utilizzabilità.</p>
+          <span>6.1 · IMPLEMENTAZIONE SU CRM</span>
+          <h2>I modelli vengono scritti in Mentor.</h2>
+          <h2 className="outline">Qlik rende i risultati leggibili.</h2>
+          <p>La delivery non si ferma alla definizione dei segmenti. DataProsper traduce regole, score e donor journey in automatismi utilizzabili ogni giorno dal team VIDAS, li testa su casi reali e li collega al monitoraggio.</p>
         </div>
-        <div className="ladder" data-reveal>
-          <div><span>01</span><strong>Regole</strong><small>Soglie, recency, lifecycle</small></div>
-          <div><span>02</span><strong>Score</strong><small>RFM, trend, engagement</small></div>
-          <div><span>03</span><strong>Propensity</strong><small>Backtest e baseline</small></div>
-          <div><span>04</span><strong>Ottimizzazione</strong><small>Priorità sotto vincoli</small></div>
+        <div className="mentor-build" data-reveal>
+          <article><span>01</span><strong>Specifiche condivise</strong><p>Campi, soglie, regole di inclusione ed esclusione e frequenza di aggiornamento.</p><small>Output · regole approvate</small></article>
+          <article><span>02</span><strong>Sviluppo in Mentor</strong><p>Automatismi per scoring, lookalike, segmenti dinamici e motivazione della selezione.</p><small>Output · audience aggiornabili</small></article>
+          <article><span>03</span><strong>Test con VIDAS</strong><p>Pilot, controlli sui record, UAT e verifica dell’utilità operativa con i fundraiser.</p><small>Output · rilascio validato</small></article>
+          <article><span>04</span><strong>Monitoraggio in Qlik</strong><p>KPI per segmento e journey, risultati delle campagne e segnali da correggere.</p><small>Output · dashboard mensile</small></article>
         </div>
-        <div className="gate-line" data-reveal>
-          {['Copertura', 'Qualità', 'Lift', 'Stabilità', 'Actionability', 'Fairness'].map((item) => <span key={item}>{item}</span>)}
+        <div className="mentor-handoff" data-reveal>
+          <span>MODELLI A–F</span><i>→</i><span>CAMPI E AUTOMAZIONI MENTOR</span><i>→</i><span>AUDIENCE OPERATIVE</span><i>→</i><strong>KPI IN QLIK</strong>
         </div>
       </section>
 
@@ -1246,26 +1261,35 @@ export default function Home() {
         <div className="section roadmap__header">
           <div className="section-kicker section-kicker--light" data-reveal>
             <span>6.2</span>
-            <p>Roadmap di delivery</p>
+            <p>Cronoprogramma · Gantt annuale</p>
           </div>
-          <h2 data-reveal>Valore presto.<br />Stabilità entro l’anno.</h2>
+          <h2 data-reveal>Dodici mesi.<br />Un percorso leggibile.</h2>
           <p data-reveal>Febbraio 2027 - gennaio 2028</p>
         </div>
-        <div className="phase-list section">
-          {phases.map((phase) => (
-            <article key={phase.code} data-reveal>
-              <div className="phase-list__number">{phase.code}</div>
-              <div className="phase-list__name">
-                <strong>{phase.title}</strong>
-                <span>{phase.months}</span>
+        <div className="gantt section" data-reveal>
+          <div className="gantt__months" aria-hidden="true">
+            <span />
+            {ganttMonths.map((month) => <strong key={month}>{month}</strong>)}
+          </div>
+          <div className="gantt__body">
+            {ganttRows.map((row) => (
+              <div className="gantt__row" key={`${row.phase}-${row.title}`}>
+                <div className="gantt__label">
+                  <span>{row.phase}</span>
+                  <div><strong>{row.title}</strong><small>{row.detail}</small></div>
+                </div>
+                <div className="gantt__track" aria-label={`${row.title}: ${ganttMonths[row.start]} - ${ganttMonths[row.start + row.span - 1]}`}>
+                  <i className={`gantt__bar gantt__bar--${row.tone}`} style={{ gridColumn: `${row.start + 1} / span ${row.span}` }}><b>{row.span > 2 ? `${row.span} mesi` : ""}</b></i>
+                </div>
               </div>
-              <div className="phase-list__body">{phase.body}</div>
-              <div className="phase-list__duration">{phase.duration}</div>
-            </article>
-          ))}
-        </div>
-        <div className="milestones section" data-reveal>
-          <span>Data ready</span><span>Design approvato</span><span>Pilot go</span><span>Operating ready</span>
+            ))}
+          </div>
+          <div className="gantt__milestones">
+            <span>FEB · AVVIO E ACCESSI</span>
+            <span>MAR · BASELINE CONDIVISA</span>
+            <span>MAG · SEGMENTI E JOURNEY APPROVATI</span>
+            <span>GEN · HANDOVER OPERATIVO</span>
+          </div>
         </div>
       </section>
 
@@ -1303,22 +1327,23 @@ export default function Home() {
       <section className="governance section">
         <div className="section-kicker" data-reveal>
           <span>6.4</span>
-          <p>Operating model e governance</p>
+          <p>Come si lavora ogni mese</p>
         </div>
-        <h2 data-reveal>La qualità della decisione<br />diventa una disciplina mensile.</h2>
+        <h2 data-reveal>Ogni mese VIDAS vede<br />cosa cambia e decide cosa fare.</h2>
+        <p className="governance__lead" data-reveal>Il sistema non viene consegnato e lasciato fermo. Dati, segmenti e risultati vengono riletti insieme al team VIDAS attraverso una routine semplice e documentata.</p>
         <div className="governance-grid" data-reveal>
           {[
-            ["Governance", "Steering · ownership · version log · change control"],
-            ["Model ops", "Freshness · drift · lift · calibrazione"],
-            ["Data quality", "Completezza · anomalie · reconciliation · incident log"],
-            ["Privacy by design", "Minimizzazione · finalità · aggregazione · controllo umano"],
-          ].map(([title, body]) => (
-            <div key={title}><span>{title}</span><p>{body}</p></div>
+            ["01", "Aggiornare", "Mentor e Qlik ricevono i dati del periodo; completezza e anomalie vengono controllate prima di creare le audience."],
+            ["02", "Verificare", "Il team controlla quanti donatori entrano o escono dai segmenti e comprende il motivo di ogni selezione."],
+            ["03", "Leggere i risultati", "KPI di campagna, retention, upgrade e riattivazione vengono confrontati per segmento e journey."],
+            ["04", "Decidere", "VIDAS approva eventuali correzioni a regole, priorità e pressione di contatto prima del ciclo successivo."],
+          ].map(([code, title, body]) => (
+            <div key={code}><span>{code}</span><strong>{title}</strong><p>{body}</p></div>
           ))}
         </div>
         <div className="guardrail" data-reveal>
-          <strong>Guardrail</strong>
-          <p>Nessun dato sensibile o arricchimento non documentato. Feature trasparenti, base giuridica verificata e override umano sempre disponibile.</p>
+          <strong>Il principio</strong>
+          <p>Ogni regola è documentata, ogni modifica è tracciata e ogni eccezione resta sotto il controllo del team VIDAS.</p>
         </div>
       </section>
 
@@ -1401,35 +1426,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="proof">
-        <div className="section proof__grid">
-          <div className="proof__statement" data-reveal>
-            <p>7.3 · Evidenze DataProsper</p>
-            <h2>Dalla diagnosi alla scelta operativa.</h2>
-            <span>Casi anonimizzati. Non costituiscono proiezioni di risultato per VIDAS.</span>
-          </div>
-          <div className="proof__case" data-reveal>
-            <span>Cohort acquisition</span>
-            <strong>245k</strong><small>invii</small>
-            <strong>9.159</strong><small>nuovi donatori</small>
-            <strong>37%</strong><small>attivi 0-24</small>
-            <p>Break-even raggiunto entro 24 mesi.</p>
-          </div>
-          <div className="proof__case proof__case--blue" data-reveal>
-            <span>Loyalty analysis</span>
-            <strong>340.866</strong><small>donatori analizzati</small>
-            <strong>12,1%</strong><small>donatori loyal</small>
-            <strong>35,6%</strong><small>del valore</small>
-            <p>Priorità: loyalty e seconda donazione.</p>
-          </div>
-        </div>
-      </section>
-
       <section className="team-section">
         <div className="section">
           <div className="team-section__header" data-reveal>
             <div>
-              <p>7.4 · IL TEAM DATAPROSPER</p>
+              <p>7.3 · IL TEAM DATAPROSPER</p>
               <h2>Competenze trasversali dedicate al progetto VIDAS.</h2>
             </div>
             <div className="partner-logos">
@@ -1457,27 +1458,31 @@ export default function Home() {
 
       <section className="investment section">
         <div className="section-kicker" data-reveal>
-          <span>7.5</span>
+          <span>7.4</span>
           <p>Perimetro</p>
         </div>
         <div className="investment__headline" data-reveal>
           <h2>Un perimetro chiaro.<br />Verificato fase per fase.</h2>
-          <p>Il progetto è suddiviso in cinque moduli operativi. Al termine di ciascuno, VIDAS verifica output e priorità prima di avviare il successivo. La valorizzazione economica sarà completata prima dell’invio formale.</p>
+          <p>Il progetto è suddiviso in cinque moduli operativi. Al termine di ciascuno, VIDAS verifica output e priorità prima di avviare il successivo.</p>
+        </div>
+        <div className="investment__draft" data-reveal>
+          <span>BOZZA DI LAVORO</span>
+          <strong>Effort e valorizzazione economica devono essere ricalcolati e validati prima dell’offerta formale.</strong>
         </div>
         <div className="investment__range" data-reveal>
           <div className="investment__range-value">
-            <span>STIMA MINIMA</span>
+            <span>IPOTESI MINIMA</span>
             <strong>156</strong>
-            <small>somma dei valori minimi</small>
+            <small>valore provvisorio · da confermare</small>
           </div>
           <div className="investment__range-connector" aria-hidden="true">
             <span>RANGE COMPLESSIVO</span>
             <i />
           </div>
           <div className="investment__range-value investment__range-value--max">
-            <span>STIMA MASSIMA</span>
+            <span>IPOTESI MASSIMA</span>
             <strong>208</strong>
-            <small>somma dei valori massimi</small>
+            <small>valore provvisorio · da confermare</small>
           </div>
           <p>giorni/persona complessivi</p>
         </div>
@@ -1485,10 +1490,10 @@ export default function Home() {
         <div className="investment__modules" data-reveal>
           <div className="investment__modules-header">
             <div>
-              <span>I CINQUE MODULI</span>
+              <span>I CINQUE MODULI · BOZZA DA RICALCOLARE</span>
               <h3>Come si compone la stima.</h3>
             </div>
-            <p>Il range di ogni modulo rappresenta l’impegno minimo e massimo previsto.</p>
+            <p>I range mostrano l’attuale ipotesi di lavoro e non costituiscono ancora l’offerta economica.</p>
           </div>
           <div className="investment__module-list">
             {projectModules.map((module) => (
@@ -1502,7 +1507,7 @@ export default function Home() {
                 </div>
                 <div className="investment__module-effort">
                   <strong>{module.min}–{module.max}</strong>
-                  <small>giorni/persona</small>
+                  <small>giorni/persona · da confermare</small>
                 </div>
               </article>
             ))}
