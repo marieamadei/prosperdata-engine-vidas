@@ -540,41 +540,16 @@ export default function Home() {
         </div>
 
         <div className="brief-premise__opening" data-reveal>
-          <h2 id="brief-premise-title">Prima di proporre,<br />partiamo dal brief.</h2>
-          <div className="brief-premise__copy">
+          <h2 id="brief-premise-title">La visione di VIDAS<br />e il brief</h2>
+          <div className="brief-premise__summary">
             <p>VIDAS sta avviando una riflessione strategica sull’evoluzione del proprio modello di fundraising data-driven, con l’obiettivo di rafforzare la capacità di analisi del database donatori e migliorare l’efficacia delle strategie di raccolta fondi.</p>
-            <p>Oggi l’organizzazione non dispone di una funzione interna dedicata all’analisi avanzata dei dati di fundraising: reporting, segmentazione e interrogazione del CRM vengono gestiti direttamente dai team operativi sulla base delle esigenze di campagna.</p>
-            <p>Il modello di segmentazione definito nel 2020 ha rappresentato uno strumento efficace per diversi anni. Il brief chiede ora a un partner specializzato di accompagnarne l’evoluzione attraverso un’analisi strategica del database e la definizione di un sistema di segmentazione e monitoraggio concretamente applicabile.</p>
-          </div>
-        </div>
-
-        <div className="brief-evolution" data-reveal>
-          <div className="brief-evolution__header">
-            <span>DAL MODELLO ATTUALE ALLA CAPACITÀ DA COSTRUIRE</span>
-            <h3>Il brief definisce una progressione chiara.</h3>
-          </div>
-
-          <div className="brief-evolution__flow">
-            <article>
-              <div className="brief-evolution__step"><span>01</span><strong>2020 · 6 fasce</strong></div>
-              <h4>Da dove partiamo</h4>
-              <p>Un modello semplice, efficace e ancora utile, articolato in fasce economiche da Small a VIP e prevalentemente basato sulla monetary.</p>
-            </article>
-            <article>
-              <div className="brief-evolution__step"><span>02</span><strong>4 cambiamenti</strong></div>
-              <h4>Che cosa è cambiato</h4>
-              <p>Database e comportamenti, multicanalità, bisogno di personalizzazione e crescita middle e major richiedono una lettura più evoluta.</p>
-            </article>
-            <article>
-              <div className="brief-evolution__step"><span>03</span><strong>3 risultati</strong></div>
-              <h4>Che cosa chiede VIDAS</h4>
-              <p>Analisi multidimensionale, segmentazione evoluta e messa a terra operativa negli strumenti utilizzati dal team.</p>
-            </article>
-          </div>
-
-          <div className="brief-evolution__bridge">
-            <span>IL PASSAGGIO PROGETTUALE</span>
-            <strong>È su questo passaggio — da una segmentazione utile a una capacità decisionale continuativa — che si innesta ProsperData Engine.</strong>
+            <div className="brief-premise__trajectory" aria-label="Dal modello attuale ai risultati richiesti">
+              <strong>2020 e 6 fasce</strong>
+              <i aria-hidden="true">→</i>
+              <strong>4 cambiamenti</strong>
+              <i aria-hidden="true">→</i>
+              <strong>3 risultati richiesti</strong>
+            </div>
           </div>
         </div>
       </section>

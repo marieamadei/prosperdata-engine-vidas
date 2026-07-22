@@ -7089,3 +7089,83 @@ html {
   .brief-evolution__flow h4 { margin-top: 38px; }
   .brief-evolution__bridge { margin-top: 18px; }
 }
+
+/* Final compact brief intro */
+
+.brief-premise {
+  padding-top: 104px;
+  padding-bottom: 100px;
+}
+
+.brief-premise__opening {
+  grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr);
+  gap: 8vw;
+  align-items: start;
+  margin-top: 54px;
+}
+
+.brief-premise__opening h2 {
+  position: static;
+  max-width: 720px;
+  font-size: clamp(56px, 6vw, 94px);
+  line-height: .94;
+}
+
+.brief-premise__summary {
+  padding: 6px 0 0 46px;
+  border-left: 5px solid var(--red);
+}
+
+.brief-premise__summary > p {
+  max-width: 980px;
+  margin: 0;
+  color: var(--navy);
+  font-size: clamp(20px, 2.1vw, 32px);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: -.026em;
+}
+
+.brief-premise__trajectory {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1.2fr);
+  gap: 20px;
+  align-items: center;
+  margin-top: 52px;
+  padding-top: 34px;
+  border-top: 1px solid var(--line);
+}
+
+.brief-premise__trajectory strong {
+  font-size: clamp(17px, 1.55vw, 24px);
+  line-height: 1.15;
+  letter-spacing: -.025em;
+}
+
+.brief-premise__trajectory strong:nth-of-type(1) { color: var(--navy); }
+.brief-premise__trajectory strong:nth-of-type(2) { color: var(--blue); }
+.brief-premise__trajectory strong:nth-of-type(3) { color: var(--red); }
+
+.brief-premise__trajectory i {
+  color: var(--cyan);
+  font-size: 22px;
+  font-style: normal;
+}
+
+@media (max-width: 1000px) {
+  .brief-premise__opening { grid-template-columns: 1fr; gap: 48px; }
+  .brief-premise__summary { max-width: 900px; }
+}
+
+@media (max-width: 700px) {
+  .brief-premise { padding-top: 88px; padding-bottom: 82px; }
+  .brief-premise__summary { padding: 4px 0 0 22px; border-left-width: 4px; }
+  .brief-premise__summary > p { font-size: 19px; }
+  .brief-premise__trajectory {
+    grid-template-columns: 1fr;
+    gap: 13px;
+    margin-top: 36px;
+    padding-top: 28px;
+  }
+  .brief-premise__trajectory i { transform: rotate(90deg); transform-origin: center; }
+}

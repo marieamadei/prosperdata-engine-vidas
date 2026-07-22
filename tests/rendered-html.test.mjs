@@ -30,14 +30,13 @@ test("server-renders the corrected VIDAS proposal", async () => {
 
   const html = await response.text();
   assert.match(html, /<title>ProsperData Engine \| Proposta VIDAS 2027<\/title>/i);
-  assert.match(html, /Prima di proporre/);
+  assert.match(html, /La visione di VIDAS/);
   assert.match(html, /VIDAS sta avviando una riflessione strategica/);
-  assert.match(html, /non dispone di una funzione interna dedicata/);
-  assert.match(html, /DAL MODELLO ATTUALE ALLA CAPACITÀ DA COSTRUIRE/);
-  assert.match(html, /2020 · 6 fasce/);
+  assert.match(html, /2020 e 6 fasce/);
   assert.match(html, /4 cambiamenti/);
-  assert.match(html, /3 risultati/);
-  assert.match(html, /da una segmentazione utile a una capacità decisionale continuativa/);
+  assert.match(html, /3 risultati richiesti/);
+  assert.doesNotMatch(html, /non dispone di una funzione interna dedicata/);
+  assert.doesNotMatch(html, /Il brief definisce una progressione chiara/);
   assert.match(html, /I modelli vengono scritti in Mentor/);
   assert.match(html, /Cronoprogramma · Gantt annuale/);
   assert.match(html, /BOZZA DI LAVORO/);
