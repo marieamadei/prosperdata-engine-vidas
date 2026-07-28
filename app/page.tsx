@@ -1006,6 +1006,11 @@ export default function Home() {
                 Apri il modello Lapsed <span aria-hidden="true">↓</span>
               </a>
             )}
+            {model.code === "D" && (
+              <a className="text-link" href="#hvd-strategy">
+                Apri la strategia HVD <span aria-hidden="true">↓</span>
+              </a>
+            )}
           </article>
         </div>
 
@@ -1019,6 +1024,92 @@ export default function Home() {
           </p>
           <div className="model-governance__formula" aria-label="Sei modelli producono una priorità e una decisione">
             <span>6 MODELLI</span><i>→</i><span>1 PRIORITÀ</span><i>→</i><strong>1 DECISIONE</strong>
+          </div>
+        </div>
+      </section>
+
+      <section className="hvd-strategy" id="hvd-strategy" aria-labelledby="hvd-strategy-title">
+        <div className="hvd-strategy__hero section">
+          <div className="section-kicker section-kicker--light" data-reveal>
+            <span>3.3</span>
+            <p>Modello D · High Value Donor</p>
+          </div>
+
+          <div className="hvd-strategy__headline" data-reveal>
+            <h2 id="hvd-strategy-title">HVD non è una fascia economica.<br />È una strategia di relazione.</h2>
+            <p>
+              Oggi Big, Top e VIP possono mescolare valore cumulato annuo e singole donazioni elevate. Il modello HVD separa questi segnali, stima il potenziale reale e concentra il caring sui profili che richiedono una relazione dedicata.
+            </p>
+          </div>
+
+          <div className="hvd-strategy__shift" data-reveal>
+            <article>
+              <span>IL LIMITE ATTUALE</span>
+              <strong>Quanto ha donato non basta a dire quanto vale la relazione.</strong>
+            </article>
+            <i aria-hidden="true">→</i>
+            <article>
+              <span>LA STRATEGIA HVD</span>
+              <strong>Potenziale, contesto relazionale e comportamento guidano una priorità unica.</strong>
+            </article>
+          </div>
+        </div>
+
+        <div className="hvd-strategy__body section">
+          <div className="hvd-strategy__body-head" data-reveal>
+            <span>LA STRATEGIA IN QUATTRO PASSAGGI</span>
+            <h3>Dal database a una relazione ad personam.</h3>
+          </div>
+
+          <div className="hvd-strategy__steps" data-reveal>
+            <article>
+              <span className="hvd-step__number">01</span>
+              <small>CALCOLARE IL POTENZIALE</small>
+              <h4>Tre macro-score producono un indice HVD.</h4>
+              <ul>
+                <li><strong>Network aziendale</strong> · ruolo e potenziale professionale</li>
+                <li><strong>Geo-intelligence</strong> · capacità contributiva territoriale</li>
+                <li><strong>RFM</strong> · comportamento cumulato e dono puntuale</li>
+              </ul>
+            </article>
+
+            <article>
+              <span className="hvd-step__number">02</span>
+              <small>QUALIFICARE LA RELAZIONE</small>
+              <h4>I tag spiegano il contesto, non solo il valore.</h4>
+              <p>Donazioni in memoria, familiari di assistiti, lutto ed eventi commemorativi guidano linguaggio, esclusioni e caring.</p>
+            </article>
+
+            <article>
+              <span className="hvd-step__number">03</span>
+              <small>CLASSIFICARE TUTTA LA BASE</small>
+              <h4>Il percentile trasforma lo score in una priorità.</h4>
+              <div className="hvd-percentiles" aria-label="Classificazione HVD per percentile">
+                <div className="is-hvd"><strong>96–99°</strong><span>HVD attivo</span></div>
+                <div><strong>90–95°</strong><span>Pre-HVD</span></div>
+                <div><strong>50–89°</strong><span>Middle potential</span></div>
+                <div><strong>0–49°</strong><span>Base</span></div>
+              </div>
+            </article>
+
+            <article>
+              <span className="hvd-step__number">04</span>
+              <small>ATTIVARE IL CARING</small>
+              <h4>Gli HVD escono dal circuito massivo.</h4>
+              <ul>
+                <li>Uscita dai 12 mailing standard</li>
+                <li>Comunicazione e momenti ad personam</li>
+                <li>Firma della Presidenza e riconoscimento</li>
+              </ul>
+            </article>
+          </div>
+
+          <div className="hvd-strategy__horizon" data-reveal>
+            <strong>2 anni</strong>
+            <div>
+              <span>ORIZZONTE MINIMO DELLA STRATEGIA</span>
+              <p>I progressi si valutano su KPI annuali — retention HVD, meeting, upgrade e grandi doni — non sulla risposta alla singola campagna.</p>
+            </div>
           </div>
         </div>
       </section>

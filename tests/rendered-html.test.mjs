@@ -60,6 +60,13 @@ test("server-renders the corrected VIDAS proposal", async () => {
   assert.doesNotMatch(html, /Prima di disegnare il nuovo/);
   assert.doesNotMatch(html, /una sola priorità operativa, con reason code spiegabile/);
   assert.match(html, /I modelli vengono scritti in Mentor/);
+  assert.match(html, /HVD non è una fascia economica/);
+  assert.match(html, /LA STRATEGIA IN QUATTRO PASSAGGI/);
+  assert.match(html, /Network aziendale/);
+  assert.match(html, /Geo-intelligence/);
+  assert.match(html, /96–99°/);
+  assert.match(html, /Uscita dai 12 mailing standard/);
+  assert.match(html, /ORIZZONTE MINIMO DELLA STRATEGIA/);
   assert.match(html, /Cronoprogramma · Gantt annuale/);
   assert.match(html, /BOZZA DI LAVORO/);
   assert.match(html, /Competenze trasversali dedicate al progetto VIDAS/);
