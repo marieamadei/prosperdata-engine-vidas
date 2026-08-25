@@ -292,15 +292,18 @@ const donorJourneys = [
   },
 ];
 
-const ganttMonths = ["Feb", "Mar", "Apr", "Mag", "Giu", "Lug", "Ago", "Set", "Ott", "Nov", "Dic", "Gen"];
+const ganttMonths = [
+  "Feb 27", "Mar", "Apr", "Mag", "Giu", "Lug", "Ago", "Set", "Ott", "Nov", "Dic",
+  "Gen 28", "Feb", "Mar", "Apr", "Mag", "Giu", "Lug", "Ago", "Set", "Ott", "Nov", "Dic",
+];
 
 const ganttRows = [
   {
     phase: "F1",
-    title: "Analisi del database",
-    detail: "Struttura, qualità, KPI e baseline",
+    title: "Assessment",
+    detail: "KPI, fonti disponibili, database, interviste e baseline",
     start: 0,
-    span: 2,
+    span: 3,
     tone: "cyan",
   },
   {
@@ -308,65 +311,65 @@ const ganttRows = [
     title: "Fotografia donor journey",
     detail: "Target, canali, campagne e pressione",
     start: 0,
-    span: 1,
+    span: 3,
     tone: "cyan",
   },
   {
     phase: "F1",
-    title: "Analisi SWOT integrata",
+    title: "SWOT",
     detail: "Sintesi quantitativa e qualitativa",
-    start: 1,
-    span: 1,
+    start: 0,
+    span: 3,
     tone: "cyan",
   },
   {
     phase: "F2",
-    title: "Modelli DataProsper",
-    detail: "Sei letture complementari",
+    title: "Analisi e prototipazione dei modelli",
+    detail: "Procedure ETL, analisi dei modelli e prototipi",
     start: 2,
-    span: 1,
+    span: 3,
     tone: "blue",
   },
   {
     phase: "F2",
     title: "Elaborazione segmenti",
     detail: "Priorità, sovrapposizioni e KPI",
-    start: 2,
-    span: 2,
+    start: 3,
+    span: 3,
     tone: "blue",
   },
   {
     phase: "F2",
     title: "Donor journey per segmenti",
     detail: "Touchpoint, tempi, obiettivi e KPI",
-    start: 2,
-    span: 2,
+    start: 4,
+    span: 4,
     tone: "blue",
   },
   {
     phase: "F3",
-    title: "Automazioni e modelli in Mentor",
-    detail: "Sviluppo, test, audience e dashboard Qlik",
-    start: 4,
-    span: 8,
+    title: "Integrazione e automazione con Mentor",
+    detail: "ETL, audience, alert, estrazioni e donor care",
+    start: 6,
+    span: 4,
     tone: "red",
   },
   {
     phase: "F4",
-    title: "Monitoraggio risultati fundraising",
-    detail: "Performance dei target e ottimizzazione",
-    start: 4,
-    span: 8,
+    title: "Sviluppo Qlik",
+    detail: "Dashboard e lettura condivisa dei KPI",
+    start: 9,
+    span: 14,
+    tone: "yellow",
+  },
+  {
+    phase: "F4",
+    title: "Monitoraggio",
+    detail: "Performance, apprendimento e revisione periodica",
+    start: 9,
+    span: 14,
     tone: "green",
   },
-];
-
-const projectModules = [
-  { code: "M0", title: "Mobilitazione e data contract", min: 6, max: 8 },
-  { code: "M1", title: "Analisi multidimensionale e baseline", min: 35, max: 45 },
-  { code: "M2", title: "Segment engine e validazione", min: 50, max: 65 },
-  { code: "M3", title: "Mentor/Qlik, pilot, UAT e rilascio", min: 45, max: 60 },
-  { code: "M4", title: "Stabilizzazione, training e governance", min: 20, max: 30 },
 ];
 
 const team = [
@@ -471,8 +474,9 @@ export default function Home() {
         <nav aria-label="Navigazione principale">
           <a href="#vidas">La sfida</a>
           <a href="#proposal">La proposta</a>
-          <a href="#engine">Il sistema</a>
+          <a href="#engine">L’Engine</a>
           <a href="#journey">Journey</a>
+          <a href="#operations">Il sistema</a>
           <a href="#delivery">Delivery</a>
           <a href="#why-us">Perché noi</a>
         </nav>
@@ -580,9 +584,9 @@ export default function Home() {
             ["01", "La sfida VIDAS", "Perché il modello deve evolvere", "#vidas"],
             ["02", "La proposta", "Come affrontiamo il progetto", "#proposal"],
             ["03", "ProsperData Engine", "Sei modelli, una priorità operativa", "#engine"],
-            ["04", "RFM Lapsed", "Un esempio concreto", "#rfm-lapsed"],
-            ["05", "Donor Journey", "Dalla segmentazione alla relazione", "#journey"],
-            ["06", "La delivery", "Mentor, Qlik e monitoraggio", "#delivery"],
+            ["04", "Donor Journey", "Dalla segmentazione alla relazione", "#journey"],
+            ["05", "Il sistema nel quotidiano", "Engine, Mentor e Qlik", "#operations"],
+            ["06", "La delivery", "Sviluppo, rilascio e monitoraggio", "#delivery"],
             ["07", "Perché DataProsper", "Partnership, continuità e team", "#why-us"],
           ].map(([code, title, body, href]) => (
             <a href={href} key={code}>
@@ -679,7 +683,7 @@ export default function Home() {
         </div>
         <div className="proposal-phases" data-reveal>
           {[
-            ["01", "Analisi & Assessment", "Capire cosa accade oggi", "Database e strumenti · donor journey attuale · dettaglio campagne · SWOT integrata"],
+            ["01", "Analisi & Assessment", "Capire cosa accade oggi", "KPI e obiettivi · database e strumenti · interviste · donor journey attuale · SWOT integrata"],
             ["02", "Modelli & Segmenti", "Costruire nuove letture", "Sei modelli DataProsper · integrazione delle sovrapposizioni · KPI per segmento"],
             ["03", "Implementazione su CRM", "Trasformare insight in operatività", "Campi e regole Mentor · dashboard Qlik · audience · pilot · formazione"],
             ["04", "Monitoraggio Continuo", "Imparare dai risultati", "Performance · lift · drift · calibrazione · governance · handover"],
@@ -703,11 +707,23 @@ export default function Home() {
       <section className="phase-one phase-one--journey section" id="phase-one">
         <div className="section-kicker" data-reveal>
           <span>2.1</span>
-          <p>Fase 1 · Fotografia del donor journey attuale</p>
+          <p>Fase 1 · Assessment e fotografia del donor journey attuale</p>
         </div>
         <div className="phase-one__header" data-reveal>
-          <h2>Il nuovo modello parte<br />da ciò che accade oggi.</h2>
-          <p>La fotografia incrocia segmenti, volumi, recency, canali e pressione mensile. È il punto di partenza per individuare sovrapposizioni, automatismi e opportunità non ancora sfruttate.</p>
+          <h2>Prima comprendiamo<br />dati, obiettivi e lavoro reale.</h2>
+          <p>L’assessment mette in relazione qualità e dimensioni del database, KPI attesi, informazioni disponibili e pratiche operative. Le interviste ai referenti VIDAS completano la lettura quantitativa e preparano una fotografia condivisa del donor journey attuale.</p>
+        </div>
+
+        <div className="assessment-scope" data-reveal>
+          <article><span>01</span><strong>KPI e obiettivi</strong><p>Retention, upgrade, riattivazione e priorità di fundraising da rendere misurabili.</p></article>
+          <article><span>02</span><strong>Patrimonio informativo</strong><p>Donazioni, campagne, modalità di pagamento, canali e dati relazionali disponibili.</p></article>
+          <article><span>03</span><strong>Database e processi</strong><p>Dimensioni, qualità, struttura, procedure ETL e modalità di aggiornamento.</p></article>
+          <article><span>04</span><strong>Interviste VIDAS</strong><p>Fundraising, CRM, comunicazione e donor care: bisogni, vincoli e decisioni quotidiane.</p></article>
+        </div>
+
+        <div className="illustrative-note" data-reveal>
+          <span>ESEMPIO ILLUSTRATIVO</span>
+          <p>Le visualizzazioni che seguono mostrano il metodo di osservazione. Segmenti, volumi, pressioni e touchpoint saranno verificati durante l’assessment con il team VIDAS.</p>
         </div>
 
         <div className="current-segment-tabs" role="tablist" aria-label="Seleziona il segmento attuale" data-reveal>
@@ -783,6 +799,11 @@ export default function Home() {
         <div className="phase-one__header phase-one__header--light" data-reveal>
           <h2>La stessa campagna.<br />Tre relazioni diverse.</h2>
           <p>Il secondo livello scende dentro la singola campagna. ASK, lettera e messaggio cambiano in funzione del valore e del profilo del segmento: è qui che la segmentazione diventa personalizzazione reale.</p>
+        </div>
+
+        <div className="illustrative-note illustrative-note--light" data-reveal>
+          <span>ESEMPIO ILLUSTRATIVO</span>
+          <p>Il dettaglio mostra come la stessa campagna possa cambiare per target. Messaggi, ASK e obiettivi saranno definiti sulla base delle evidenze emerse nella Fase 1.</p>
         </div>
 
         <div className="campaign-switcher" role="tablist" aria-label="Confronta la personalizzazione per segmento" data-reveal>
@@ -887,8 +908,8 @@ export default function Home() {
       <section className="engine-section" id="engine">
         <div className="section engine-section__intro">
           <div className="section-kicker section-kicker--light" data-reveal>
-            <span>03</span>
-            <p>Il cuore della proposta</p>
+            <span>3.1</span>
+            <p>Il cuore della proposta · Architettura decisionale</p>
           </div>
           <h2 data-reveal>I modelli osservano.<br />L’Engine decide.</h2>
           <p data-reveal>
@@ -1028,95 +1049,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="hvd-strategy" id="hvd-strategy" aria-labelledby="hvd-strategy-title">
-        <div className="hvd-strategy__hero section">
-          <div className="section-kicker section-kicker--light" data-reveal>
-            <span>3.3</span>
-            <p>Modello D · High Value Donor</p>
-          </div>
-
-          <div className="hvd-strategy__headline" data-reveal>
-            <h2 id="hvd-strategy-title">HVD non è una fascia economica.<br />È una strategia di relazione.</h2>
-            <p>
-              Oggi Big, Top e VIP possono mescolare valore cumulato annuo e singole donazioni elevate. Il modello HVD separa questi segnali, stima il potenziale reale e concentra il caring sui profili che richiedono una relazione dedicata.
-            </p>
-          </div>
-
-          <div className="hvd-strategy__shift" data-reveal>
-            <article>
-              <span>IL LIMITE ATTUALE</span>
-              <strong>Quanto ha donato non basta a dire quanto vale la relazione.</strong>
-            </article>
-            <i aria-hidden="true">→</i>
-            <article>
-              <span>LA STRATEGIA HVD</span>
-              <strong>Potenziale, contesto relazionale e comportamento guidano una priorità unica.</strong>
-            </article>
-          </div>
-        </div>
-
-        <div className="hvd-strategy__body section">
-          <div className="hvd-strategy__body-head" data-reveal>
-            <span>LA STRATEGIA IN QUATTRO PASSAGGI</span>
-            <h3>Dal database a una relazione ad personam.</h3>
-          </div>
-
-          <div className="hvd-strategy__steps" data-reveal>
-            <article>
-              <span className="hvd-step__number">01</span>
-              <small>CALCOLARE IL POTENZIALE</small>
-              <h4>Tre macro-score producono un indice HVD.</h4>
-              <ul>
-                <li><strong>Network aziendale</strong> · ruolo e potenziale professionale</li>
-                <li><strong>Geo-intelligence</strong> · capacità contributiva territoriale</li>
-                <li><strong>RFM</strong> · comportamento cumulato e dono puntuale</li>
-              </ul>
-            </article>
-
-            <article>
-              <span className="hvd-step__number">02</span>
-              <small>QUALIFICARE LA RELAZIONE</small>
-              <h4>I tag spiegano il contesto, non solo il valore.</h4>
-              <p>Donazioni in memoria, familiari di assistiti, lutto ed eventi commemorativi guidano linguaggio, esclusioni e caring.</p>
-            </article>
-
-            <article>
-              <span className="hvd-step__number">03</span>
-              <small>CLASSIFICARE TUTTA LA BASE</small>
-              <h4>Il percentile trasforma lo score in una priorità.</h4>
-              <div className="hvd-percentiles" aria-label="Classificazione HVD per percentile">
-                <div className="is-hvd"><strong>96–99°</strong><span>HVD attivo</span></div>
-                <div><strong>90–95°</strong><span>Pre-HVD</span></div>
-                <div><strong>50–89°</strong><span>Middle potential</span></div>
-                <div><strong>0–49°</strong><span>Base</span></div>
-              </div>
-            </article>
-
-            <article>
-              <span className="hvd-step__number">04</span>
-              <small>ATTIVARE IL CARING</small>
-              <h4>Gli HVD escono dal circuito massivo.</h4>
-              <ul>
-                <li>Uscita dai 12 mailing standard</li>
-                <li>Comunicazione e momenti ad personam</li>
-                <li>Firma della Presidenza e riconoscimento</li>
-              </ul>
-            </article>
-          </div>
-
-          <div className="hvd-strategy__horizon" data-reveal>
-            <strong>2 anni</strong>
-            <div>
-              <span>ORIZZONTE MINIMO DELLA STRATEGIA</span>
-              <p>I progressi si valutano su KPI annuali — retention HVD, meeting, upgrade e grandi doni — non sulla risposta alla singola campagna.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section className="rfm-lapsed section" id="rfm-lapsed">
         <div className="section-kicker" data-reveal>
-          <span>04</span>
+          <span>3.3</span>
           <p>Un esempio concreto · Modello A</p>
         </div>
         <div className="rfm-lapsed__header" data-reveal>
@@ -1209,9 +1144,95 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="hvd-strategy" id="hvd-strategy" aria-labelledby="hvd-strategy-title">
+        <div className="hvd-strategy__hero section">
+          <div className="section-kicker section-kicker--light" data-reveal>
+            <span>3.4</span>
+            <p>Modello D · High Value Donor</p>
+          </div>
+
+          <div className="hvd-strategy__headline" data-reveal>
+            <h2 id="hvd-strategy-title">HVD non è una fascia economica.<br />È una strategia di relazione.</h2>
+            <p>
+              Oggi Big, Top e VIP possono mescolare valore cumulato annuo e singole donazioni elevate. Il modello HVD separa questi segnali, stima il potenziale reale e concentra il caring sui profili che richiedono una relazione dedicata.
+            </p>
+          </div>
+
+          <div className="hvd-strategy__shift" data-reveal>
+            <article>
+              <span>IL LIMITE ATTUALE</span>
+              <strong>Quanto ha donato non basta a dire quanto vale la relazione.</strong>
+            </article>
+            <i aria-hidden="true">→</i>
+            <article>
+              <span>LA STRATEGIA HVD</span>
+              <strong>Potenziale, contesto relazionale e comportamento guidano una priorità unica.</strong>
+            </article>
+          </div>
+        </div>
+
+        <div className="hvd-strategy__body section">
+          <div className="hvd-strategy__body-head" data-reveal>
+            <span>LA STRATEGIA IN QUATTRO PASSAGGI</span>
+            <h3>Dal database a una relazione ad personam.</h3>
+          </div>
+
+          <div className="hvd-strategy__steps" data-reveal>
+            <article>
+              <span className="hvd-step__number">01</span>
+              <small>CALCOLARE IL POTENZIALE</small>
+              <h4>Tre macro-score producono un indice HVD.</h4>
+              <ul>
+                <li><strong>Network aziendale</strong> · ruolo e potenziale professionale</li>
+                <li><strong>Geo-intelligence</strong> · capacità contributiva territoriale</li>
+                <li><strong>RFM</strong> · comportamento cumulato e dono puntuale</li>
+              </ul>
+            </article>
+
+            <article>
+              <span className="hvd-step__number">02</span>
+              <small>QUALIFICARE LA RELAZIONE</small>
+              <h4>I tag spiegano il contesto, non solo il valore.</h4>
+              <p>Donazioni in memoria, familiari di assistiti, lutto ed eventi commemorativi guidano linguaggio, esclusioni e caring.</p>
+            </article>
+
+            <article>
+              <span className="hvd-step__number">03</span>
+              <small>CLASSIFICARE TUTTA LA BASE</small>
+              <h4>Il percentile trasforma lo score in una priorità.</h4>
+              <div className="hvd-percentiles" aria-label="Classificazione HVD per percentile">
+                <div className="is-hvd"><strong>96–99°</strong><span>HVD attivo</span></div>
+                <div><strong>90–95°</strong><span>Pre-HVD</span></div>
+                <div><strong>50–89°</strong><span>Middle potential</span></div>
+                <div><strong>0–49°</strong><span>Base</span></div>
+              </div>
+            </article>
+
+            <article>
+              <span className="hvd-step__number">04</span>
+              <small>ATTIVARE IL CARING</small>
+              <h4>Gli HVD escono dal circuito massivo.</h4>
+              <ul>
+                <li>Uscita dai 12 mailing standard</li>
+                <li>Comunicazione e momenti ad personam</li>
+                <li>Firma della Presidenza e riconoscimento</li>
+              </ul>
+            </article>
+          </div>
+
+          <div className="hvd-strategy__horizon" data-reveal>
+            <strong>2 anni</strong>
+            <div>
+              <span>ORIZZONTE MINIMO DELLA STRATEGIA</span>
+              <p>I progressi si valutano su KPI annuali — retention HVD, meeting, upgrade e grandi doni — non sulla risposta alla singola campagna.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="journey section" id="journey">
         <div className="section-kicker" data-reveal>
-          <span>05</span>
+          <span>04</span>
           <p>Dai segmenti alla relazione</p>
         </div>
         <div className="journey__header" data-reveal>
@@ -1248,6 +1269,11 @@ export default function Home() {
             KPI e soglie vengono definiti con il team VIDAS e resi rilevabili negli strumenti quotidiani. Il journey è un documento vivo: risultati reali e cicli di revisione alimentano il miglioramento continuo.
           </p>
           <div className="journey-kpi__systems"><span>CRM MENTOR</span><i>+</i><span>BI QLIK</span></div>
+        </div>
+
+        <div className="illustrative-note" data-reveal>
+          <span>IPOTESI DI NUOVO DONOR JOURNEY</span>
+          <p>Il contact plan 2027–2028 rende concreta la logica del modello. Target, touchpoint, frequenze e KPI sono esemplificativi e saranno progettati e validati con VIDAS.</p>
         </div>
 
         <div className="journey-planner" data-reveal>
@@ -1330,57 +1356,70 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="method implementation section" id="delivery">
+      <section className="method implementation operations section" id="operations">
         <div className="section-kicker" data-reveal>
-          <span>06</span>
-          <p>Dalla strategia all’operatività</p>
+          <span>05</span>
+          <p>Il sistema entra nel lavoro quotidiano</p>
         </div>
         <div className="implementation__header" data-reveal>
           <h2>Il sistema entra<br />nel lavoro quotidiano.</h2>
-          <p>ProsperData Engine non sostituisce l’ecosistema VIDAS. Traduce modelli e journey in campi, audience, dashboard e routine governabili dentro Mentor e Qlik.</p>
+          <p>ProsperData Engine non sostituisce l’ecosistema VIDAS. Si inserisce tra assessment, patrimonio informativo e operatività: elabora dati e modelli, produce label e priorità, alimenta Mentor e rende i risultati monitorabili in Qlik.</p>
         </div>
-        <div className="pipeline" data-reveal>
-          <div className="pipeline__column">
-            <span>Fonti VIDAS</span>
-            <strong>Mentor CRM</strong>
-            <strong>Donazioni</strong>
-            <strong>Campagne</strong>
-            <strong>Email / digital</strong>
-            <strong>Eventi e relazioni</strong>
-          </div>
-          <div className="pipeline__connector"><i /><i /><i /></div>
-          <div className="pipeline__column pipeline__column--engine">
-            <span>ProsperData Engine</span>
-            <strong>Data quality</strong>
-            <strong>Metriche comuni</strong>
-            <strong>Stati e segnali</strong>
-            <strong>Score e regole</strong>
-            <strong>Reason code</strong>
-          </div>
-          <div className="pipeline__connector"><i /><i /><i /></div>
-          <div className="pipeline__column">
-            <span>Attivazione</span>
-            <strong>Campi Mentor</strong>
-            <strong>Data mart</strong>
-            <strong>Dashboard Qlik</strong>
-            <strong>Audience</strong>
-            <strong>Alert e liste</strong>
-          </div>
+        <div className="operating-architecture" data-reveal>
+          <article>
+            <span>01 · ASSESSMENT VIDAS</span>
+            <h3>Definire ciò che conta.</h3>
+            <p>KPI e obiettivi, informazioni disponibili, dimensioni del database e pratiche operative.</p>
+          </article>
+          <i aria-hidden="true">→</i>
+          <article>
+            <span>02 · SVILUPPO DEL KPI</span>
+            <h3>Tradurre l’obiettivo in modello.</h3>
+            <p>Procedure ETL, analisi del modello, prototipazione e criteri di validazione.</p>
+          </article>
+          <i aria-hidden="true">→</i>
+          <article className="operating-architecture__engine">
+            <span>03 · PROSPERDATA ENGINE</span>
+            <h3>Elaborare e assegnare.</h3>
+            <p>Data quality, applicazione dei modelli, score, regole e label operative per ogni record.</p>
+          </article>
+          <i aria-hidden="true">→</i>
+          <article>
+            <span>04 · MENTOR CRM</span>
+            <h3>Attivare il patrimonio informativo.</h3>
+            <p>Audience, alert, estrazioni e strumenti per fundraising e donor care.</p>
+          </article>
+          <i aria-hidden="true">→</i>
+          <article className="operating-architecture__qlik">
+            <span>05 · QLIK</span>
+            <h3>Leggere e monitorare.</h3>
+            <p>Dashboard, KPI e risultati alimentano il ciclo successivo di assessment.</p>
+          </article>
+        </div>
+        <div className="operating-loop" data-reveal>
+          <span>ASSESSMENT</span><i>→</i><span>ENGINE</span><i>→</i><span>LABEL E SCORE</span><i>→</i><span>MENTOR</span><i>→</i><strong>QLIK</strong><i>↺</i><span>MONITORAGGIO</span>
+        </div>
+      </section>
+
+      <section className="method implementation delivery-section section" id="delivery">
+        <div className="section-kicker" data-reveal>
+          <span>06</span>
+          <p>La delivery</p>
         </div>
         <div className="method__headline" data-reveal>
           <span>6.1 · IMPLEMENTAZIONE SU CRM</span>
-          <h2>I modelli vengono scritti in Mentor.</h2>
-          <h2 className="outline">Qlik rende i risultati leggibili.</h2>
-          <p>La delivery non si ferma alla definizione dei segmenti. DataProsper traduce regole, score e donor journey in automatismi utilizzabili ogni giorno dal team VIDAS, li testa su casi reali e li collega al monitoraggio.</p>
+          <h2>I risultati dell’Engine<br />entrano in Mentor.</h2>
+          <h2 className="outline">Qlik li rende leggibili.</h2>
+          <p>I dati elaborati da ProsperData Engine vengono condivisi in Mentor sotto forma di label, score, audience e alert utilizzabili dal team VIDAS. Qlik rende KPI e risultati leggibili, alimentando un monitoraggio continuo.</p>
         </div>
         <div className="mentor-build" data-reveal>
-          <article><span>01</span><strong>Specifiche condivise</strong><p>Campi, soglie, regole di inclusione ed esclusione e frequenza di aggiornamento.</p><small>Output · regole approvate</small></article>
-          <article><span>02</span><strong>Sviluppo in Mentor</strong><p>Automatismi per scoring, lookalike, segmenti dinamici e motivazione della selezione.</p><small>Output · audience aggiornabili</small></article>
-          <article><span>03</span><strong>Test con VIDAS</strong><p>Pilot, controlli sui record, UAT e verifica dell’utilità operativa con i fundraiser.</p><small>Output · rilascio validato</small></article>
-          <article><span>04</span><strong>Monitoraggio in Qlik</strong><p>KPI per segmento e journey, risultati delle campagne e segnali da correggere.</p><small>Output · dashboard mensile</small></article>
+          <article><span>01</span><strong>Specifiche e KPI condivisi</strong><p>Obiettivi, campi, soglie, regole e frequenze di aggiornamento.</p><small>Output · specifiche approvate</small></article>
+          <article><span>02</span><strong>Engine e prototipazione</strong><p>ETL, modelli, score, label e controlli di qualità su dati reali.</p><small>Output · modello verificato</small></article>
+          <article><span>03</span><strong>Integrazione in Mentor</strong><p>Audience, alert, estrazioni e strumenti operativi testati con VIDAS.</p><small>Output · rilascio validato</small></article>
+          <article><span>04</span><strong>Monitoraggio in Qlik</strong><p>KPI per segmento e journey, risultati e segnali da correggere.</p><small>Output · dashboard condivisa</small></article>
         </div>
         <div className="mentor-handoff" data-reveal>
-          <span>MODELLI A–F</span><i>→</i><span>CAMPI E AUTOMAZIONI MENTOR</span><i>→</i><span>AUDIENCE OPERATIVE</span><i>→</i><strong>KPI IN QLIK</strong>
+          <span>SPECIFICHE</span><i>→</i><span>ENGINE</span><i>→</i><span>LABEL, SCORE E AUDIENCE IN MENTOR</span><i>→</i><strong>KPI IN QLIK</strong>
         </div>
       </section>
 
@@ -1388,15 +1427,15 @@ export default function Home() {
         <div className="section roadmap__header">
           <div className="section-kicker section-kicker--light" data-reveal>
             <span>6.2</span>
-            <p>Cronoprogramma · Gantt annuale</p>
+            <p>Cronoprogramma · Gantt di progetto</p>
           </div>
-          <h2 data-reveal>Dodici mesi.<br />Un percorso leggibile.</h2>
-          <p data-reveal>Febbraio 2027 - gennaio 2028</p>
+          <h2 data-reveal>Dal setup<br />al monitoraggio continuo.</h2>
+          <p data-reveal>Febbraio 2027 - dicembre 2028</p>
         </div>
         <div className="gantt section" data-reveal>
-          <div className="gantt__months" aria-hidden="true">
+          <div className="gantt__months" aria-hidden="true" style={{ gridTemplateColumns: `330px repeat(${ganttMonths.length}, minmax(54px, 1fr))` }}>
             <span />
-            {ganttMonths.map((month) => <strong key={month}>{month}</strong>)}
+            {ganttMonths.map((month, index) => <strong key={`${month}-${index}`}>{month}</strong>)}
           </div>
           <div className="gantt__body">
             {ganttRows.map((row) => (
@@ -1405,7 +1444,7 @@ export default function Home() {
                   <span>{row.phase}</span>
                   <div><strong>{row.title}</strong><small>{row.detail}</small></div>
                 </div>
-                <div className="gantt__track" aria-label={`${row.title}: ${ganttMonths[row.start]} - ${ganttMonths[row.start + row.span - 1]}`}>
+                <div className="gantt__track" style={{ gridTemplateColumns: `repeat(${ganttMonths.length}, minmax(54px, 1fr))`, backgroundSize: `calc(100% / ${ganttMonths.length}) 100%` }} aria-label={`${row.title}: ${ganttMonths[row.start]} - ${ganttMonths[row.start + row.span - 1]}`}>
                   <i className={`gantt__bar gantt__bar--${row.tone}`} style={{ gridColumn: `${row.start + 1} / span ${row.span}` }}><b>{row.span > 2 ? `${row.span} mesi` : ""}</b></i>
                 </div>
               </div>
@@ -1413,41 +1452,10 @@ export default function Home() {
           </div>
           <div className="gantt__milestones">
             <span>FEB · AVVIO E ACCESSI</span>
-            <span>MAR · BASELINE CONDIVISA</span>
-            <span>MAG · SEGMENTI E JOURNEY APPROVATI</span>
-            <span>GEN · HANDOVER OPERATIVO</span>
+            <span>APR · ASSESSMENT E SWOT CONDIVISI</span>
+            <span>OTT · ENGINE E MENTOR INTEGRATI</span>
+            <span>2028 · QLIK E MONITORAGGIO CONTINUO</span>
           </div>
-        </div>
-      </section>
-
-      <section className="pilot section">
-        <div className="section-kicker" data-reveal>
-          <span>6.3</span>
-          <p>I primi pilot</p>
-        </div>
-        <div className="pilot__header" data-reveal>
-          <h2>Dimostrare valore.<br />Cambiare il modo di lavorare.</h2>
-          <p>La selezione finale segue la baseline. Tre use case iniziali combinano rilevanza, apprendibilità e misurabilità.</p>
-        </div>
-        <div className="pilot-grid" data-reveal>
-          <article>
-            <span>MODELLO A · REACTIVATION</span>
-            <h3>RFM Lapsed</h3>
-            <p>Selezionare gli ex-donatori con il più alto potenziale di ritorno.</p>
-            <small>Holdout · reactivation rate · ROI</small>
-          </article>
-          <article>
-            <span>MODELLO B · CONVERSION</span>
-            <h3>Propensione Regolari</h3>
-            <p>Trasformare frequenza mobile e fiducia in sostegno continuativo.</p>
-            <small>TM + DEM · conversione · tenuta</small>
-          </article>
-          <article>
-            <span>MODELLO D · VALUE</span>
-            <h3>High Value Donor</h3>
-            <p>Portare fuori dal massivo i profili con capacità e potenziale elevati.</p>
-            <small>Caring · meeting · upgrade</small>
-          </article>
         </div>
       </section>
 
@@ -1553,6 +1561,24 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="experience-section section">
+        <div className="section-kicker" data-reveal>
+          <span>PROOF</span>
+          <p>Esperienze rilevanti nel nonprofit</p>
+        </div>
+        <div className="experience-section__header" data-reveal>
+          <h2>Modelli già applicati.<br />Non solo ipotizzati.</h2>
+          <p>La proposta per VIDAS nasce da esperienze operative maturate su database, mailplan, modelli di riattivazione, high value donor e campagne multicanale nel settore nonprofit.</p>
+        </div>
+        <div className="experience-grid" data-reveal>
+          <article><strong>9</strong><span>organizzazioni</span><h3>Mailplan strategici e operativi</h3><p>Governance di target, campagne, canali e pressione di contatto.</p></article>
+          <article><strong>10</strong><span>organizzazioni</span><h3>Modellistica Lapsed</h3><p>Selezione mirata per massimizzare la risposta o ampliare il target qualificato.</p></article>
+          <article><strong>3</strong><span>organizzazioni</span><h3>Modelli HVD</h3><p>Potenziale high value arricchito con informazioni aziendali e relazionali.</p></article>
+          <article><strong>1</strong><span>organizzazione</span><h3>Lasciti Lookalike</h3><p>Individuazione di profili affini ai sostenitori che hanno scelto un lascito.</p></article>
+          <article className="experience-grid__wide"><span>MULTICANALE</span><h3>Engagement e campagne in memoria</h3><p>Progettazione di journey e campagne coordinate tra postale, digitale e relazione diretta.</p></article>
+        </div>
+      </section>
+
       <section className="team-section">
         <div className="section">
           <div className="team-section__header" data-reveal>
@@ -1583,61 +1609,45 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="deliverables-recap section" aria-labelledby="deliverables-title">
+        <div className="deliverables-recap__header" data-reveal>
+          <span>I TRE DELIVERABLE RICHIESTI DA VIDAS</span>
+          <h2 id="deliverables-title">Il brief trova risposta<br />in tre risultati verificabili.</h2>
+        </div>
+        <div className="deliverables-recap__list" data-reveal>
+          <article><span>01</span><div><strong>Analisi della performance multidimensionale</strong><p>Assessment, database, KPI, donor journey attuale e SWOT integrata.</p><small>CAPITOLO 02</small></div></article>
+          <article><span>02</span><div><strong>Proposta evolutiva di segmentazione</strong><p>ProsperData Engine, modelli specialistici e donor journey per i nuovi segmenti.</p><small>CAPITOLI 03 E 04</small></div></article>
+          <article><span>03</span><div><strong>Messa a terra operativa</strong><p>Integrazione fra Engine, Mentor e Qlik, delivery e monitoraggio.</p><small>CAPITOLI 05 E 06</small></div></article>
+        </div>
+      </section>
+
       <section className="investment section">
         <div className="section-kicker" data-reveal>
           <span>7.4</span>
-          <p>Perimetro</p>
+          <p>Proposta economica</p>
         </div>
         <div className="investment__headline" data-reveal>
-          <h2>Un perimetro chiaro.<br />Verificato fase per fase.</h2>
-          <p>Il progetto è suddiviso in cinque moduli operativi. Al termine di ciascuno, VIDAS verifica output e priorità prima di avviare il successivo.</p>
+          <h2>Una base economica chiara.<br />Da validare sul perimetro finale.</h2>
+          <p>La valorizzazione economica sarà consolidata sulla base dei tre deliverable, delle attività di integrazione e del cronoprogramma condiviso con VIDAS.</p>
         </div>
-        <div className="investment__draft" data-reveal>
-          <span>BOZZA DI LAVORO</span>
-          <strong>Effort e valorizzazione economica devono essere ricalcolati e validati prima dell’offerta formale.</strong>
+        <div className="investment__budget" data-reveal>
+          <div>
+            <span>BUDGET DI RIFERIMENTO</span>
+            <strong>€ 90.000</strong>
+            <small>attività di consulenza</small>
+          </div>
+          <div>
+            <span>STATO DELLA PROPOSTA</span>
+            <h3>Base di lavoro da validare.</h3>
+            <p>Il valore indica il riferimento economico attuale. Articolazione per fase e condizioni finali saranno definite nella proposta economica conclusiva.</p>
+          </div>
         </div>
-        <div className="investment__range" data-reveal>
-          <div className="investment__range-value">
-            <span>IPOTESI MINIMA</span>
-            <strong>156</strong>
-            <small>valore provvisorio · da confermare</small>
-          </div>
-          <div className="investment__range-connector" aria-hidden="true">
-            <span>RANGE COMPLESSIVO</span>
-            <i />
-          </div>
-          <div className="investment__range-value investment__range-value--max">
-            <span>IPOTESI MASSIMA</span>
-            <strong>208</strong>
-            <small>valore provvisorio · da confermare</small>
-          </div>
-          <p>giorni/persona complessivi</p>
-        </div>
-
-        <div className="investment__modules" data-reveal>
-          <div className="investment__modules-header">
-            <div>
-              <span>I CINQUE MODULI · BOZZA DA RICALCOLARE</span>
-              <h3>Come si compone la stima.</h3>
-            </div>
-            <p>I range mostrano l’attuale ipotesi di lavoro e non costituiscono ancora l’offerta economica.</p>
-          </div>
-          <div className="investment__module-list">
-            {projectModules.map((module) => (
-              <article className="investment__module" key={module.code}>
-                <div className="investment__module-title">
-                  <span>{module.code}</span>
-                  <strong>{module.title}</strong>
-                </div>
-                <div className="investment__module-bar" aria-hidden="true">
-                  <i style={{ width: `${Math.round((module.max / 65) * 100)}%` }} />
-                </div>
-                <div className="investment__module-effort">
-                  <strong>{module.min}–{module.max}</strong>
-                  <small>giorni/persona · da confermare</small>
-                </div>
-              </article>
-            ))}
+        <div className="investment__scope" data-reveal>
+          <span>IL BUDGET SEGUE IL PERIMETRO</span>
+          <div>
+            <strong>Analisi multidimensionale</strong>
+            <strong>Segmentazione evoluta</strong>
+            <strong>Messa a terra operativa</strong>
           </div>
         </div>
       </section>
