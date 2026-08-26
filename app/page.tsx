@@ -1570,13 +1570,68 @@ export default function Home() {
           <h2>Modelli già applicati.<br />Non solo ipotizzati.</h2>
           <p>La proposta per VIDAS nasce da esperienze operative maturate su database, mailplan, modelli di riattivazione, high value donor e campagne multicanale nel settore nonprofit.</p>
         </div>
-        <div className="experience-grid" data-reveal>
-          <article><strong>9</strong><span>organizzazioni</span><h3>Mailplan strategici e operativi</h3><p>Governance di target, campagne, canali e pressione di contatto.</p></article>
-          <article><strong>10</strong><span>organizzazioni</span><h3>Modellistica Lapsed</h3><p>Selezione mirata per massimizzare la risposta o ampliare il target qualificato.</p></article>
-          <article><strong>3</strong><span>organizzazioni</span><h3>Modelli HVD</h3><p>Potenziale high value arricchito con informazioni aziendali e relazionali.</p></article>
-          <article><strong>1</strong><span>organizzazione</span><h3>Lasciti Lookalike</h3><p>Individuazione di profili affini ai sostenitori che hanno scelto un lascito.</p></article>
-          <article className="experience-grid__wide"><span>MULTICANALE</span><h3>Engagement e campagne in memoria</h3><p>Progettazione di journey e campagne coordinate tra postale, digitale e relazione diretta.</p></article>
+        <div className="experience-credentials" data-reveal aria-label="Esperienza DataProsper nel nonprofit">
+          <article><strong>8</strong><span>organizzazioni</span><p>Mailplan strategici e operativi</p></article>
+          <article><strong>9</strong><span>organizzazioni</span><p>Modellistica Lapsed</p></article>
+          <article><strong>3</strong><span>organizzazioni</span><p>Modelli HVD</p></article>
+          <article><strong>1</strong><span>organizzazione</span><p>Lasciti Lookalike</p></article>
         </div>
+
+        <div className="case-history-intro" data-reveal>
+          <span>DUE EVIDENZE OPERATIVE</span>
+          <p>I nomi delle organizzazioni non vengono esposti. Metodo, scala e risultati restano quelli osservati nei progetti.</p>
+        </div>
+        <div className="case-history-grid" data-reveal>
+          <article className="case-history case-history--lapsed">
+            <div className="case-history__heading">
+              <span>CASE 01 · RIATTIVAZIONE</span>
+              <h3>Il modello Lapsed supera la selezione interna.</h3>
+              <p>Su donatori inattivi da oltre 60 mesi, la selezione DataProsper è stata confrontata con il modello già utilizzato dall’organizzazione.</p>
+            </div>
+            <div className="case-history__metrics">
+              <div><strong>1,82%</strong><span>response rate medio</span><small>vs 1,16% della selezione interna</small></div>
+              <div><strong>+56,9%</strong><span>riattivazioni stimate</span><small>a parità di confronto</small></div>
+              <div><strong>+35%</strong><span>raccolta</span><small>rispetto alla selezione standard</small></div>
+            </div>
+            <div className="case-history__footer">
+              <span>4 mailing</span><i aria-hidden="true">·</i><span>160.000 invii</span><i aria-hidden="true">·</i><span>4 varianti di messaggio</span>
+            </div>
+          </article>
+
+          <article className="case-history case-history--mailplan">
+            <div className="case-history__heading">
+              <span>CASE 02 · CICLO DI VITA</span>
+              <h3>Dal prospect al break-even.</h3>
+              <p>Un Contact Plan integrato ha collegato acquisizione, welcome e coltivazione dei nuovi donatori, leggendo il ritorno su un orizzonte pluriennale.</p>
+            </div>
+            <div className="case-history__path" aria-label="Progressione del caso mailplan">
+              <div><small>ACQUISIZIONE</small><strong>245.000</strong><span>invii prospect</span></div>
+              <i aria-hidden="true">→</i>
+              <div><small>PORTAFOGLIO</small><strong>9.159</strong><span>nuovi donatori</span></div>
+              <i aria-hidden="true">→</i>
+              <div><small>RISULTATO</small><strong>18–24</strong><span>mesi al break-even</span></div>
+            </div>
+            <div className="case-history__outcome">
+              <span>IL PUNTO STRATEGICO</span>
+              <p>L’acquisizione non viene valutata sul primo invio, ma sulla capacità del journey di generare valore nel tempo.</p>
+            </div>
+          </article>
+        </div>
+
+        <div className="experience-capabilities" data-reveal>
+          <div>
+            <span>ATTIVAZIONE MULTICANALE</span>
+            <strong>Dalla segmentazione alla relazione.</strong>
+          </div>
+          <ul aria-label="Capacità di attivazione multicanale">
+            <li>Direct mail</li>
+            <li>Digitale</li>
+            <li>Telemarketing</li>
+            <li>QR e raccolta dati</li>
+            <li>Donor care</li>
+          </ul>
+        </div>
+        <p className="case-history-note" data-reveal>Case history presentate in forma anonima nel rispetto degli accordi di riservatezza.</p>
       </section>
 
       <section className="team-section">

@@ -78,6 +78,15 @@ test("server-renders the corrected VIDAS proposal", async () => {
   assert.doesNotMatch(html, /I primi pilot/);
   assert.match(html, /Esperienze rilevanti nel nonprofit/);
   assert.match(html, /Mailplan strategici e operativi/);
+  assert.match(html, />8<\/strong><span>organizzazioni<\/span><p>Mailplan strategici e operativi/);
+  assert.match(html, />9<\/strong><span>organizzazioni<\/span><p>Modellistica Lapsed/);
+  assert.match(html, /Il modello Lapsed supera la selezione interna/);
+  assert.match(html, /1,82%/);
+  assert.match(html, /\+56,9%/);
+  assert.match(html, /Dal prospect al break-even/);
+  assert.match(html, /245\.000/);
+  assert.match(html, /18–24/);
+  assert.match(html, /Case history presentate in forma anonima/);
   assert.match(html, /I TRE DELIVERABLE RICHIESTI DA VIDAS/);
   assert.match(html, /€ 90\.000/);
   assert.match(html, /Base di lavoro da validare/);
