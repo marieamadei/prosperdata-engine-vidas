@@ -1116,7 +1116,7 @@ export default function Home() {
           </article>
           <div className="lapsed-segments__outcome">
             <span>OUTPUT</span>
-            <strong>Propensione al ritorno P1 / P2</strong>
+            <strong>Propensione al ritorno · Priorità 1 / Priorità 2</strong>
           </div>
         </div>
 
