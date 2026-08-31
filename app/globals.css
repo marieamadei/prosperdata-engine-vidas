@@ -2471,7 +2471,7 @@ img {
 
 .journey-kpi {
   display: grid;
-  grid-template-columns: 1.3fr 1fr auto;
+  grid-template-columns: 1.25fr .75fr;
   gap: 46px;
   align-items: center;
   margin-top: 2px;
@@ -2500,26 +2500,6 @@ img {
   color: rgba(255, 255, 255, .72);
   font-size: 11px;
   line-height: 1.55;
-}
-
-.journey-kpi__systems {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.journey-kpi__systems span {
-  padding: 14px 16px;
-  border: 1px solid rgba(255, 255, 255, .36);
-  font-size: 9px;
-  font-weight: 800;
-  letter-spacing: .1em;
-  white-space: nowrap;
-}
-
-.journey-kpi__systems i {
-  color: var(--yellow);
-  font-style: normal;
 }
 
 .journey-planner {
@@ -3491,7 +3471,6 @@ img {
   .journey__header > p { max-width: 680px; margin-top: 36px; }
   .journey-principles { grid-template-columns: 1fr 1fr; }
   .journey-kpi { grid-template-columns: 1fr 1fr; }
-  .journey-kpi__systems { grid-column: 1 / -1; }
   .journey-targets { grid-template-columns: repeat(2, 1fr); }
   .journey-targets button { border-bottom: 1px solid rgba(255,255,255,.2); }
   .architecture__header,
@@ -3589,7 +3568,6 @@ img {
   .journey-principles { grid-template-columns: 1fr; margin-top: 70px; }
   .journey-principles article { min-height: 250px; }
   .journey-kpi { grid-template-columns: 1fr; gap: 26px; padding: 34px 28px; }
-  .journey-kpi__systems { grid-column: auto; flex-wrap: wrap; }
   .journey-planner { margin-top: 72px; }
   .journey-planner__top { align-items: flex-start; flex-direction: column; }
   .journey-legend { justify-content: flex-start; }
@@ -4941,15 +4919,6 @@ html {
 }
 
 .journey-kpi > div:first-child span {
-  color: var(--cyan);
-}
-
-.journey-kpi__systems span {
-  border-color: rgba(24, 165, 217, .38);
-  border-radius: 999px;
-}
-
-.journey-kpi__systems i {
   color: var(--cyan);
 }
 

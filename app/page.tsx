@@ -1304,7 +1304,6 @@ export default function Home() {
           <p>
             KPI e soglie vengono definiti con il team VIDAS e resi rilevabili negli strumenti quotidiani. Il journey è un documento vivo: risultati reali e cicli di revisione alimentano il miglioramento continuo.
           </p>
-          <div className="journey-kpi__systems"><span>CRM MENTOR</span><i>+</i><span>BI QLIK</span></div>
         </div>
 
         <div className="illustrative-note" data-reveal>

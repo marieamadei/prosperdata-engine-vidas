@@ -131,6 +131,7 @@ test("keeps the source reconciled with the team review", async () => {
 
   assert.match(page, /ProsperData/);
   assert.match(page, /VIDAS/);
+  assert.doesNotMatch(page, /journey-kpi__systems/);
   assert.match(page, /metric: "FEDELTÀ"/);
   assert.match(page, /AREE DEL MODELLO CHE GENERANO LO SCORE/);
   assert.doesNotMatch(page, /metric: "81%"/);
