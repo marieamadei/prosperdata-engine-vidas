@@ -4098,6 +4098,8 @@ img {
 }
 
 .vidas-commitment {
+  padding-top: 132px;
+  padding-bottom: 158px;
   background: var(--white);
 }
 
@@ -4735,6 +4737,7 @@ img {
   .system-map__return { grid-template-columns: 1fr; gap: 8px; }
   .vidas-commitment__header,
   .vidas-commitment__phases { grid-template-columns: 1fr; }
+  .vidas-commitment { padding-top: 96px; padding-bottom: 112px; }
   .vidas-commitment__header { margin-top: 66px; }
   .vidas-commitment__total { max-width: 420px; }
   .vidas-commitment__phases { margin-top: 56px; }
