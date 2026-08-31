@@ -1308,7 +1308,7 @@ export default function Home() {
 
         <div className="illustrative-note" data-reveal>
           <span>IPOTESI DI NUOVO DONOR JOURNEY</span>
-          <p>Il contact plan 2027–2028 rende concreta la logica del modello. Target, touchpoint, frequenze e KPI sono esemplificativi e saranno progettati e validati con VIDAS.</p>
+          <p>Qui presentiamo un contact plan 2027–2028 che rende concreta la logica del modello e permette di comprenderne meglio il funzionamento. Target, touchpoint, frequenze e KPI sono esemplificativi e saranno progettati e validati con VIDAS.</p>
         </div>
 
         <div className="journey-planner" data-reveal>

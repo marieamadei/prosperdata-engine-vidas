@@ -72,6 +72,8 @@ test("server-renders the corrected VIDAS proposal", async () => {
   assert.match(html, /Arricchimento e upgrade discovery/);
   assert.match(html, /Profilazione e trend discovery/);
   assert.match(html, /Targetizzazione ottimizzata/);
+  assert.match(html, /Qui presentiamo un contact plan 2027–2028/);
+  assert.match(html, /permette di comprenderne meglio il funzionamento/);
   assert.match(html, /stabilisce le priorità e restituisce le informazioni utili per le next best actions/);
   assert.match(html, /NEXT BEST ACTIONS/);
   assert.doesNotMatch(html, /un solo next best action spiegabile/);
