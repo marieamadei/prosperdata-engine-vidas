@@ -382,7 +382,7 @@ const team = [
   {
     name: "Marco Bellati",
     role: "Responsabile Data Quality · continuità VIDAS",
-    org: "DataProsper",
+    org: "KIWI",
     image: "/team/marco-bellati.jpg",
   },
   {

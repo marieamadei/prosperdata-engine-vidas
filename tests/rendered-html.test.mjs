@@ -137,6 +137,7 @@ test("server-renders the corrected VIDAS proposal", async () => {
   assert.doesNotMatch(html, /156/);
   assert.doesNotMatch(html, /208/);
   assert.match(html, /Competenze trasversali dedicate al progetto VIDAS/);
+  assert.match(html, /<span>KIWI<\/span><strong>Marco Bellati<\/strong>/);
 
   assert.doesNotMatch(html, />81%?</);
   assert.doesNotMatch(html, /Protezione deliverability/);
