@@ -1548,29 +1548,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="governance section">
-        <div className="section-kicker" data-reveal>
-          <span>6.3</span>
-          <p>Come si lavora ogni mese</p>
-        </div>
-        <h2 data-reveal>Ogni mese VIDAS vede<br />cosa cambia e decide cosa fare.</h2>
-        <p className="governance__lead" data-reveal>Il sistema non viene consegnato e lasciato fermo. Dati, segmenti e risultati vengono riletti insieme al team VIDAS attraverso una routine semplice e documentata.</p>
-        <div className="governance-grid" data-reveal>
-          {[
-            ["01", "Aggiornare", "Mentor e Qlik ricevono i dati del periodo; completezza e anomalie vengono controllate prima di creare le audience."],
-            ["02", "Verificare", "Il team controlla quanti donatori entrano o escono dai segmenti e comprende il motivo di ogni selezione."],
-            ["03", "Leggere i risultati", "KPI di campagna, retention, upgrade e riattivazione vengono confrontati per segmento e journey."],
-            ["04", "Decidere", "VIDAS approva eventuali correzioni a regole, priorità e pressione di contatto prima del ciclo successivo."],
-          ].map(([code, title, body]) => (
-            <div key={code}><span>{code}</span><strong>{title}</strong><p>{body}</p></div>
-          ))}
-        </div>
-        <div className="guardrail" data-reveal>
-          <strong>Il principio</strong>
-          <p>Ogni regola è documentata, ogni modifica è tracciata e ogni eccezione resta sotto il controllo del team VIDAS.</p>
-        </div>
-      </section>
-
       <section className="why-us-intro section" id="why-us">
         <div className="section-kicker section-kicker--light" data-reveal>
           <span>07</span>

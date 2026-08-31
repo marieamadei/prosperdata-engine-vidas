@@ -104,8 +104,8 @@ test("server-renders the corrected VIDAS proposal", async () => {
   assert.match(html, /Descrizione dei processi attuali/);
   assert.match(html, /Validazione delle informazioni acquisite/);
   assert.match(html, /Supervisione dell’integrazione/);
-  assert.match(html, />6\.3<\/span><p>Come si lavora ogni mese/);
-  assert.doesNotMatch(html, />6\.4<\/span><p>Come si lavora ogni mese/);
+  assert.doesNotMatch(html, /Come si lavora ogni mese/);
+  assert.doesNotMatch(html, /Ogni mese VIDAS vede/);
   assert.match(html, /Il monitoraggio non chiude il progetto: riapre il ciclo/);
   assert.match(html, /HVD non è una fascia economica/);
   assert.match(html, /LA STRATEGIA IN QUATTRO PASSAGGI/);
