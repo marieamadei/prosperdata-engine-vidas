@@ -1086,8 +1086,9 @@ export default function Home() {
       </section>
 
       <section className="rfm-lapsed section" id="rfm-lapsed">
-        <div className="model-examples-note" data-reveal>
-          <p>Qui vengono illustrati due modelli esemplificativi, dettagliati nell’allegato alla presentazione.</p>
+        <div className="annex-reference annex-reference--models" data-reveal>
+          <span>ALLEGATO TECNICO</span>
+          <p>Qui vengono illustrati due modelli esemplificativi. Tutti i 6 modelli sono pienamente dettagliati nell’allegato <strong>«ProsperData Engine per gara VIDAS — Allegato tecnico»</strong>.</p>
         </div>
         <div className="section-kicker" data-reveal>
           <span>3.3</span>
@@ -1309,6 +1310,11 @@ export default function Home() {
           </p>
         </div>
 
+        <div className="annex-reference annex-reference--kpi" data-reveal>
+          <span>GLOSSARIO DEI KPI</span>
+          <p>Il glossario completo dei KPI è inserito nell’allegato <strong>«ProsperData Engine per gara VIDAS — Allegato tecnico»</strong>.</p>
+        </div>
+
         <div className="illustrative-note" data-reveal>
           <span>IPOTESI DI NUOVO DONOR JOURNEY</span>
           <p>Qui presentiamo un contact plan 2027–2028 che rende concreta la logica del modello e permette di comprenderne meglio il funzionamento. Target, touchpoint, frequenze e KPI sono esemplificativi e saranno progettati e validati con VIDAS.</p>
@@ -1402,6 +1408,10 @@ export default function Home() {
         <div className="implementation__header" data-reveal>
           <h2>Il sistema entra<br />nel lavoro quotidiano.</h2>
           <p>Il sistema non procede in linea retta. Mentor è insieme fonte dei dati e ambiente di attivazione: invia il patrimonio informativo all’Engine tramite ETL e riceve label, score, audience e alert. Qlik legge i risultati e chiude il ciclo, riportando le revisioni verso assessment, KPI e modelli.</p>
+        </div>
+        <div className="annex-reference annex-reference--operations" data-reveal>
+          <span>SCHEMA DI DETTAGLIO</span>
+          <p>Il dettaglio dello schema della Fase 3, dei flussi e dei passaggi operativi è contenuto nell’allegato <strong>«ProsperData Engine per gara VIDAS — Allegato tecnico»</strong>.</p>
         </div>
         <div className="system-map" data-reveal aria-label="Architettura ciclica tra assessment, KPI, Mentor, ProsperData Engine e Qlik">
           <section className="system-map__band system-map__band--design" aria-labelledby="system-design-title">
@@ -1650,6 +1660,10 @@ export default function Home() {
           <span>DUE EVIDENZE OPERATIVE</span>
           <p>I nomi delle organizzazioni non vengono esposti. Metodo, scala e risultati restano quelli osservati nei progetti.</p>
         </div>
+        <div className="annex-reference annex-reference--cases" data-reveal>
+          <span>CASE HISTORY</span>
+          <p>Tutte le case history sono dettagliate nell’allegato <strong>«ProsperData Engine per gara VIDAS — Allegato tecnico»</strong>.</p>
+        </div>
         <div className="case-history-grid" data-reveal>
           <article className="case-history case-history--lapsed">
             <div className="case-history__heading">
@@ -1788,7 +1802,7 @@ export default function Home() {
         </div>
         <div className="site-footer__bottom">
           <span>DataProsper + Kiwi Data Science</span>
-          <span>Proposta tecnica VIDAS 2027 · Bozza riservata</span>
+          <span>ProsperData Engine per gara VIDAS — Proposta strategica e operativa · Bozza riservata</span>
         </div>
       </footer>
     </main>

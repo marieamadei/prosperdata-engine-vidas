@@ -1977,24 +1977,44 @@ img {
   background: var(--paper);
 }
 
-.model-examples-note {
+.annex-reference {
+  display: grid;
+  grid-template-columns: minmax(150px, .34fr) minmax(0, 1fr);
+  gap: 30px;
+  align-items: start;
   max-width: 980px;
-  margin: 0 0 92px auto;
-  padding: 30px 34px;
-  border-left: 5px solid var(--red);
+  margin-left: auto;
+  padding: 24px 28px;
+  border-left: 4px solid var(--red);
   border-radius: 0 18px 18px 0;
   background: var(--white);
   box-shadow: 0 16px 50px rgba(22, 33, 81, .06);
 }
 
-.model-examples-note p {
-  margin: 0;
-  color: var(--navy);
-  font-size: clamp(20px, 2.3vw, 32px);
-  font-weight: 560;
-  line-height: 1.25;
-  letter-spacing: -.025em;
+.annex-reference > span {
+  padding-top: 3px;
+  color: var(--red);
+  font-size: 9px;
+  font-weight: 850;
+  letter-spacing: .14em;
 }
+
+.annex-reference p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.annex-reference p strong {
+  color: var(--navy);
+  font-weight: 760;
+}
+
+.annex-reference--models { margin-bottom: 92px; }
+.annex-reference--kpi { margin-top: 30px; }
+.annex-reference--operations { margin-top: 52px; }
+.annex-reference--cases { margin-top: 22px; }
 
 .rfm-lapsed__header {
   display: grid;
@@ -3571,7 +3591,8 @@ img {
   .model-governance__formula span { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.18); }
   .model-governance__formula i { width: auto; height: 42px; display: grid; place-items: center; transform: rotate(90deg); }
   .rfm-lapsed { padding-top: 100px; padding-bottom: 110px; }
-  .model-examples-note { margin-bottom: 66px; padding: 24px 22px; }
+  .annex-reference { grid-template-columns: 1fr; gap: 12px; padding: 22px; }
+  .annex-reference--models { margin-bottom: 66px; }
   .lapsed-segments { grid-template-columns: 1fr; margin-top: 70px; }
   .lapsed-segments > * { min-height: 200px; }
   .lapsed-process { grid-template-columns: 1fr; margin-top: 72px; }
@@ -3893,6 +3914,10 @@ img {
   display: grid;
   gap: 18px;
   margin-top: 96px;
+}
+
+.operations > .annex-reference + .system-map {
+  margin-top: 32px;
 }
 
 .system-map__band {

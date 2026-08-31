@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "ProsperData Engine | Proposta VIDAS 2027",
+  title: "ProsperData Engine per gara VIDAS — Proposta strategica e operativa",
   description:
     "Sistema di intelligence, segmentazione e attivazione proposto da DataProsper e Kiwi Data Science per VIDAS.",
   icons: {

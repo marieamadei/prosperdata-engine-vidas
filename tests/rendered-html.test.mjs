@@ -29,7 +29,7 @@ test("server-renders the corrected VIDAS proposal", async () => {
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /<title>ProsperData Engine \| Proposta VIDAS 2027<\/title>/i);
+  assert.match(html, /<title>ProsperData Engine per gara VIDAS — Proposta strategica e operativa<\/title>/i);
   assert.match(html, /La visione di VIDAS/);
   assert.match(html, /VIDAS sta avviando una riflessione strategica/);
   assert.match(html, /Quattro cambiamenti/);
@@ -123,7 +123,12 @@ test("server-renders the corrected VIDAS proposal", async () => {
   assert.match(html, />9<\/strong><span>organizzazioni<\/span><p>Modellistica Lapsed/);
   assert.match(html, /Il modello Lapsed supera la selezione interna/);
   assert.match(html, /Propensione al ritorno · Priorità 1 \/ Priorità 2/);
-  assert.match(html, /Qui vengono illustrati due modelli esemplificativi, dettagliati nell’allegato alla presentazione/);
+  assert.match(html, /Tutti i 6 modelli sono pienamente dettagliati/);
+  assert.match(html, /Il glossario completo dei KPI è inserito/);
+  assert.match(html, /Tutte le case history sono dettagliate/);
+  assert.match(html, /Il dettaglio dello schema della Fase 3/);
+  assert.equal((html.match(/ProsperData Engine per gara VIDAS — Allegato tecnico/g) ?? []).length, 4);
+  assert.match(html, /ProsperData Engine per gara VIDAS — Proposta strategica e operativa/);
   assert.doesNotMatch(html, /Propensione al ritorno P1 \/ P2/);
   assert.match(html, /1,82%/);
   assert.match(html, /\+56,9%/);
@@ -162,7 +167,7 @@ test("keeps the source reconciled with the team review", async () => {
   assert.match(page, /AREE DEL MODELLO CHE GENERANO LO SCORE/);
   assert.doesNotMatch(page, /metric: "81%"/);
   assert.doesNotMatch(page, /Protezione deliverability/);
-  assert.match(layout, /ProsperData Engine \| Proposta VIDAS 2027/);
+  assert.match(layout, /ProsperData Engine per gara VIDAS — Proposta strategica e operativa/);
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);
   assert.doesNotMatch(page, /SkeletonPreview|codex-preview/);
   assert.deepEqual(previewFiles, []);
