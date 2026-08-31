@@ -1977,6 +1977,25 @@ img {
   background: var(--paper);
 }
 
+.model-examples-note {
+  max-width: 980px;
+  margin: 0 0 92px auto;
+  padding: 30px 34px;
+  border-left: 5px solid var(--red);
+  border-radius: 0 18px 18px 0;
+  background: var(--white);
+  box-shadow: 0 16px 50px rgba(22, 33, 81, .06);
+}
+
+.model-examples-note p {
+  margin: 0;
+  color: var(--navy);
+  font-size: clamp(20px, 2.3vw, 32px);
+  font-weight: 560;
+  line-height: 1.25;
+  letter-spacing: -.025em;
+}
+
 .rfm-lapsed__header {
   display: grid;
   grid-template-columns: 1.35fr .65fr;
@@ -3552,6 +3571,7 @@ img {
   .model-governance__formula span { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.18); }
   .model-governance__formula i { width: auto; height: 42px; display: grid; place-items: center; transform: rotate(90deg); }
   .rfm-lapsed { padding-top: 100px; padding-bottom: 110px; }
+  .model-examples-note { margin-bottom: 66px; padding: 24px 22px; }
   .lapsed-segments { grid-template-columns: 1fr; margin-top: 70px; }
   .lapsed-segments > * { min-height: 200px; }
   .lapsed-process { grid-template-columns: 1fr; margin-top: 72px; }

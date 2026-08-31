@@ -1086,6 +1086,9 @@ export default function Home() {
       </section>
 
       <section className="rfm-lapsed section" id="rfm-lapsed">
+        <div className="model-examples-note" data-reveal>
+          <p>Qui vengono illustrati due modelli esemplificativi, dettagliati nell’allegato alla presentazione.</p>
+        </div>
         <div className="section-kicker" data-reveal>
           <span>3.3</span>
           <p>Un esempio concreto · Modello A</p>

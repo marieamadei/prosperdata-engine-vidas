@@ -123,6 +123,7 @@ test("server-renders the corrected VIDAS proposal", async () => {
   assert.match(html, />9<\/strong><span>organizzazioni<\/span><p>Modellistica Lapsed/);
   assert.match(html, /Il modello Lapsed supera la selezione interna/);
   assert.match(html, /Propensione al ritorno · Priorità 1 \/ Priorità 2/);
+  assert.match(html, /Qui vengono illustrati due modelli esemplificativi, dettagliati nell’allegato alla presentazione/);
   assert.doesNotMatch(html, /Propensione al ritorno P1 \/ P2/);
   assert.match(html, /1,82%/);
   assert.match(html, /\+56,9%/);
