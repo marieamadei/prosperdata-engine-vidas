@@ -683,7 +683,7 @@ export default function Home() {
         </div>
         <div className="proposal-phases" data-reveal>
           {[
-            ["01", "Analisi & Assessment", "Capire cosa accade oggi", "KPI e obiettivi · database e strumenti · interviste · donor journey attuale · SWOT integrata"],
+            ["01", "Analisi & Assessment", "Capire cosa accade oggi", "KPI e obiettivi · processi di donor care · database e strumenti · interviste · donor journey attuale · SWOT integrata"],
             ["02", "Modelli & Segmenti", "Costruire nuove letture", "Sei modelli DataProsper · integrazione delle sovrapposizioni · KPI per segmento"],
             ["03", "Implementazione su CRM", "Trasformare insight in operatività", "Campi e regole Mentor · dashboard Qlik · audience · pilot · formazione"],
             ["04", "Monitoraggio Continuo", "Imparare dai risultati", "Performance · lift · drift · calibrazione · governance · handover"],
@@ -710,15 +710,30 @@ export default function Home() {
           <p>Fase 1 · Assessment e fotografia del donor journey attuale</p>
         </div>
         <div className="phase-one__header" data-reveal>
-          <h2>Prima comprendiamo<br />dati, obiettivi e lavoro reale.</h2>
-          <p>L’assessment mette in relazione qualità e dimensioni del database, KPI attesi, informazioni disponibili e pratiche operative. Le interviste ai referenti VIDAS completano la lettura quantitativa e preparano una fotografia condivisa del donor journey attuale.</p>
+          <h2>Leggiamo dati, KPI<br />e lavoro reale.</h2>
+          <p>L’assessment mette in relazione qualità e dimensioni del database, KPI attuali e attesi, informazioni disponibili e pratiche operative. In parallelo analizziamo i processi di donor care per capire come VIDAS gestisce oggi la relazione: dalla presa in carico al follow-up, fino alla registrazione degli esiti.</p>
         </div>
 
         <div className="assessment-scope" data-reveal>
-          <article><span>01</span><strong>KPI e obiettivi</strong><p>Retention, upgrade, riattivazione e priorità di fundraising da rendere misurabili.</p></article>
+          <article><span>01</span><strong>KPI e obiettivi</strong><p>Definizioni, fonti, baseline, frequenze e responsabilità per retention, upgrade, riattivazione e fundraising.</p></article>
           <article><span>02</span><strong>Patrimonio informativo</strong><p>Donazioni, campagne, modalità di pagamento, canali e dati relazionali disponibili.</p></article>
-          <article><span>03</span><strong>Database e processi</strong><p>Dimensioni, qualità, struttura, procedure ETL e modalità di aggiornamento.</p></article>
-          <article><span>04</span><strong>Interviste VIDAS</strong><p>Fundraising, CRM, comunicazione e donor care: bisogni, vincoli e decisioni quotidiane.</p></article>
+          <article><span>03</span><strong>Processi di donor care</strong><p>Trigger, presa in carico, ruoli, passaggi tra team, follow-up, strumenti utilizzati ed esiti tracciati.</p></article>
+          <article><span>04</span><strong>Strumenti e flussi</strong><p>Database e procedure ETL. Interviste VIDAS con fundraising, CRM, comunicazione e donor care.</p></article>
+        </div>
+
+        <div className="donor-care-assessment" data-reveal>
+          <div className="donor-care-assessment__lead">
+            <span>FOCUS OPERATIVO · DONOR CARE</span>
+            <strong>Non osserviamo solo i touchpoint.<br />Ricostruiamo il processo.</strong>
+            <p>L’obiettivo è capire dove la relazione funziona, dove si interrompe e quali informazioni devono diventare KPI, segnali e regole per l’Engine.</p>
+          </div>
+          <div className="donor-care-assessment__steps" aria-label="Ambiti di analisi dei processi di donor care">
+            <article><span>01</span><strong>Segnale e ingresso</strong><p>Come nasce una richiesta o un’opportunità di relazione.</p></article>
+            <i aria-hidden="true">→</i>
+            <article><span>02</span><strong>Presa in carico</strong><p>Chi interviene, con quali strumenti, tempi e criteri.</p></article>
+            <i aria-hidden="true">→</i>
+            <article><span>03</span><strong>Esito e tracciamento</strong><p>Che cosa viene registrato e come alimenta le decisioni successive.</p></article>
+          </div>
         </div>
 
         <div className="illustrative-note" data-reveal>
@@ -911,10 +926,21 @@ export default function Home() {
             <span>3.1</span>
             <p>Il cuore della proposta · Architettura decisionale</p>
           </div>
-          <h2 data-reveal>I modelli osservano.<br />L’Engine decide.</h2>
+          <h2 data-reveal>I KPI definiscono cosa conta.<br />L’Engine decide come agire.</h2>
           <p data-reveal>
-            I sei modelli DataProsper analizzano il database da prospettive diverse. ProsperData Engine integra queste letture e indica, per ogni donatore, la priorità di azione e le ragioni che la determinano.
+            Nella fase iniziale analizziamo con VIDAS i KPI esistenti e quelli necessari: definizioni, fonti, baseline, frequenze di aggiornamento e responsabilità. Su questa base i sei modelli leggono il database; ProsperData Engine integra queste letture e produce score e label, indicando per ogni donatore la priorità di azione e le ragioni che la determinano.
           </p>
+          <div className="engine-kpi-bridge" data-reveal aria-label="Dall’analisi dei KPI all’attivazione dell’Engine">
+            <article>
+              <span>FASE 1 · ANALISI DEI KPI</span>
+              <strong>Obiettivi, formule, fonti, baseline, frequenze e owner.</strong>
+            </article>
+            <div aria-hidden="true"><small>CRITERI CONDIVISI</small><i>→</i></div>
+            <article>
+              <span>FASE 2 · PROSPERDATA ENGINE</span>
+              <strong>Score, label, priorità e azioni per ogni donatore.</strong>
+            </article>
+          </div>
         </div>
 
         <div className="engine-console section" data-tone={stage.tone}>
