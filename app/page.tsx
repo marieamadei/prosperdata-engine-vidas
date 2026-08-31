@@ -1508,9 +1508,49 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="vidas-commitment section" aria-labelledby="vidas-commitment-title">
+        <div className="section-kicker" data-reveal>
+          <span>6.2</span>
+          <p>Impegno di VIDAS</p>
+        </div>
+        <div className="vidas-commitment__header" data-reveal>
+          <div>
+            <h2 id="vidas-commitment-title">Un impegno distribuito.<br />Per validare insieme ciò che conta.</h2>
+            <p>Il coinvolgimento del team VIDAS accompagna le tre fasi con intensità diverse: più operativo nell’assessment, progressivamente focalizzato su supervisione e validazione.</p>
+          </div>
+          <div className="vidas-commitment__total">
+            <span>IMPEGNO COMPLESSIVO INDICATIVO</span>
+            <strong>≈ 130</strong>
+            <small>ore distribuite sulle tre fasi</small>
+          </div>
+        </div>
+        <div className="vidas-commitment__phases" data-reveal>
+          <article className="vidas-commitment__phase vidas-commitment__phase--primary">
+            <div><span>FASE 1</span><strong>≈ 70 ore</strong></div>
+            <h3>Assessment e processi attuali</h3>
+            <p>Ore distribuite nell’arco di tre mesi e su più risorse, con una persona dedicata per ciascuna area coinvolta.</p>
+            <ul>
+              <li>Partecipazione alle interviste</li>
+              <li>Descrizione dei processi attuali</li>
+              <li>Validazione delle informazioni acquisite</li>
+            </ul>
+          </article>
+          <article className="vidas-commitment__phase">
+            <div><span>FASE 2</span><strong>≈ 30 ore</strong></div>
+            <h3>Supervisione e validazione</h3>
+            <p>Confronto sugli output intermedi, verifica delle ipotesi e validazione di KPI, criteri e modelli.</p>
+          </article>
+          <article className="vidas-commitment__phase vidas-commitment__phase--blue">
+            <div><span>FASE 3</span><strong>≈ 30 ore</strong></div>
+            <h3>Supervisione dell’integrazione</h3>
+            <p>Presidio del raccordo con Mentor e Qlik, verifica dei flussi e validazione della messa a terra operativa.</p>
+          </article>
+        </div>
+      </section>
+
       <section className="governance section">
         <div className="section-kicker" data-reveal>
-          <span>6.4</span>
+          <span>6.3</span>
           <p>Come si lavora ogni mese</p>
         </div>
         <h2 data-reveal>Ogni mese VIDAS vede<br />cosa cambia e decide cosa fare.</h2>

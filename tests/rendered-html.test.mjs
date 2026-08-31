@@ -96,6 +96,16 @@ test("server-renders the corrected VIDAS proposal", async () => {
   assert.doesNotMatch(html, /6\.1 · IMPLEMENTAZIONE SU CRM/);
   assert.match(html, />6\.1<\/span><p>Cronoprogramma · Gantt di progetto/);
   assert.doesNotMatch(html, />6\.2<\/span><p>Cronoprogramma · Gantt di progetto/);
+  assert.match(html, />6\.2<\/span><p>Impegno di VIDAS/);
+  assert.match(html, /IMPEGNO COMPLESSIVO INDICATIVO/);
+  assert.match(html, /≈ 130/);
+  assert.match(html, /≈ 70 ore/);
+  assert.match(html, /Partecipazione alle interviste/);
+  assert.match(html, /Descrizione dei processi attuali/);
+  assert.match(html, /Validazione delle informazioni acquisite/);
+  assert.match(html, /Supervisione dell’integrazione/);
+  assert.match(html, />6\.3<\/span><p>Come si lavora ogni mese/);
+  assert.doesNotMatch(html, />6\.4<\/span><p>Come si lavora ogni mese/);
   assert.match(html, /Il monitoraggio non chiude il progetto: riapre il ciclo/);
   assert.match(html, /HVD non è una fascia economica/);
   assert.match(html, /LA STRATEGIA IN QUATTRO PASSAGGI/);
