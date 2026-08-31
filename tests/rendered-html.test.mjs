@@ -47,6 +47,7 @@ test("server-renders the corrected VIDAS proposal", async () => {
   assert.match(html, /Sette capitoli/);
   assert.match(html, /Un’unica progressione/);
   assert.match(html, /Il sistema nel quotidiano/);
+  assert.match(html, /Fase 3 · Il sistema entra nel lavoro quotidiano/);
   assert.doesNotMatch(html, /RFM Lapsed<\/strong><small>Un esempio concreto/);
   assert.match(html, /Comprendere\. Modellare/);
   assert.match(html, /Attivare\. Migliorare/);

@@ -1394,7 +1394,7 @@ export default function Home() {
       <section className="method implementation operations section" id="operations">
         <div className="section-kicker" data-reveal>
           <span>05</span>
-          <p>Il sistema entra nel lavoro quotidiano</p>
+          <p>Fase 3 · Il sistema entra nel lavoro quotidiano</p>
         </div>
         <div className="implementation__header" data-reveal>
           <h2>Il sistema entra<br />nel lavoro quotidiano.</h2>
