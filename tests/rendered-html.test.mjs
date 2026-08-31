@@ -90,7 +90,12 @@ test("server-renders the corrected VIDAS proposal", async () => {
   assert.match(html, /LABEL E SCORE/);
   assert.match(html, /Mentor ed Engine si alimentano reciprocamente/);
   assert.match(html, /ETL · DATI/);
-  assert.match(html, /MONITORAGGIO · CICLO DI APPRENDIMENTO/);
+  assert.match(html, /I risultati dell’Engine entrano in Mentor\. Qlik li rende leggibili\./);
+  assert.match(html, /I dati elaborati da ProsperData Engine vengono condivisi in Mentor sotto forma di label, score, audience e alert utilizzabili dal team VIDAS/);
+  assert.doesNotMatch(html, /MONITORAGGIO · CICLO DI APPRENDIMENTO/);
+  assert.doesNotMatch(html, /6\.1 · IMPLEMENTAZIONE SU CRM/);
+  assert.match(html, />6\.1<\/span><p>Cronoprogramma · Gantt di progetto/);
+  assert.doesNotMatch(html, />6\.2<\/span><p>Cronoprogramma · Gantt di progetto/);
   assert.match(html, /Il monitoraggio non chiude il progetto: riapre il ciclo/);
   assert.match(html, /HVD non è una fascia economica/);
   assert.match(html, /LA STRATEGIA IN QUATTRO PASSAGGI/);

@@ -3910,6 +3910,19 @@ img {
   letter-spacing: -.05em;
 }
 
+.system-map__band-heading--learning {
+  grid-template-columns: minmax(0, 1.15fr) minmax(300px, .85fr);
+  align-items: end;
+}
+
+.system-map__band-heading--learning > p {
+  max-width: 520px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
 .system-map__design-flow {
   display: grid;
   grid-template-columns: 1fr 92px 1fr 92px 1fr;
@@ -4059,6 +4072,9 @@ img {
 
 .system-map__learning-flow article { min-height: 200px; background: rgba(255, 255, 255, .82); }
 .system-map__learning-flow > i { display: grid; place-items: center; color: var(--blue); font-size: 19px; font-style: normal; }
+.system-map__qlik { color: var(--white); background: var(--blue) !important; }
+.system-map__qlik > span { color: var(--white) !important; }
+.system-map__qlik > p { color: rgba(255, 255, 255, .7) !important; }
 .system-map__revision { color: var(--white); background: var(--blue) !important; }
 .system-map__revision > span { color: var(--yellow) !important; }
 .system-map__revision > p { color: rgba(255, 255, 255, .65) !important; }
@@ -4550,6 +4566,7 @@ img {
   .system-map { margin-top: 66px; }
   .system-map__band { padding: 28px 22px; }
   .system-map__band-heading,
+  .system-map__band-heading--learning,
   .system-map__design-flow,
   .system-map__runtime-flow,
   .system-map__learning-flow { grid-template-columns: 1fr; }

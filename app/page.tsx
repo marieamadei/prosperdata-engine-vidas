@@ -1451,14 +1451,14 @@ export default function Home() {
           </section>
 
           <section className="system-map__band system-map__band--learning" aria-labelledby="system-learning-title">
-            <div className="system-map__band-heading">
-              <span>MONITORAGGIO · CICLO DI APPRENDIMENTO</span>
-              <h3 id="system-learning-title">I risultati rientrano nel sistema.</h3>
+            <div className="system-map__band-heading system-map__band-heading--learning">
+              <h3 id="system-learning-title">I risultati dell’Engine entrano in Mentor. Qlik li rende leggibili.</h3>
+              <p>I dati elaborati da ProsperData Engine vengono condivisi in Mentor sotto forma di label, score, audience e alert utilizzabili dal team VIDAS. Qlik rende KPI e risultati leggibili, alimentando un monitoraggio continuo.</p>
             </div>
             <div className="system-map__learning-flow">
               <article><span>01</span><strong>Risultati in Mentor</strong><p>Attivazioni, risposte ed esiti operativi.</p></article>
               <i aria-hidden="true">→</i>
-              <article><span>02</span><strong>Qlik</strong><p>Dashboard, KPI e scostamenti.</p></article>
+              <article className="system-map__qlik"><span>02</span><strong>Qlik</strong><p>Dashboard, KPI e scostamenti.</p></article>
               <i aria-hidden="true">→</i>
               <article><span>03</span><strong>Monitoraggio</strong><p>Lettura delle performance e dei segnali.</p></article>
               <i aria-hidden="true">→</i>
@@ -1472,32 +1472,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="method implementation delivery-section section" id="delivery">
-        <div className="section-kicker" data-reveal>
-          <span>06</span>
-          <p>La delivery</p>
-        </div>
-        <div className="method__headline" data-reveal>
-          <span>6.1 · IMPLEMENTAZIONE SU CRM</span>
-          <h2>I risultati dell’Engine<br />entrano in Mentor.</h2>
-          <h2 className="outline">Qlik li rende leggibili.</h2>
-          <p>I dati elaborati da ProsperData Engine vengono condivisi in Mentor sotto forma di label, score, audience e alert utilizzabili dal team VIDAS. Qlik rende KPI e risultati leggibili, alimentando un monitoraggio continuo.</p>
-        </div>
-        <div className="mentor-build" data-reveal>
-          <article><span>01</span><strong>Specifiche e KPI condivisi</strong><p>Obiettivi, campi, soglie, regole e frequenze di aggiornamento.</p><small>Output · specifiche approvate</small></article>
-          <article><span>02</span><strong>Engine e prototipazione</strong><p>ETL, modelli, score, label e controlli di qualità su dati reali.</p><small>Output · modello verificato</small></article>
-          <article><span>03</span><strong>Integrazione in Mentor</strong><p>Audience, alert, estrazioni e strumenti operativi testati con VIDAS.</p><small>Output · rilascio validato</small></article>
-          <article><span>04</span><strong>Monitoraggio in Qlik</strong><p>KPI per segmento e journey, risultati e segnali da correggere.</p><small>Output · dashboard condivisa</small></article>
-        </div>
-        <div className="mentor-handoff" data-reveal>
-          <span>SPECIFICHE</span><i>→</i><span>ENGINE</span><i>→</i><span>LABEL, SCORE E AUDIENCE IN MENTOR</span><i>→</i><strong>KPI IN QLIK</strong>
-        </div>
-      </section>
-
-      <section className="roadmap">
+      <section className="roadmap" id="delivery">
         <div className="section roadmap__header">
           <div className="section-kicker section-kicker--light" data-reveal>
-            <span>6.2</span>
+            <span>6.1</span>
             <p>Cronoprogramma · Gantt di progetto</p>
           </div>
           <h2 data-reveal>Dal setup<br />al monitoraggio continuo.</h2>
