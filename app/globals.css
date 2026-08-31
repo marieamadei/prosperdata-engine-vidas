@@ -1728,8 +1728,8 @@ img {
 
 .model-index button small {
   font-size: 8px;
-  text-transform: uppercase;
-  letter-spacing: .1em;
+  line-height: 1.35;
+  letter-spacing: .04em;
 }
 
 .model-index button.is-active {
@@ -1820,6 +1820,31 @@ img {
   margin: 0;
   font-size: 16px;
   line-height: 1.65;
+}
+
+.model-detail__objective {
+  display: grid;
+  grid-template-columns: 130px minmax(0, 1fr);
+  gap: 24px;
+  align-items: center;
+  margin-top: 42px;
+  padding: 22px 26px;
+  border-left: 5px solid var(--model-active);
+  border-radius: 0 14px 14px 0;
+  background: color-mix(in srgb, var(--model-active) 9%, #f2f3f4);
+}
+
+.model-detail__objective span {
+  color: var(--model-active);
+  font-size: 8px;
+  font-weight: 850;
+  letter-spacing: .14em;
+}
+
+.model-detail__objective strong {
+  font-size: clamp(21px, 2.5vw, 36px);
+  line-height: 1.05;
+  letter-spacing: -.045em;
 }
 
 .model-detail__metric {
@@ -3540,6 +3565,7 @@ img {
   .model-detail { min-height: 690px; padding: 32px 26px; }
   .model-detail__topline { flex-direction: column; gap: 8px; }
   .model-detail h3 { margin-top: 42px; }
+  .model-detail__objective { grid-template-columns: 1fr; gap: 12px; }
   .model-detail__metric { grid-template-columns: 1fr; }
   .model-detail__metric span { max-width: 240px; }
   .model-governance { grid-template-columns: 1fr; margin-top: 70px; padding-top: 54px; }

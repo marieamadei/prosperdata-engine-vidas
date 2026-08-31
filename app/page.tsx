@@ -54,6 +54,7 @@ const teamModels = [
     code: "A",
     name: "RFM Avanzata",
     role: "Modello fondativo",
+    objective: "Redemption e riattivazione",
     thesis: "Recency, Frequency e Monetary restano la base, ma vengono aperte, prioritizzate e integrate con lifecycle e comportamento per generare segmenti dinamici.",
     metric: "RFM+",
     metricLabel: "Da fascia economica a comportamento osservabile",
@@ -65,6 +66,7 @@ const teamModels = [
     code: "B",
     name: "Propensione ai Regolari",
     role: "Scoring di conversione",
+    objective: "Conversione e retention",
     thesis: "Il modello distingue con chiarezza chi è già regolare — perché dona attraverso un metodo di pagamento ricorrente — dai donatori one-off da accompagnare alla conversione. La propensione non viene dedotta solo da monetary e frequency: il segnale centrale è la fedeltà dimostrata nel tempo.",
     metric: "FEDELTÀ",
     metricLabel: "Continuità, stabilità e risposta alla relazione guidano lo score; importo e frequenza restano segnali da contestualizzare.",
@@ -76,6 +78,7 @@ const teamModels = [
     code: "C",
     name: "Engagement Online",
     role: "Digitalizzazione e multicanalità",
+    objective: "Ottimizzazione e sinergia",
     thesis: "Il database viene letto per reale raggiungibilità e comportamento, distinguendo Solo Postale, Solo Digital, Multicanale Caldo e Digital Silente.",
     metric: "+8.600",
     metricLabel: "donatori digitali attivi nel 2025 secondo l’analisi del team",
@@ -87,6 +90,7 @@ const teamModels = [
     code: "D",
     name: "Modello HVD",
     role: "High Value Donor",
+    objective: "Arricchimento e upgrade discovery",
     thesis: "Capacità contributiva, segnali relazionali e comportamento donativo convergono in un indice di potenziale unico e riproducibile.",
     metric: "96–99°",
     metricLabel: "percentile proposto per il cluster HVD attivo",
@@ -98,6 +102,7 @@ const teamModels = [
     code: "E",
     name: "Lasciti Lookalike",
     role: "Propensione di lungo periodo",
+    objective: "Profilazione e trend discovery",
     thesis: "Il profilo di chi ha già scelto un lascito diventa il riferimento per trovare somiglianze anagrafiche, geografiche e di fedeltà nella base VIDAS.",
     metric: "149.107",
     metricLabel: "donatori unici dal 2015 disponibili come patrimonio storico",
@@ -109,6 +114,7 @@ const teamModels = [
     code: "F",
     name: "Memorie",
     role: "Segmentazione relazionale",
+    objective: "Targetizzazione ottimizzata",
     thesis: "Le donazioni legate ad assistiti e persone care richiedono una lettura dedicata: il contesto della relazione guida esclusioni, caring e linguaggio.",
     metric: "1:1",
     metricLabel: "una relazione sensibile, non un segmento promozionale",
@@ -1007,7 +1013,7 @@ export default function Home() {
           <div className="models-section__headline" data-reveal>
             <h2>Sei modelli specialistici.<br />Un’unica regia per VIDAS.</h2>
             <p>
-              La proposta DataProsper articola sei letture complementari del donatore. ProsperData Engine non le sostituisce: governa le sovrapposizioni, assegna le priorità e trasforma ogni modello in una decisione operativa.
+              La proposta DataProsper articola sei letture complementari del donatore, ciascuna associata a un obiettivo operativo esplicito. ProsperData Engine governa le sovrapposizioni, assegna le priorità e trasforma i risultati dei modelli in decisioni attivabili.
             </p>
           </div>
         </div>
@@ -1025,7 +1031,7 @@ export default function Home() {
               >
                 <span>{item.code}</span>
                 <strong>{item.name}</strong>
-                <small>{item.role}</small>
+                <small>Obiettivo · {item.objective}</small>
               </button>
             ))}
           </div>
@@ -1033,10 +1039,14 @@ export default function Home() {
           <article className="model-detail" role="tabpanel" data-model-tone={model.tone} data-model-code={model.code}>
             <div className="model-detail__topline">
               <span>FASE 2 · MODELLO {model.code}</span>
-              <small>Proposta DataProsper per VIDAS</small>
+              <small>{model.role}</small>
             </div>
             <h3>{model.code}. {model.name}</h3>
             <p className="model-detail__thesis">{model.thesis}</p>
+            <div className="model-detail__objective">
+              <span>OBIETTIVO</span>
+              <strong>{model.objective}</strong>
+            </div>
             <div className="model-detail__metric">
               <strong>{model.metric}</strong>
               <span>{model.metricLabel}</span>

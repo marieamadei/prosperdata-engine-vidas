@@ -66,6 +66,12 @@ test("server-renders the corrected VIDAS proposal", async () => {
   assert.match(html, /Obiettivi, formule, fonti, baseline, frequenze e owner/);
   assert.match(html, /FASE 2 · PROSPERDATA ENGINE/);
   assert.match(html, /la priorità di azione e le ragioni che la determinano/);
+  assert.match(html, /Redemption e riattivazione/);
+  assert.match(html, /Conversione e retention/);
+  assert.match(html, /Ottimizzazione e sinergia/);
+  assert.match(html, /Arricchimento e upgrade discovery/);
+  assert.match(html, /Profilazione e trend discovery/);
+  assert.match(html, /Targetizzazione ottimizzata/);
   assert.doesNotMatch(html, /non dispone di una funzione interna dedicata/);
   assert.doesNotMatch(html, /Il brief definisce una progressione chiara/);
   assert.doesNotMatch(html, /La proposta in sette passaggi/);
