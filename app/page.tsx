@@ -1677,7 +1677,7 @@ export default function Home() {
               <h3>Il modello Lapsed supera la selezione interna.</h3>
               <p>Su donatori inattivi da oltre 60 mesi, la selezione DataProsper è stata confrontata con il modello già utilizzato dall’organizzazione.</p>
             </div>
-            <div className="case-history__metrics">
+            <div className="case-history__metrics" role="group" aria-label="Tre risultati collegati dello stesso confronto">
               <div><strong>1,82%</strong><span>response rate medio</span><small>vs 1,16% della selezione interna</small></div>
               <div><strong>+56,9%</strong><span>riattivazioni stimate</span><small>a parità di confronto</small></div>
               <div><strong>+35%</strong><span>raccolta</span><small>rispetto alla selezione standard</small></div>

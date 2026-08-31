@@ -126,6 +126,7 @@ test("server-renders the corrected VIDAS proposal", async () => {
   assert.doesNotMatch(html, /Propensione al ritorno P1 \/ P2/);
   assert.match(html, /1,82%/);
   assert.match(html, /\+56,9%/);
+  assert.match(html, /Tre risultati collegati dello stesso confronto/);
   assert.match(html, /Dal prospect al break-even/);
   assert.match(html, /245\.000/);
   assert.match(html, /18–24/);

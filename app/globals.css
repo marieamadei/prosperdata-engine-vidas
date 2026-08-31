@@ -4415,17 +4415,22 @@ img {
 
 .case-history__metrics {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
+  grid-template-columns: .9fr 1.1fr .9fr;
+  gap: 0;
   margin-top: auto;
-  padding-top: 66px;
+  overflow: hidden;
+  border-top: 3px solid var(--cyan);
+  border-radius: 0 0 18px 18px;
+  background: rgba(255, 255, 255, .07);
 }
 
 .case-history__metrics > div {
   min-width: 0;
-  padding: 22px 18px;
-  border-top: 3px solid var(--cyan);
-  background: rgba(255, 255, 255, .07);
+  padding: 24px 18px;
+}
+
+.case-history__metrics > div + div {
+  border-left: 1px solid rgba(255, 255, 255, .15);
 }
 
 .case-history__metrics strong,
@@ -4435,7 +4440,8 @@ img {
 }
 
 .case-history__metrics strong {
-  font-size: clamp(38px, 3.8vw, 58px);
+  white-space: nowrap;
+  font-size: clamp(34px, 3.2vw, 52px);
   line-height: .9;
   letter-spacing: -.06em;
 }
@@ -4748,8 +4754,9 @@ img {
   .case-history-intro { gap: 18px; margin-top: 92px; }
   .case-history { min-height: 0; padding: 30px 24px; }
   .case-history__heading h3 { margin-top: 32px; }
-  .case-history__metrics { grid-template-columns: 1fr; margin-top: 54px; padding-top: 0; }
+  .case-history__metrics { grid-template-columns: 1fr; margin-top: 54px; }
   .case-history__metrics > div { min-height: 150px; }
+  .case-history__metrics > div + div { border-left: 0; border-top: 1px solid rgba(255, 255, 255, .15); }
   .case-history__path { grid-template-columns: 1fr; margin-top: 54px; padding-top: 0; }
   .case-history__path > i { text-align: center; transform: rotate(90deg); }
   .experience-capabilities { gap: 28px; padding: 30px 24px; }
