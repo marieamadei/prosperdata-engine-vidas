@@ -1077,10 +1077,10 @@ export default function Home() {
             <strong>La complessità dell’integrazione.</strong>
           </div>
           <p>
-            Un donatore può essere contemporaneamente RFM Middle, ad alta propensione alla regolarizzazione e digitalmente ingaggiato. ProsperData Engine combina queste letture, stabilisce la priorità e restituisce un solo next best action spiegabile.
+            Un donatore può essere contemporaneamente RFM Middle, ad alta propensione alla regolarizzazione e digitalmente ingaggiato. ProsperData Engine combina queste letture, stabilisce le priorità e restituisce le informazioni utili per le next best actions.
           </p>
-          <div className="model-governance__formula" aria-label="Sei modelli producono una priorità e una decisione">
-            <span>6 MODELLI</span><i>→</i><span>1 PRIORITÀ</span><i>→</i><strong>1 DECISIONE</strong>
+          <div className="model-governance__formula" aria-label="Sei modelli definiscono le priorità e producono informazioni utili per le next best actions">
+            <span>6 MODELLI</span><i>→</i><span>PRIORITÀ</span><i>→</i><strong>NEXT BEST ACTIONS</strong>
           </div>
         </div>
       </section>
