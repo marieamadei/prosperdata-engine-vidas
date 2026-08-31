@@ -88,6 +88,10 @@ test("server-renders the corrected VIDAS proposal", async () => {
   assert.match(html, /entrano in Mentor/);
   assert.match(html, /ASSESSMENT VIDAS/);
   assert.match(html, /LABEL E SCORE/);
+  assert.match(html, /Mentor ed Engine si alimentano reciprocamente/);
+  assert.match(html, /ETL · DATI/);
+  assert.match(html, /MONITORAGGIO · CICLO DI APPRENDIMENTO/);
+  assert.match(html, /Il monitoraggio non chiude il progetto: riapre il ciclo/);
   assert.match(html, /HVD non è una fascia economica/);
   assert.match(html, /LA STRATEGIA IN QUATTRO PASSAGGI/);
   assert.match(html, /Network aziendale/);
@@ -135,6 +139,7 @@ test("keeps the source reconciled with the team review", async () => {
   assert.match(page, /ProsperData/);
   assert.match(page, /VIDAS/);
   assert.doesNotMatch(page, /journey-kpi__systems/);
+  assert.doesNotMatch(page, /operating-architecture|operating-loop/);
   assert.match(page, /metric: "FEDELTÀ"/);
   assert.match(page, /AREE DEL MODELLO CHE GENERANO LO SCORE/);
   assert.doesNotMatch(page, /metric: "81%"/);

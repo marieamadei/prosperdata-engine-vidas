@@ -1398,41 +1398,77 @@ export default function Home() {
         </div>
         <div className="implementation__header" data-reveal>
           <h2>Il sistema entra<br />nel lavoro quotidiano.</h2>
-          <p>ProsperData Engine non sostituisce l’ecosistema VIDAS. Si inserisce tra assessment, patrimonio informativo e operatività: elabora dati e modelli, produce label e priorità, alimenta Mentor e rende i risultati monitorabili in Qlik.</p>
+          <p>Il sistema non procede in linea retta. Mentor è insieme fonte dei dati e ambiente di attivazione: invia il patrimonio informativo all’Engine tramite ETL e riceve label, score, audience e alert. Qlik legge i risultati e chiude il ciclo, riportando le revisioni verso assessment, KPI e modelli.</p>
         </div>
-        <div className="operating-architecture" data-reveal>
-          <article>
-            <span>01 · ASSESSMENT VIDAS</span>
-            <h3>Definire ciò che conta.</h3>
-            <p>KPI e obiettivi, informazioni disponibili, dimensioni del database e pratiche operative.</p>
-          </article>
-          <i aria-hidden="true">→</i>
-          <article>
-            <span>02 · SVILUPPO DEL KPI</span>
-            <h3>Tradurre l’obiettivo in modello.</h3>
-            <p>Procedure ETL, analisi del modello, prototipazione e criteri di validazione.</p>
-          </article>
-          <i aria-hidden="true">→</i>
-          <article className="operating-architecture__engine">
-            <span>03 · PROSPERDATA ENGINE</span>
-            <h3>Elaborare e assegnare.</h3>
-            <p>Data quality, applicazione dei modelli, score, regole e label operative per ogni record.</p>
-          </article>
-          <i aria-hidden="true">→</i>
-          <article>
-            <span>04 · MENTOR CRM</span>
-            <h3>Attivare il patrimonio informativo.</h3>
-            <p>Audience, alert, estrazioni e strumenti per fundraising e donor care.</p>
-          </article>
-          <i aria-hidden="true">→</i>
-          <article className="operating-architecture__qlik">
-            <span>05 · QLIK</span>
-            <h3>Leggere e monitorare.</h3>
-            <p>Dashboard, KPI e risultati alimentano il ciclo successivo di assessment.</p>
-          </article>
-        </div>
-        <div className="operating-loop" data-reveal>
-          <span>ASSESSMENT</span><i>→</i><span>ENGINE</span><i>→</i><span>LABEL E SCORE</span><i>→</i><span>MENTOR</span><i>→</i><strong>QLIK</strong><i>↺</i><span>MONITORAGGIO</span>
+        <div className="system-map" data-reveal aria-label="Architettura ciclica tra assessment, KPI, Mentor, ProsperData Engine e Qlik">
+          <section className="system-map__band system-map__band--design" aria-labelledby="system-design-title">
+            <div className="system-map__band-heading">
+              <span>FASE 1–2 · PROGETTAZIONE</span>
+              <h3 id="system-design-title">Dagli obiettivi ai criteri del modello.</h3>
+            </div>
+            <div className="system-map__design-flow">
+              <article>
+                <span>FASE 1 · ASSESSMENT VIDAS</span>
+                <strong>Definire ciò che conta.</strong>
+                <p>KPI e obiettivi, informazioni disponibili, dimensioni del database, donor care e pratiche operative.</p>
+              </article>
+              <div className="system-map__arrow" aria-hidden="true"><small>DEFINISCE</small><i>→</i></div>
+              <article>
+                <span>FASE 2 · KPI E MODELLI</span>
+                <strong>Tradurre gli obiettivi.</strong>
+                <p>Analisi del modello, procedure ETL, prototipazione e criteri di validazione.</p>
+              </article>
+              <div className="system-map__arrow" aria-hidden="true"><small>PRODUCE</small><i>→</i></div>
+              <article className="system-map__criteria">
+                <span>INPUT PER L’ENGINE</span>
+                <strong>Criteri e prototipi validati.</strong>
+                <p>Le regole definite nelle prime due fasi guidano le elaborazioni successive.</p>
+              </article>
+            </div>
+          </section>
+
+          <section className="system-map__band system-map__band--runtime" aria-labelledby="system-runtime-title">
+            <div className="system-map__band-heading system-map__band-heading--light">
+              <span>FASE 3 · CICLO OPERATIVO</span>
+              <h3 id="system-runtime-title">Mentor ed Engine si alimentano reciprocamente.</h3>
+            </div>
+            <div className="system-map__runtime-flow">
+              <article className="system-map__mentor">
+                <span>MENTOR CRM</span>
+                <strong>Patrimonio e operatività.</strong>
+                <ul><li>Dati e storico</li><li>Audience e alert</li><li>Estrazioni e donor care</li></ul>
+              </article>
+              <div className="system-map__exchange" aria-label="Scambio bidirezionale tra Mentor e ProsperData Engine">
+                <div><span>ETL · DATI</span><i aria-hidden="true">→</i></div>
+                <div><i aria-hidden="true">←</i><span>LABEL E SCORE · AUDIENCE E ALERT</span></div>
+              </div>
+              <article className="system-map__engine">
+                <span>PROSPERDATA ENGINE</span>
+                <strong>Elaborare e assegnare.</strong>
+                <ul><li>Data quality</li><li>Applicazione dei modelli</li><li>Score, regole e label</li></ul>
+              </article>
+            </div>
+          </section>
+
+          <section className="system-map__band system-map__band--learning" aria-labelledby="system-learning-title">
+            <div className="system-map__band-heading">
+              <span>MONITORAGGIO · CICLO DI APPRENDIMENTO</span>
+              <h3 id="system-learning-title">I risultati rientrano nel sistema.</h3>
+            </div>
+            <div className="system-map__learning-flow">
+              <article><span>01</span><strong>Risultati in Mentor</strong><p>Attivazioni, risposte ed esiti operativi.</p></article>
+              <i aria-hidden="true">→</i>
+              <article><span>02</span><strong>Qlik</strong><p>Dashboard, KPI e scostamenti.</p></article>
+              <i aria-hidden="true">→</i>
+              <article><span>03</span><strong>Monitoraggio</strong><p>Lettura delle performance e dei segnali.</p></article>
+              <i aria-hidden="true">→</i>
+              <article className="system-map__revision"><span>04 · REVISIONI</span><strong>Assessment, KPI e modelli</strong><p>Le evidenze aggiornano criteri, priorità e ciclo successivo.</p></article>
+            </div>
+            <div className="system-map__return">
+              <i aria-hidden="true">↺</i>
+              <div><strong>Il monitoraggio non chiude il progetto: riapre il ciclo.</strong><p>Ogni revisione alimenta nuovamente Fase 1, Fase 2 e ProsperData Engine.</p></div>
+            </div>
+          </section>
         </div>
       </section>
 
