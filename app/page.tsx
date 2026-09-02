@@ -1529,7 +1529,7 @@ export default function Home() {
           </div>
           <h2 data-reveal>Dal setup<br />al monitoraggio continuo.</h2>
           <p data-reveal>Febbraio 2027 - dicembre 2028</p>
-          <p className="roadmap__budget-note" data-reveal>Calendario proposto: attività di consulenza da febbraio a settembre 2027; agosto come finestra di validazione. Sviluppo Qlik e monitoraggio continuo sono da dimensionare e quotare separatamente. Date e ripartizione economica restano da validare con Fiorenza e VIDAS.</p>
+          <p className="roadmap__budget-note" data-reveal>Calendario proposto: attività di consulenza da febbraio a settembre 2027; agosto come finestra di validazione. Sviluppo Qlik e monitoraggio continuo sono da dimensionare e quotare separatamente.</p>
         </div>
         <div className="gantt section" data-reveal>
           <div className="gantt__months" aria-hidden="true" style={{ gridTemplateColumns: `330px repeat(${ganttMonths.length}, minmax(54px, 1fr))` }}>
@@ -1791,7 +1791,7 @@ export default function Home() {
         </div>
         <div className="investment__headline" data-reveal>
           <h2 id="budget-title">Attività, tempi<br />e investimento.</h2>
-          <p>La base di consulenza di 90.000 euro è articolata per attività e mesi di lavoro. La ripartizione qui presentata è una proposta da validare con Fiorenza prima della definizione dell’offerta economica finale.</p>
+          <p>La base di consulenza di 90.000 euro è articolata per attività e mesi di lavoro. Per ogni fase sono indicati gli interventi, gli output previsti e l’investimento corrispondente.</p>
         </div>
         <div className="investment__budget" data-reveal>
           <div>
@@ -1801,8 +1801,8 @@ export default function Home() {
           </div>
           <div>
             <span>RIPARTIZIONE PROPOSTA</span>
-            <h3>Da validare<br />con Fiorenza.</h3>
-            <p>Sette attività distribuite su tre fasi. Il dettaglio descrive lavoro e output previsti, senza esporre il conteggio delle ore interne.</p>
+            <h3>Tre fasi.<br />Sette attività.</h3>
+            <p>Il dettaglio collega ogni attività al periodo di lavoro, agli output previsti e alla relativa quota di investimento.</p>
           </div>
         </div>
         <div className="budget-phases">
@@ -1829,7 +1829,7 @@ export default function Home() {
         </div>
         <div className="budget-total" data-reveal><span>Totale consulenza proposta</span><strong>{formatFee(budgetTotal)}</strong></div>
         <div className="budget-conditions" data-reveal>
-          <h3>Perimetro e condizioni da confermare</h3>
+          <h3>Perimetro e condizioni</h3>
           <p><strong>Qlik e monitoraggio continuo.</strong> Nell’ipotesi di budget sono esclusi dai 90.000 euro: saranno quotati separatamente, a pacchetto o su base oraria, dopo la definizione delle esigenze.</p>
           <p><strong>Integrazione Mentor.</strong> Le modalità tecniche, le dipendenze dal gestore del CRM e l’eventuale connettore saranno concordati in fase progettuale.</p>
           <p><strong>Condizioni economiche.</strong> Licenze, servizi di terzi, spese vive, scadenze di pagamento e perimetro esecutivo saranno precisati nell’offerta finale. I periodi indicano quando si svolge il lavoro, non un piano di fatturazione.</p>

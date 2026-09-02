@@ -143,7 +143,10 @@ test("server-renders the corrected VIDAS proposal", async () => {
   assert.doesNotMatch(html, /deliverables-recap/);
   assert.match(html, /€ 90\.000/);
   assert.match(html, /RIPARTIZIONE PROPOSTA/);
-  assert.match(html, /Da validare<br\s*\/>con Fiorenza/);
+  assert.match(html, /Tre fasi\.<br\s*\/>Sette attività\./);
+  assert.doesNotMatch(html, /da validare/i);
+  assert.doesNotMatch(html, /con Fiorenza/);
+  assert.doesNotMatch(html, /conteggio delle ore interne/);
   assert.match(html, /€ 20\.500/);
   assert.match(html, /€ 56\.250/);
   assert.match(html, /€ 13\.250/);
