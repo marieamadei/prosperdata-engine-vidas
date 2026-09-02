@@ -309,7 +309,7 @@ const ganttRows = [
     title: "Assessment",
     detail: "KPI, fonti disponibili, database, interviste e baseline",
     start: 0,
-    span: 3,
+    span: 1,
     tone: "cyan",
   },
   {
@@ -317,15 +317,15 @@ const ganttRows = [
     title: "Fotografia donor journey",
     detail: "Target, canali, campagne e pressione",
     start: 0,
-    span: 3,
+    span: 2,
     tone: "cyan",
   },
   {
     phase: "F1",
     title: "SWOT",
     detail: "Sintesi quantitativa e qualitativa",
-    start: 0,
-    span: 3,
+    start: 2,
+    span: 1,
     tone: "cyan",
   },
   {
@@ -340,8 +340,8 @@ const ganttRows = [
     phase: "F2",
     title: "Elaborazione segmenti",
     detail: "Priorità, sovrapposizioni e KPI",
-    start: 3,
-    span: 3,
+    start: 4,
+    span: 2,
     tone: "blue",
   },
   {
@@ -356,8 +356,8 @@ const ganttRows = [
     phase: "F3",
     title: "Integrazione e automazione con Mentor",
     detail: "ETL, audience, alert, estrazioni e donor care",
-    start: 6,
-    span: 4,
+    start: 5,
+    span: 3,
     tone: "red",
   },
   {
@@ -377,6 +377,42 @@ const ganttRows = [
     tone: "green",
   },
 ];
+
+// Client-facing proposal from the budget worksheet. No internal hours or rates.
+const budgetPhases = [
+  {
+    number: "01", title: "Assessment e analisi", period: "Febbraio–aprile 2027",
+    activities: [
+      { title: "Assessment e analisi dei processi", period: "Febbraio 2027", fee: 5500,
+        detail: "Database, KPI, interviste e processi operativi e di donor care. Output: baseline condivisa e mappa dei processi." },
+      { title: "Fotografia del donor journey attuale", period: "Febbraio–marzo 2027", fee: 13250,
+        detail: "Touchpoint, campagne, pressione di contatto e passaggi tra canali. Output: journey attuale e principali evidenze." },
+      { title: "SWOT integrata e priorità", period: "Aprile 2027", fee: 1750,
+        detail: "Lettura congiunta di dati, processi, rischi e opportunità. Output: SWOT e priorità di intervento." },
+    ],
+  },
+  {
+    number: "02", title: "Modelli, segmenti e donor journey", period: "Aprile–settembre 2027",
+    activities: [
+      { title: "Analisi e prototipazione dei modelli", period: "Aprile–giugno 2027", fee: 26500,
+        detail: "Progettazione dei sei modelli, sovrapposizioni, score, label e priorità. Output: architettura dei modelli e prototipi." },
+      { title: "Elaborazione dei segmenti e KPI", period: "Giugno–luglio 2027", fee: 13250,
+        detail: "Segmenti operativi, motivazioni delle priorità, KPI e regole di lettura. Output: segmentazione operativa e indicatori condivisi." },
+      { title: "Donor journey dei nuovi segmenti", period: "Giugno–settembre 2027", fee: 16500,
+        detail: "Obiettivi, next best action, touchpoint, frequenze e misure di efficacia. Output: journey target e contact plan." },
+    ],
+  },
+  {
+    number: "03", title: "Integrazione e automazione", period: "Luglio–settembre 2027",
+    activities: [
+      { title: "Integrazione e automazione con Mentor", period: "Luglio–settembre 2027", fee: 13250,
+        detail: "Requisiti funzionali, flussi di label, score, audience e alert, regole di attivazione e specifiche tecniche. Output: disegno di integrazione e automazione; perimetro esecutivo da confermare." },
+    ],
+  },
+];
+
+const formatFee = (amount: number) => `€ ${amount.toLocaleString("it-IT")}`;
+const budgetTotal = budgetPhases.reduce((total, phase) => total + phase.activities.reduce((sum, activity) => sum + activity.fee, 0), 0);
 
 const team = [
   {
@@ -1493,6 +1529,7 @@ export default function Home() {
           </div>
           <h2 data-reveal>Dal setup<br />al monitoraggio continuo.</h2>
           <p data-reveal>Febbraio 2027 - dicembre 2028</p>
+          <p className="roadmap__budget-note" data-reveal>Calendario proposto: attività di consulenza da febbraio a settembre 2027; agosto come finestra di validazione. Sviluppo Qlik e monitoraggio continuo sono da dimensionare e quotare separatamente. Date e ripartizione economica restano da validare con Fiorenza e VIDAS.</p>
         </div>
         <div className="gantt section" data-reveal>
           <div className="gantt__months" aria-hidden="true" style={{ gridTemplateColumns: `330px repeat(${ganttMonths.length}, minmax(54px, 1fr))` }}>
@@ -1515,7 +1552,7 @@ export default function Home() {
           <div className="gantt__milestones">
             <span>FEB · AVVIO E ACCESSI</span>
             <span>APR · ASSESSMENT E SWOT CONDIVISI</span>
-            <span>OTT · ENGINE E MENTOR INTEGRATI</span>
+            <span>SET · CHIUSURA ATTIVITÀ CORE</span>
             <span>2028 · QLIK E MONITORAGGIO CONTINUO</span>
           </div>
         </div>
@@ -1747,46 +1784,55 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="deliverables-recap section" aria-labelledby="deliverables-title">
-        <div className="deliverables-recap__header" data-reveal>
-          <span>I TRE DELIVERABLE RICHIESTI DA VIDAS</span>
-          <h2 id="deliverables-title">Il brief trova risposta<br />in tre risultati verificabili.</h2>
-        </div>
-        <div className="deliverables-recap__list" data-reveal>
-          <article><span>01</span><div><strong>Analisi della performance multidimensionale</strong><p>Assessment, database, KPI, donor journey attuale e SWOT integrata.</p><small>CAPITOLO 02</small></div></article>
-          <article><span>02</span><div><strong>Proposta evolutiva di segmentazione</strong><p>ProsperData Engine, modelli specialistici e donor journey per i nuovi segmenti.</p><small>CAPITOLI 03 E 04</small></div></article>
-          <article><span>03</span><div><strong>Messa a terra operativa</strong><p>Integrazione fra Engine, Mentor e Qlik, delivery e monitoraggio.</p><small>CAPITOLI 05 E 06</small></div></article>
-        </div>
-      </section>
-
-      <section className="investment section">
+      <section className="investment section" id="budget" aria-labelledby="budget-title">
         <div className="section-kicker" data-reveal>
           <span>7.4</span>
           <p>Proposta economica</p>
         </div>
         <div className="investment__headline" data-reveal>
-          <h2>Una base economica chiara.<br />Da validare sul perimetro finale.</h2>
-          <p>La valorizzazione economica sarà consolidata sulla base dei tre deliverable, delle attività di integrazione e del cronoprogramma condiviso con VIDAS.</p>
+          <h2 id="budget-title">Attività, tempi<br />e investimento.</h2>
+          <p>La base di consulenza di 90.000 euro è articolata per attività e mesi di lavoro. La ripartizione qui presentata è una proposta da validare con Fiorenza prima della definizione dell’offerta economica finale.</p>
         </div>
         <div className="investment__budget" data-reveal>
           <div>
-            <span>BUDGET DI RIFERIMENTO</span>
-            <strong>€ 90.000</strong>
-            <small>attività di consulenza</small>
+            <span>BASE DI CONSULENZA</span>
+            <strong>{formatFee(budgetTotal)}</strong>
+            <small>Importi al netto di IVA · Febbraio–settembre 2027</small>
           </div>
           <div>
-            <span>STATO DELLA PROPOSTA</span>
-            <h3>Base di lavoro da validare.</h3>
-            <p>Il valore indica il riferimento economico attuale. Articolazione per fase e condizioni finali saranno definite nella proposta economica conclusiva.</p>
+            <span>RIPARTIZIONE PROPOSTA</span>
+            <h3>Da validare<br />con Fiorenza.</h3>
+            <p>Sette attività distribuite su tre fasi. Il dettaglio descrive lavoro e output previsti, senza esporre il conteggio delle ore interne.</p>
           </div>
         </div>
-        <div className="investment__scope" data-reveal>
-          <span>IL BUDGET SEGUE IL PERIMETRO</span>
-          <div>
-            <strong>Analisi multidimensionale</strong>
-            <strong>Segmentazione evoluta</strong>
-            <strong>Messa a terra operativa</strong>
-          </div>
+        <div className="budget-phases">
+          {budgetPhases.map((phase) => (
+            <section className="budget-phase" key={phase.number} aria-labelledby={`budget-phase-${phase.number}`} data-reveal>
+              <header className="budget-phase__header">
+                <div>
+                  <span>FASE {phase.number} · {phase.period}</span>
+                  <h3 id={`budget-phase-${phase.number}`}>{phase.title}</h3>
+                </div>
+                <strong>{formatFee(phase.activities.reduce((total, activity) => total + activity.fee, 0))}</strong>
+              </header>
+              <ul className="budget-phase__activities">
+                {phase.activities.map((activity) => (
+                  <li key={activity.title} data-budget-fee={activity.fee}>
+                    <span className="budget-activity__period">{activity.period}</span>
+                    <div><h4>{activity.title}</h4><p>{activity.detail}</p></div>
+                    <strong className="budget-activity__fee">{formatFee(activity.fee)}</strong>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          ))}
+        </div>
+        <div className="budget-total" data-reveal><span>Totale consulenza proposta</span><strong>{formatFee(budgetTotal)}</strong></div>
+        <div className="budget-conditions" data-reveal>
+          <h3>Perimetro e condizioni da confermare</h3>
+          <p><strong>Qlik e monitoraggio continuo.</strong> Nell’ipotesi di budget sono esclusi dai 90.000 euro: saranno quotati separatamente, a pacchetto o su base oraria, dopo la definizione delle esigenze.</p>
+          <p><strong>Integrazione Mentor.</strong> Le modalità tecniche, le dipendenze dal gestore del CRM e l’eventuale connettore saranno concordati in fase progettuale.</p>
+          <p><strong>Condizioni economiche.</strong> Licenze, servizi di terzi, spese vive, scadenze di pagamento e perimetro esecutivo saranno precisati nell’offerta finale. I periodi indicano quando si svolge il lavoro, non un piano di fatturazione.</p>
         </div>
       </section>
 

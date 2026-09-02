@@ -4300,6 +4300,46 @@ img {
 .gantt__milestones { min-width: 1760px; }
 .gantt__bar--yellow { background: linear-gradient(90deg, #e5ad12, var(--yellow)); }
 
+/* Budget proposal: visible activities and fees, without a boxed table. */
+#budget { scroll-margin-top: 130px; }
+.roadmap__header .roadmap__budget-note { max-width: 860px; font-size: 14px; line-height: 1.6; color: rgba(255, 255, 255, .8); }
+#budget .investment__budget { margin-top: 56px; }
+#budget .investment__budget > div { min-height: 280px; }
+#budget .investment__budget > div:first-child strong { font-size: clamp(48px, 7vw, 112px); line-height: 1; }
+#budget .investment__budget > div:first-child small { line-height: 1.6; color: rgba(255, 255, 255, .82); }
+#budget .investment__budget h3 { font-size: clamp(30px, 3.4vw, 52px); line-height: 1.05; }
+.budget-phases { margin-top: 72px; }
+.budget-phase + .budget-phase { margin-top: 56px; }
+.budget-phase__header { display: flex; align-items: end; justify-content: space-between; gap: 28px; padding-bottom: 24px; border-bottom: 2px solid var(--blue); }
+.budget-phase__header > div { min-width: 0; }
+.budget-phase__header span { color: var(--blue); font-size: 11px; font-weight: 750; letter-spacing: .08em; text-transform: uppercase; }
+.budget-phase__header h3 { margin: 14px 0 0; color: var(--navy); font-size: clamp(26px, 2.7vw, 38px); line-height: 1.1; letter-spacing: -.035em; }
+.budget-phase__header > strong { flex: none; white-space: nowrap; font-size: clamp(28px, 3.5vw, 48px); color: var(--blue); letter-spacing: -.04em; }
+.budget-phase__activities { list-style: none; padding: 0; margin: 0; }
+.budget-phase__activities li { display: grid; grid-template-columns: minmax(140px, .65fr) minmax(0, 2fr) auto; align-items: start; gap: 32px; padding: 28px 0; border-bottom: 1px solid rgba(22, 33, 81, .15); }
+.budget-activity__period { color: var(--blue); font-size: 12px; line-height: 1.5; }
+.budget-phase__activities h4 { margin: 0; font-size: 19px; line-height: 1.3; color: var(--navy); }
+.budget-phase__activities p { max-width: 740px; margin: 10px 0 0; font-size: 13px; line-height: 1.6; color: #566176; }
+.budget-activity__fee { white-space: nowrap; color: var(--navy); font-size: 21px; line-height: 1.3; text-align: right; }
+.budget-total { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-top: 40px; padding: 30px 34px; border-radius: 18px; background: var(--navy); color: var(--white); }
+.budget-total span { font-size: 17px; font-weight: 650; }
+.budget-total strong { font-size: clamp(28px, 3vw, 42px); white-space: nowrap; letter-spacing: -.04em; }
+.budget-conditions { margin-top: 40px; max-width: 1050px; }
+.budget-conditions h3 { font-size: 21px; color: var(--navy); }
+.budget-conditions p { font-size: 13px; line-height: 1.65; color: #566176; }
+.budget-conditions strong { color: var(--navy); }
+@media (max-width: 760px) {
+  #budget .investment__budget > div { min-height: 240px; padding: 30px 24px; }
+  #budget .investment__budget > div:first-child strong { font-size: clamp(46px, 13vw, 90px); }
+  .budget-phase__header { align-items: start; flex-direction: column; gap: 18px; }
+  .budget-phase__header > strong { font-size: 32px; }
+  .budget-phase__activities li { grid-template-columns: minmax(0, 1fr) auto; gap: 10px 16px; }
+  .budget-activity__period { grid-column: 1 / -1; }
+  .budget-phase__activities h4 { font-size: 17px; }
+  .budget-activity__fee { font-size: 19px; }
+  .budget-total { padding: 24px; align-items: start; flex-direction: column; gap: 12px; }
+}
+
 .experience-section {
   padding-top: 148px;
   padding-bottom: 158px;
