@@ -155,6 +155,8 @@ test("server-renders the corrected VIDAS proposal", async () => {
   assert.equal(budgetFees.reduce((total, fee) => total + fee, 0), 90000);
   assert.match(html, /Assessment, analisi dei processi e donor journey attuale/);
   assert.match(html, /€ 18\.750/);
+  assert.match(html, /Sviluppo dell(?:'|&#x27;|&#39;)integrazione dell(?:'|&#x27;|&#39;)automazione con Mentor/);
+  assert.doesNotMatch(html, /Integrazione e automazione con Mentor/);
   assert.doesNotMatch(html, /data-budget-fee="5500"/);
   assert.doesNotMatch(html, /Sette attività/);
   assert.match(html, /non un piano di fatturazione/);

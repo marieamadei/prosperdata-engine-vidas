@@ -354,7 +354,7 @@ const ganttRows = [
   },
   {
     phase: "F3",
-    title: "Integrazione e automazione con Mentor",
+    title: "Sviluppo dell'integrazione dell'automazione con Mentor",
     detail: "ETL, audience, alert, estrazioni e donor care",
     start: 5,
     span: 3,
@@ -403,7 +403,7 @@ const budgetPhases = [
   {
     number: "03", title: "Integrazione e automazione", period: "Luglio–settembre 2027",
     activities: [
-      { title: "Integrazione e automazione con Mentor", period: "Luglio–settembre 2027", fee: 13250,
+      { title: "Sviluppo dell'integrazione dell'automazione con Mentor", period: "Luglio–settembre 2027", fee: 13250,
         detail: "Requisiti funzionali, flussi di label, score, audience e alert, regole di attivazione e specifiche tecniche. Output: disegno di integrazione e automazione; perimetro esecutivo da confermare." },
     ],
   },
