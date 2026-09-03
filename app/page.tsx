@@ -383,10 +383,8 @@ const budgetPhases = [
   {
     number: "01", title: "Assessment e analisi", period: "Febbraio–aprile 2027",
     activities: [
-      { title: "Assessment e analisi dei processi", period: "Febbraio 2027", fee: 5500,
-        detail: "Database, KPI, interviste e processi operativi e di donor care. Output: baseline condivisa e mappa dei processi." },
-      { title: "Fotografia del donor journey attuale", period: "Febbraio–marzo 2027", fee: 13250,
-        detail: "Touchpoint, campagne, pressione di contatto e passaggi tra canali. Output: journey attuale e principali evidenze." },
+      { title: "Assessment, analisi dei processi e donor journey attuale", period: "Febbraio–marzo 2027", fee: 18750,
+        detail: "Database, KPI, interviste, processi operativi e di donor care, touchpoint, campagne, pressione di contatto e passaggi tra canali. Output: baseline condivisa, mappa dei processi, journey attuale e principali evidenze." },
       { title: "SWOT integrata e priorità", period: "Aprile 2027", fee: 1750,
         detail: "Lettura congiunta di dati, processi, rischi e opportunità. Output: SWOT e priorità di intervento." },
     ],
@@ -1801,7 +1799,7 @@ export default function Home() {
           </div>
           <div>
             <span>RIPARTIZIONE PROPOSTA</span>
-            <h3>Tre fasi.<br />Sette attività.</h3>
+            <h3>Tre fasi.<br />Sei attività.</h3>
             <p>Il dettaglio collega ogni attività al periodo di lavoro, agli output previsti e alla relativa quota di investimento.</p>
           </div>
         </div>

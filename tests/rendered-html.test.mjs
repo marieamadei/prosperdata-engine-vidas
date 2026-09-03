@@ -143,7 +143,7 @@ test("server-renders the corrected VIDAS proposal", async () => {
   assert.doesNotMatch(html, /deliverables-recap/);
   assert.match(html, /€ 90\.000/);
   assert.match(html, /RIPARTIZIONE PROPOSTA/);
-  assert.match(html, /Tre fasi\.<br\s*\/>Sette attività\./);
+  assert.match(html, /Tre fasi\.<br\s*\/>Sei attività\./);
   assert.doesNotMatch(html, /da validare/i);
   assert.doesNotMatch(html, /con Fiorenza/);
   assert.doesNotMatch(html, /conteggio delle ore interne/);
@@ -151,8 +151,12 @@ test("server-renders the corrected VIDAS proposal", async () => {
   assert.match(html, /€ 56\.250/);
   assert.match(html, /€ 13\.250/);
   const budgetFees = [...html.matchAll(/data-budget-fee="(\d+)"/g)].map((match) => Number(match[1]));
-  assert.deepEqual(budgetFees, [5500, 13250, 1750, 26500, 13250, 16500, 13250]);
+  assert.deepEqual(budgetFees, [18750, 1750, 26500, 13250, 16500, 13250]);
   assert.equal(budgetFees.reduce((total, fee) => total + fee, 0), 90000);
+  assert.match(html, /Assessment, analisi dei processi e donor journey attuale/);
+  assert.match(html, /€ 18\.750/);
+  assert.doesNotMatch(html, /data-budget-fee="5500"/);
+  assert.doesNotMatch(html, /Sette attività/);
   assert.match(html, /non un piano di fatturazione/);
   assert.match(html, /quotati separatamente, a pacchetto o su base oraria/);
   assert.doesNotMatch(html, /Articolazione per fase e condizioni finali saranno definite/);
