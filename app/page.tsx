@@ -403,14 +403,16 @@ const budgetPhases = [
   {
     number: "03", title: "Integrazione e automazione", period: "Luglio–settembre 2027",
     activities: [
-      { title: "Sviluppo dell'integrazione dell'automazione con Mentor", period: "Luglio–settembre 2027", fee: 13250,
+      { title: "Sviluppo dell'integrazione dell'automazione con Mentor", period: "Luglio–settembre 2027", fee: 5000,
         detail: "Requisiti funzionali, flussi di label, score, audience e alert, regole di attivazione e specifiche tecniche. Output: disegno di integrazione e automazione; perimetro esecutivo da confermare." },
     ],
   },
 ];
 
-const formatFee = (amount: number) => `€ ${amount.toLocaleString("it-IT")}`;
+const formatFee = (amount: number) => `€ ${amount.toLocaleString("it-IT", { useGrouping: "always" })}`;
+const Fee = ({ amount }: { amount: number }) => <>{formatFee(amount)}<em className="budget-vat"> + IVA</em></>;
 const budgetTotal = budgetPhases.reduce((total, phase) => total + phase.activities.reduce((sum, activity) => sum + activity.fee, 0), 0);
+const monthlyServiceFee = 700;
 
 const team = [
   {
@@ -1789,12 +1791,12 @@ export default function Home() {
         </div>
         <div className="investment__headline" data-reveal>
           <h2 id="budget-title">Attività, tempi<br />e investimento.</h2>
-          <p>La base di consulenza di 90.000 euro è articolata per attività e mesi di lavoro. Per ogni fase sono indicati gli interventi, gli output previsti e l’investimento corrispondente.</p>
+          <p>La consulenza è articolata per attività e mesi di lavoro. Per ogni fase sono indicati gli interventi, gli output previsti e l’investimento corrispondente.</p>
         </div>
         <div className="investment__budget" data-reveal>
           <div>
             <span>BASE DI CONSULENZA</span>
-            <strong>{formatFee(budgetTotal)}</strong>
+            <strong><Fee amount={budgetTotal} /></strong>
             <small>Importi al netto di IVA · Febbraio–settembre 2027</small>
           </div>
           <div>
@@ -1811,24 +1813,28 @@ export default function Home() {
                   <span>FASE {phase.number} · {phase.period}</span>
                   <h3 id={`budget-phase-${phase.number}`}>{phase.title}</h3>
                 </div>
-                <strong>{formatFee(phase.activities.reduce((total, activity) => total + activity.fee, 0))}</strong>
+                <strong><Fee amount={phase.activities.reduce((total, activity) => total + activity.fee, 0)} /></strong>
               </header>
               <ul className="budget-phase__activities">
                 {phase.activities.map((activity) => (
                   <li key={activity.title} data-budget-fee={activity.fee}>
                     <span className="budget-activity__period">{activity.period}</span>
                     <div><h4>{activity.title}</h4><p>{activity.detail}</p></div>
-                    <strong className="budget-activity__fee">{formatFee(activity.fee)}</strong>
+                    <strong className="budget-activity__fee"><Fee amount={activity.fee} /></strong>
                   </li>
                 ))}
               </ul>
             </section>
           ))}
         </div>
-        <div className="budget-total" data-reveal><span>Totale consulenza proposta</span><strong>{formatFee(budgetTotal)}</strong></div>
+        <div className="budget-total" data-reveal><span>Totale consulenza proposta</span><strong><Fee amount={budgetTotal} /></strong></div>
+        <div className="budget-service" data-monthly-service-fee={monthlyServiceFee} data-reveal>
+          <div><h3>Fee mensile del servizio</h3><p>A partire da ottobre 2027 · minimo 12 mesi</p></div>
+          <strong><Fee amount={monthlyServiceFee} /><small>al mese</small></strong>
+        </div>
         <div className="budget-conditions" data-reveal>
           <h3>Perimetro e condizioni</h3>
-          <p><strong>Qlik e monitoraggio continuo.</strong> Nell’ipotesi di budget sono esclusi dai 90.000 euro: saranno quotati separatamente, a pacchetto o su base oraria, dopo la definizione delle esigenze.</p>
+          <p><strong>Qlik e attività aggiuntive.</strong> Sono esclusi dal totale della consulenza e saranno quotati separatamente, a pacchetto o su base oraria, dopo la definizione delle esigenze.</p>
           <p><strong>Integrazione Mentor.</strong> Le modalità tecniche, le dipendenze dal gestore del CRM e l’eventuale connettore saranno concordati in fase progettuale.</p>
           <p><strong>Condizioni economiche.</strong> Licenze, servizi di terzi, spese vive, scadenze di pagamento e perimetro esecutivo saranno precisati nell’offerta finale. I periodi indicano quando si svolge il lavoro, non un piano di fatturazione.</p>
         </div>
