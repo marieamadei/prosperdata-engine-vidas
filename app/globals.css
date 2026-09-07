@@ -4300,6 +4300,68 @@ img {
 .gantt__milestones { min-width: 1760px; }
 .gantt__bar--yellow { background: linear-gradient(90deg, #e5ad12, var(--yellow)); }
 
+/* Product definition — neutral bridge between the cover and the VIDAS brief. */
+.product-definition {
+  display: grid;
+  grid-template-columns: minmax(220px, .42fr) minmax(0, 1.58fr);
+  gap: 8vw;
+  align-items: start;
+  padding-top: 72px;
+  padding-bottom: 78px;
+  border-bottom: 1px solid var(--line);
+  background: var(--white);
+}
+
+.product-definition__label {
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.product-definition__label span {
+  color: var(--blue);
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: .16em;
+}
+
+.product-definition__label p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.product-definition > p {
+  max-width: 1180px;
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(24px, 2.6vw, 42px);
+  line-height: 1.35;
+  letter-spacing: -.025em;
+}
+
+.product-definition > p strong {
+  color: var(--ink);
+  font-weight: 750;
+}
+
+@media (max-width: 900px) {
+  .product-definition {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+}
+
+@media (max-width: 700px) {
+  .product-definition {
+    padding-top: 54px;
+    padding-bottom: 58px;
+  }
+
+  .product-definition__label { padding-top: 0; }
+}
+
 /* Budget proposal: visible activities and fees, without a boxed table. */
 #budget { scroll-margin-top: 130px; }
 .roadmap__header .roadmap__budget-note { max-width: 860px; font-size: 14px; line-height: 1.6; color: rgba(255, 255, 255, .8); }

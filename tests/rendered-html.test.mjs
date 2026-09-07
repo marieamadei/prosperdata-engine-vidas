@@ -75,9 +75,13 @@ test("server-renders the corrected VIDAS proposal", async () => {
   assert.match(html, /Targetizzazione ottimizzata/);
   assert.match(html, /Qui presentiamo un contact plan 2027–2028/);
   assert.match(html, /permette di comprenderne meglio il funzionamento/);
-  assert.match(html, /stabilisce le priorità e restituisce le informazioni utili per le next best actions/);
-  assert.match(html, /NEXT BEST ACTIONS/);
-  assert.doesNotMatch(html, /un solo next best action spiegabile/);
+  assert.match(html, /stabilisce le priorità e restituisce le informazioni utili per definire le azioni prioritarie/);
+  assert.match(html, /CRITERI DI ATTIVAZIONE/);
+  assert.match(html, /ProsperData Engine è il framework specialistico di modellistica e prioritizzazione per il fundraising nonprofit/);
+  assert.match(html, /Produce segmenti, score, audience e criteri di attivazione integrabili nel CRM/);
+  assert.doesNotMatch(html, /Report d’impatto riservato/);
+  assert.doesNotMatch(html, /next best action/i);
+  assert.doesNotMatch(html, /un solo criterio di attivazione spiegabile/);
   assert.doesNotMatch(html, /non dispone di una funzione interna dedicata/);
   assert.doesNotMatch(html, /Il brief definisce una progressione chiara/);
   assert.doesNotMatch(html, /La proposta in sette passaggi/);
@@ -199,6 +203,8 @@ test("keeps the source reconciled with the team review", async () => {
   assert.doesNotMatch(page, /operating-architecture|operating-loop/);
   assert.match(page, /metric: "FEDELTÀ"/);
   assert.match(page, /AREE DEL MODELLO CHE GENERANO LO SCORE/);
+  assert.match(page, /Aggiornamento personalizzato sui risultati e sull’impatto dei progetti/);
+  assert.doesNotMatch(page, /Report d’impatto riservato|next best action/i);
   assert.doesNotMatch(page, /metric: "81%"/);
   assert.doesNotMatch(page, /Protezione deliverability/);
   assert.match(layout, /ProsperData Engine per gara VIDAS — Proposta strategica e operativa/);

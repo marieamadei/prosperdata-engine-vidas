@@ -244,7 +244,7 @@ const donorJourneys = [
       { channel: "Digital (DEM)", type: "digital", touchpoints: [
         { month: 0, label: "Aggiornamento privato dalla Direzione." },
         { month: 6, label: "Save the date per evento dedicato." },
-        { month: 12, label: "Report d’impatto riservato." },
+        { month: 12, label: "Aggiornamento personalizzato sui risultati e sull’impatto dei progetti." },
       ] },
       { channel: "One-to-One", type: "one2one", touchpoints: [
         { month: 3, label: "Invito ad personam a evento o visita in Hospice." },
@@ -397,7 +397,7 @@ const budgetPhases = [
       { title: "Elaborazione dei segmenti e KPI", period: "Giugno–luglio 2027", fee: 13250,
         detail: "Segmenti operativi, motivazioni delle priorità, KPI e regole di lettura. Output: segmentazione operativa e indicatori condivisi." },
       { title: "Donor journey dei nuovi segmenti", period: "Giugno–settembre 2027", fee: 16500,
-        detail: "Obiettivi, next best action, touchpoint, frequenze e misure di efficacia. Output: journey target e contact plan." },
+        detail: "Obiettivi, azioni prioritarie, touchpoint, frequenze e misure di efficacia. Output: journey target e contact plan." },
     ],
   },
   {
@@ -577,6 +577,16 @@ export default function Home() {
           <div />
           <span>ProsperData Engine × VIDAS</span>
         </div>
+      </section>
+
+      <section className="product-definition section" aria-labelledby="product-definition-title">
+        <div className="product-definition__label" data-reveal>
+          <span>PROSPERDATA ENGINE</span>
+          <p>Definizione</p>
+        </div>
+        <p id="product-definition-title" data-reveal>
+          <strong>ProsperData Engine è il framework specialistico di modellistica e prioritizzazione per il fundraising nonprofit.</strong> Produce segmenti, score, audience e criteri di attivazione integrabili nel CRM, negli strumenti di BI e nelle piattaforme operative del cliente.
+        </p>
       </section>
 
       <section className="brief-premise section" aria-labelledby="brief-premise-title">
@@ -1113,10 +1123,10 @@ export default function Home() {
             <strong>La complessità dell’integrazione.</strong>
           </div>
           <p>
-            Un donatore può essere contemporaneamente RFM Middle, ad alta propensione alla regolarizzazione e digitalmente ingaggiato. ProsperData Engine combina queste letture, stabilisce le priorità e restituisce le informazioni utili per le next best actions.
+            Un donatore può essere contemporaneamente RFM Middle, ad alta propensione alla regolarizzazione e digitalmente ingaggiato. ProsperData Engine combina queste letture, stabilisce le priorità e restituisce le informazioni utili per definire le azioni prioritarie.
           </p>
-          <div className="model-governance__formula" aria-label="Sei modelli definiscono le priorità e producono informazioni utili per le next best actions">
-            <span>6 MODELLI</span><i>→</i><span>PRIORITÀ</span><i>→</i><strong>NEXT BEST ACTIONS</strong>
+          <div className="model-governance__formula" aria-label="Sei modelli definiscono le priorità e producono criteri di attivazione">
+            <span>6 MODELLI</span><i>→</i><span>PRIORITÀ</span><i>→</i><strong>CRITERI DI ATTIVAZIONE</strong>
           </div>
         </div>
       </section>
